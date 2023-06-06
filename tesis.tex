@@ -17,6 +17,9 @@
 % Inclusion de imagenes
 \usepackage{graphicx}
 
+%Modificación CHRIS
+\usepackage[utf8]{inputenc}
+
 % Codificacion de simbolos
 \usepackage[T1]{fontenc}
 \usepackage[applemac]{inputenc}
@@ -29,6 +32,8 @@
 
 % Colores
 \usepackage[table]{xcolor}
+
+\usepackage{comment} 
 
 \definecolor{verdeOscuro}{rgb}{0,0.6,0}
 \definecolor{verdeAzulado}{RGB}{3,168,108}
@@ -181,11 +186,12 @@
 \include{agradecimientos}
 \tableofcontents
 
-
 \mainmatter
 
+\include{prefacio}
 \include{introduccion}
 \include{capitulo1}
+\include{capitulo2}
 
 
 \backmatter
