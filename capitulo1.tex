@@ -71,7 +71,7 @@ A continuación daremos una definición y un teorema, los cuales nos ayudarán a
 Decimos que una gráfica cordal es aquella en la cual todos los ciclos de cuatro mas vértices tiene una cuerda. Esto es un arista la cual no es parte del ciclo, pero que conecta a dos vértices dentro del ciclo.
 
 \begin{teorema}
-\label{teo:201}
+\label{teo:Int-Chord}
     Toda gráfica de intervalos es cordal.
 \end{teorema}
 
@@ -91,7 +91,7 @@ Decimos que una gráfica cordal es aquella en la cual todos los ciclos de cuatro
 
 En particular al completar el ciclo de \cref{fig:03} se tiene que ya no es gráfica de intervalos.
 
-Así hasta el momento hemos visto que toda gráfica de intervalos debe ser cordal. En este punto, como dirían varios exprofesores, todo buen matemático debería ahora preguntarse si toda gráfica cordal tiene una representación interválica. Es decir veamos si el ser cordal es suficiente para ser de intervalos.
+Así hasta el momento hemos visto que toda gráfica de intervalos debe ser cordal. En este punto, como dirían varios exprofesores, todo buen matemático debería ahora preguntarse si toda gráfica cordal tiene una representación por intervalos. Es decir veamos si el ser cordal es una condición suficiente para ser gráficas de intervalos.
 Desafortunadamente, aunque al mismo tiempo afortunadamente, para los fines literarios de esta tesis, la respuesta es no.
 Veamos el siguiente ejemplo. A partir de este punto en los dibujos omitiremos dibujar los lazos, los cuales ya sabemos que existen en toda gráfica de intervalos.
 
@@ -109,8 +109,8 @@ Ya como ultima nota, $I_d$ debe ser disjunto de $I_x$  ($x$ y $d$ no son adyacen
 \end{figure}
 
 Siguiendo con el proceso del estudio de las gráficas de intervalos, ahora nos gustaría encontrar una propiedad adicional de las gráficas de intervalos y nuevamente preguntarnos si esta propiedad es suficiente para que la gráfica sea de intervalos y en caso de no serlo, preguntarnos entonces si esta nueva propiedad en junto a la propiedad de ser cordal nos den la suficiencia para ser de intervalos.
-De acuerdo a lo anterior, se presentan tres actores. El primero de ellos se presenta de forma natural al hacer un par de observaciones basadas en la representación por intervalos de una gráfica de intervalos. Más en especifico en observar el comportamiento de las componentes conexas de la gráfica. Este actor resulta ser suficiente para caracterizar a las gráficas de intervalos. Respecto a los otros dos actores, uno consiste en tener una estructura prohibida, las tripletas asteroidales y el segundo se refiere a una propiedad del complemento de la gráfica, el complemento debe admitir una orientación transitiva. Cada uno de ellos se complementan con la propiedad de ser cordal para caracterizar a las gráficas de intervalos. 
-Por el momento veremos un par de ejemplos de gráficas de intervalos un poco mas elaborados y veamos como surge de forma intuitiva la primer caracterización. En las secciones posteriores estudiaremos a las otras dos propiedades.
+De acuerdo a lo anterior, se presentan tres actores. El primero de ellos se presenta de forma natural al hacer un par de observaciones basadas en la representación por intervalos de una gráfica de intervalos. Más en especifico en observar el comportamiento de las componentes conexas de la gráfica. Este actor veremos que resulta ser suficiente para caracterizar a las gráficas de intervalos. Respecto a los otros dos actores, uno consiste en tener una estructura prohibida, las tripletas asteroidales y el segundo se refiere a una propiedad del complemento de la gráfica, el complemento debe admitir una orientación transitiva. Cada uno de ellos se complementan con la propiedad de ser cordal para así poder caracterizar a las gráficas de intervalos. 
+Por el momento veremos un par de ejemplos de gráficas de intervalos un poco mas elaborados y veamos como surge de forma intuitiva la primer caracterización. Y posponemos para secciones posteriores el estudio de los otros dos actores.
 
 Una nota importante a hacer respecto a las gráficas de intervalos es pueden ser conexas o disconexas. En \crefrange{fig:GrafInt01}{fig:GrafInt02} se exponen gráficas de intervalos disconexas mientras que en \cref{fig:GrafInt03} se muestra una gráfica de intervalos que es conexa. 
 
@@ -149,29 +149,46 @@ En \cref{sec:SbGrfcs} se introdujo el concepto de vértice simplicial. Notemos q
   \label{fig:209}
 \end{figure}
 
-Con base a la representación por intervalos de los dos ejemplos anteriores, si uno se fija en las lineas verticales auxiliares correspondientes a los clanes maximales, uno nota que dichas lineas pueden ser ordenadas. Por ejemplo, al estar representadas sobre la recta real, las lineas pueden ser ordenadas con el orden de los números reales, es decir podemos ordenarlas como $(C_1,C_2, C_3, C_4, C_5, C_6, C_7)$. También uno podría sugerir el orden $(C_7,C_6,C_5,C_4,C_3,C_2,C_1)$, el cual se obtiene 
+Una vez que uno cuenta con un la representación por intervalos de una gráfica, la representación sugiere un ordenamiento muy natural de los clanes maximales, de izquierda a derecha. Por ejemplo en \cref{fig:209} podemos ordenar los clanes maximales como $(C_1,C_2, C_3, C_4, C_5, C_6, C_7)$. Alternamente si proponemos la representación por intervalos que resulta de reflejar, por una linea vertical a la izquierda del intervalo 16, la representación dada en \cref{fig:209}. Ahora se obtiene el ordenamiento $(C_7,C_6,C_5,C_4,C_3,C_2,C_1)$. Ciertamente uno puede dar cualquier ordenamiento de los clanes maximales de la gráfica, sin embargo los que surgen de forma natural dada la representación por intervalos, tienen una peculiaridad. Los clanes que tienen a un vértice $v$ aparecen consecutivamente en el orden dado. Veamos esto. Supongamos que $G$ es una gráfica de intervalos y que $\{C_i\}_{i=1} ^n$ es el ordenamiento de sus clanes maximales dado por la representación de intervalos, supongamos adicionalmente que $v\in C_k$ y $v\in C_l$ y $k<j<l$ entonces $v\in C_j$. Esto se puede observar en \crefrange{fig:208}{fig:209}. 
 
 
-ordqen es dependiente de la representación que uno haya elegido, ya que otra representación de la gráfica de \cref{fig:209} se obtiene justamente reflejando la representación ya dada sobre una recta vertical a la derecha del intervalo 16, y así podríamos ordenar los clanes maximales como . Aparentemente la forma en la cual podremos ordenar los clanes maximales depende enteramente de la representación que uno de. Veamos la siguiente figura para aclarar un poco este punto.
 
-Hasta el momento hemos visto que las gráficas de intervalos son gráficas cordales y también 
-Con base en los dos ejemplos anteriores, haremos ver un par de notas muy interesantes de las gráficas de intervalos.
+    \begin{comment}
+    Sin embargo ambos ordenes son dependientes de la representación por intervalos que uno haya elegido. 
+    En \cref{fig:OrdMaxClns} tenemos una estrella de 5 picos y a la derecha se muestran tres posibles representaciones por intervalos de dicha gráfica. La estrella tiene como clanes maximales a los conjuntos $C_{i-1}=\{1,i\}$ con $i \in \{2,3,4,5,6\}$, es decir un pico de la estrella acompañado del centro. En la representación por intervalos de la parte superior se ocurre inmediatamente dos ordenaciones de los clanes maximales, $(C_1,C_2,C_3,C_4,C_5)$ y $(C_5,C_4,C_3,C_2,C_1)$. De forma análoga las representaciones del centro y de la parte inferior nos sugieren cada una dos ordenaciones, de derecha a izquierda y de izquierda a derecha. En general, en este acaso particular cualquier permutación de los clanes nos da una ordenación. 
+    
+    \begin{figure}[H]
+      \centering
+      \includegraphics[width=0.7\textwidth]{recursos/capturas/OrdMaxClns.jpg}
+      \caption{Ordenamientos de los clanes maximales de la estrella.}
+      \label{fig:OrdMaxClns}
+    \end{figure}
+    
+    La finalidad de todo lo anterior es para hacer notar que, si bien los clanes pueden ser ordenados, necesitamos una característica la cual no dependa de la representación, si no mas bien de la interacción entre los vértices y los clanes maximales. Así notemos de \crefrange{fig:208} cualquier orden que demos de 
+\end{comment}
 
+En efecto, la propiedad de poder ordenar los clanes maximales de tal forma que para todo vértice $v\in V$ los clanes maximales que contienen a $v$ aparecen consecutivamente en el orden, es una condición necesaria y suficiente para ser una gráfica de intervalos. 
+
+\begin{teorema}
+    \label{teo:Int-MaxClns}
+    Sea $G$ una gráfca. G es gráfica de intervalos si y solo si los clanes maximales de $G$ se pueden ordenar de tal forma que para cada vértice $v\in V$ los clanes maximales que contienen a $v$ aparecen consecutivamente en el orden.
+\end{teorema}
+
+La prueba de esta primer caracterización la posponemos hasta el final del capítulo junto a la prueba de las otras dos caracterizaciones que daremos.
 
 \section{Orientaciones transitivas}
+Como vimos en el capitulo anterior, que una gráfica sea cordal no es una condición suficiente para que una gráfica sea de intervalos. En esta sección introducimos una propiedad adicional, la cual nos da la suficiencia.
 
 Dada un gráfica $G$, una orientación transitiva consiste en, nosotros poder asignar una orientación a las aristas de la gráfica formando así una gráfica dirigida $(V(G),F)$ de tal forma que $ab\in F$ y $bc\in F$ implica que $ac\in F$ $\forall a,b,c \in V(G)$
 
 Veamos el siguiente ejemplo bastante sencillo.
 
-
-    \label{exmpl:205}
-    Tenemos un 3-ciclo. Y nos preguntamos si este tiene la propiedad de orientación transitiva. Para esto debemos asignar dirección $F$ a sus aristas, de tal forma que $ab\in F$ y $bc\in F$ implica que $ac\in F$.
-    Por ejemplo, damos la orientación $F_1$ tal que; al arista diagonal de la izquierda le damos sentido de arriba hacia abajo, al arista horizontal le damos sentido de izquierda a derecha, y finalmente al arista diagonal restante (de la derecha) debe ir de arriba hacia abajo.
+Tenemos un 3-ciclo. Y nos preguntamos si este tiene la propiedad de orientación transitiva. Para esto debemos asignar dirección $F$ a sus aristas, de tal forma que $ab\in F$ y $bc\in F$ implica que $ac\in F$.
+Por ejemplo, damos la orientación $F_1$ tal que; al arista diagonal de la izquierda le damos sentido de arriba hacia abajo, al arista horizontal le damos sentido de izquierda a derecha, y finalmente al arista diagonal restante (de la derecha) debe ir de arriba hacia abajo.
     
-    Como un segundo ejemplo damos la orientación $F_2$ tal que; al arista diagonal de la izquierda le damos sentido de abajo hacia arriba, al arista horizontal le damos sentido de derecha a izquierda, y al arista diagonal de la derecha abajo hacia arriba.
+Como un segundo ejemplo damos la orientación $F_2$ tal que; al arista diagonal de la izquierda le damos sentido de abajo hacia arriba, al arista horizontal le damos sentido de derecha a izquierda, y al arista diagonal de la derecha abajo hacia arriba.
 
-    Es fácil comprobar que este par de orientaciones son en efecto un par de orientaciones transitivas de la gráfica $G$.
+Es fácil comprobar que este par de orientaciones son en efecto un par de orientaciones transitivas de la gráfica $G$.
 
 
 \begin{figure}[H]
@@ -221,7 +238,7 @@ La respuesta, como es de esperarse, es que si nos ayudará a caracterizar a las 
 Si bien Gilmore y Hoffman probaron que toda gráfica de intervalos es gráfica de comparación, algo interesante que veremos y probaremos a continuación es que también el complemento de una gráfica de intervalos es gráfica de comparación.
 
 \begin{teorema}
-    \label{teo:202}
+    \label{teo:Int-Comprbldd}
     El complemento de una gráfica de intervalos es una gráfica de comparación.
 \end{teorema}
 
@@ -238,56 +255,43 @@ Si bien Gilmore y Hoffman probaron que toda gráfica de intervalos es gráfica d
     $(I_x < I_y) \wedge (I_y < I_z) \Rightarrow (I_x<I_z) $
 \end{proof}
 
-Ya estamos a un paso de llegar a nuestra caracterización de las gráficas de intervalos, como dijimos antes, veamos si el hecho de que una gráfica satisfaga que su complemento es de comparabilidad, es suficiente para garantizar que la gráfica es de intervalos. 
+Ya hemos advertido que nuestra caracterización de las gráficas de intervalos, necesita de la propiedad cordal y que el complemento sea una gráfica de comparación. Sin embargo, es necesario comprobar antes si no es suficiente el hecho de que una gráfica satisfaga que su complemento es de comparabilidad, para garantizar que la gráfica es de intervalos. Un ejemplo muy sencillo para exhibir la insuficiencia es el 4-ciclo sin cuerdas. Es decir tomamos a $G=C_4$, luego $G^c$ consta de solo dos aristas y se cumple que es orientable transitivamente casi por vacuidad.
 
-Y un ejemplo muy sencillo para exhibir la insuficiencia es el 4-ciclo sin cuerdas.
-Es decir tomamos a $G=C_4$, luego $G^c$ consta de solo dos aristas y se cumple que es orientable transitivamente casi por vacuidad.
-
-Por lo tanto se necesita de otras propiedades para poder terminar de caracterizar a las gráficas de intervalos. El siguiente teorema nos afirma que basta ser cordal y que el complemento sea gráfica de comparación para ser gráfica de intervalos.
+Por lo tanto, se hace visible la necesidad de una segunda propiedad. En el siguiente teorema damos la caracterización completa.
 
 \begin{teorema}
-\label{teo:203}
+\label{teo:Crctzn1}
     $G$ es gráfica de intervalos si y solo si $G$ es cordal y su complemento es gráfica de comparabilidad.
 \end{teorema}
 
-Si bien en este punto debería ir una prueba, seguiremos explorando mas propiedades de las gráficas de intervalos a fin de encontrar mas caracterizaciones de estas.\\
-
-
-
-
-\begin{teorema}
-\label{teo:204}
-    $G$ es una gráfica de intervalos si y solo si los clanes maximales de $G$ pueden ser ordenados linealmente de tal forma que los clanes que contengan a $v$ sean consecutivos en el orden.
-\end{teorema}
-
-
-
-
-
 \section{Tripletas asteroidales}
-\label{sec:etiquetas}
-Una gráfica $G$ es llamada \indice{asteroidal} si y solo si esta contiene tres puntos distintos $a_1,a_2,a_3$ y tres caminos $W_1,W_2,W_3$ tales que para todo $i\in \{1,2,3\}$ , se tiene que \\
-$W_i$ conecta a $a_k$ y a $a_l$ con $k,l\in\{1,2,3\}-\{i\}$\\
-$a_i$no es vecino de $W_i$\\ 
-Tres puntos que cumplan esto, los llamamos tripleta asteroidal.
+\label{sec:AstTrpls}
+Por ultimo introducimos una estructura la cual es imposible tener en una gráfica la cual es de intervalos, y este hecho complementa la propiedad cordal para caracterizar a las gráficas de intervalos.
 
-A continuación enunciamos el teorema de Lekkerkerker y Bolnad.
+Dada una gráfica $G$. Decimos que tres vértices distintos $a_1,a_2,a_3$ forman una tripleta asteroidal si y solo si cualesquiera de ellos dos son conectados por un camino el cual evita al tercer vértice y todos sus vecinos. Una gráfica la cual tenga una tripleta asteroidal es llamada asteroidal. En \cref{fig:GrafAstrdl} exhibimos una gráfica la cual tiene una gráfica asteroidal. Más en especifico, los vértices $1,5,10$ conforman una tripeta asteroidal, ya que por ejemplo podemos tomar $(1,2,4,7,5)$ la cual es una 1,5-trayectoria y esta evita a la vecindad cerrada del vértice 10, también se tiene que $(1,2,4,8,10)$ es una 1,10-trayectoria que evita a $V[10]$, la vecindad cerrada del vértice 10 y finalmente se tiene la trayectoria $(5,7,4,8,10)$ la cual es una 5,10-trayectoria que evita a $V[1]$.
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.5\textwidth]{recursos/capturas/Ast-Trpl.jpg}
+  \caption{Gráfica asteroidal}
+  \label{fig:GrafAstrdl}
+\end{figure}
+
+A continuación mostramos un argumento, asumiendo verdadero \cref{teo:Int-MaxClns}, el cual muestra la imposibilidad de la presencia de tripletas asteroidales en una gráfica de intervalos. Sea $G$ una gráfica de intervalos y $x,y,z \in V(G)$ una terna arbitraria de vértices de $G$. Supongamos adicionalmente que $\{C_i\}_{i=1}^n$ es un ordenamiento de los clanes maximales de $G$ tal que para cada vértice $v \in V(G)$ los clanes maximales que contienen a $v$ aparecen consecutivamente en el orden. Supongamos sin pérdida de generalidad que $x\in C_i, y \in C_j, z\in C_h$ e $i\leq j \leq h$. Luego cualquier $xz$-camino debe pasar por $C_j$, esto es no puede evitar a $y$ o algún vecino de $y$. Por ende no puede haber tripletas asteroidales en una gráfica de intervalos. Este hecho se ve reflejado en el teorema de Lekkerkerker y Boland, que enunciamos a continuación.
+
 \begin{teorema}
     Una gráfica finita $G$ es de intervalos si y solo si es cordal y no tiene tripletas asteroidales.
 \end{teorema}
 
+Con todo lo anterior, podemos dar paso al siguiente teorema que caracteriza a las gráficas de intervalos.
 
-
-
-
-
-
-
-
-
-
-
-
+\begin{teorema}
+    Sea $G $ una gráfica. Las siguientes proposiciones son equivalentes.\\
+    i) $G$ es gráfica de intervalos.\\
+    ii) $G$ es cordal y su complemento es gráfica de comparabilidad.\\
+    iii) $G$ es cordal y no tiene tripletas asteroidales.\\
+    iv) Los clanes maximales de $G$ se pueden ordenar de tal forma que para cada vértice $v \in V(G)$ los clanes maximales que contienen a $v$ aparecen consecutivamente en el orden. 
+\end{teorema}
 
  
 

@@ -1,12 +1,13 @@
 \chapter{Digráficas de intervalos ajustadas}
 \label{cap:DigrafIntAj}
 
-En el año 1989 se publicó un articulo de M. Sen, S. Das, A.B. Roy y D.B. West en el  \textit{"Journal of graph theory"}. En este introduce una nueva definición que generalizaría a las gráficas de intervalos. Dicha generalización iría enfocada a tener caracterizaciones análogas a las de las gráficas de intervalos, una de ellas, la propiedad de los unos consecutivos para columnas de la matriz asociada a la gráfica de clanes maximales. 
-Desafortunadamente esta definición, no contaría con un alguna caracterización en términos de estructuras prohibidas, así como se tiene para las gráficas de intervalos, las cuales hemos visto que tienen ciertas estructuras prohibidas como las tripletas asteroidales o cuatro ciclos sin cuerdas. 
-Así, al solo contar con la caracterización dada por la propiedad de los unos consecutivos, se tendría un algoritmo de reconocimiento de tiempo polinomial.
+En el año 1989 se publicó un articulo de M. Sen, S. Das, A.B. Roy y D.B. West en el  \textit{"Journal of graph theory"}. En este introduce una nueva definición que generaliza a las gráficas de intervalos. Dicha generalización iba enfocada a tener caracterizaciones análogas a las de las gráficas de intervalos, una de ellas, la propiedad de los unos consecutivos para columnas de la matriz asociada a la gráfica de clanes maximales. 
+Desafortunadamente esta definición, no cuenta con un alguna caracterización en términos de estructuras prohibidas, así como si las tienen las gráficas de intervalos, las tripletas asteroidales o cuatro ciclos sin cuerdas. Así, al solo contar con la caracterización dada por la propiedad de los unos consecutivos, se tendría un algoritmo de reconocimiento de tiempo polinomial.
 
 Ellos definen un digráfica de intervalos como una digráfica $G$ la cual admite una representación de par de intervalos. Es decir, para cada vértice $v\in V(G)$, existen $I_v,J_v$ un par de intervalos, y $uv\in E(G)$ si y solo si $I_u$ intersecta a $J_v$. 
 
-Veamos nuevamente varios ejemplos a fin de familiarizarnos.
+Veamos nuevamente varios ejemplos a fin de familiarizarnos. Comencemos con una digráfica muy sencilla, la cual se muestra en (=(=(=(= y consta únicamente de dos vértices, $v_1, v_2$, y que carce de flechas, así como de lazos. Una representación por pares de intervalos se muestra en la parte inferior, y es fácil comprobar que las incidencias se respetan. Pues los cuatro intervalos son disjuntos dos a dos. Pero en particular $I_1$ no intersecta a $J_1$ ni a $J_2$ e $I_2$ tampoco intersecta a $J_1$ o a $J_2$. En este punto hacemos una primer nota, en la definición de las gráficas de intervalos es implícito que cuenten con lazos, mas aún que sean reflexivas. Como primer contraste, en el caso dirigido se pierde esto. 
 
-r
+Ahora vemos que al añadir una flecha que sale de $v_1$ a $v_2$ nosotros seguimos teniendo que esta digráfica tiene una representación por pares de intervalos. Para dar la representación, podemos usar de base la que se dio en =)=)=) y solo modificar los intervalos $I_1,J_2$, debemos buscar que $I_1\cap J_2 \neq \emptyset$ es decir que tengan intersección no vacía ya que queremos rescatar el hecho de tener la flecha $(v_1,v_2)$. Para lograr esto, basta extender un poco hacia la derecha el extremo derecho del intervalo $I_1$. 
+
+A continuación mostramos que la =)=)=) sigue siendo una digráfica de intervalos al añadir la flecha de regreso. Para esto haremos una pequeña modificación a la representación de pares de la figura anterior. Como primer cosa situamos el intervalo $I_2$ a la izquierda de todos los intervalos y extendemos el extremo derecho del intervalo de tal forma que este intersecte al intervalo $J_1$.
