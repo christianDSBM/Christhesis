@@ -1,6 +1,8 @@
 \chapter{Digráficas de intervalos ajustadas}
 \label{cap:DigrafIntAj}
 
+\section{Digr\'aficas de intervalos}
+
 En el año 1989 se publicó un articulo de M. Sen, S. Das, A.B. Roy y D.B. West en el  \textit{Journal of Graph Theory}. En este se introduce una nueva definición que generaliza a las gráficas de intervalos. Dicha generalización iba enfocada a tener caracterizaciones análogas a las de las gráficas de intervalos, una de ellas, la propiedad de los unos consecutivos para columnas de la matriz asociada a la gráfica de clanes maximales. 
 Desafortunadamente esta definición, no cuenta con un alguna caracterización en términos de estructuras prohibidas, como sí las tienen las gráficas de intervalos, en términos de las tripletas asteroidales y $k$-ciclos sin cuerdas, $k \geq 4$. Así, al solo contar con una caracterización sencilla, a saber, a través de la propiedad de los unos consecutivos, el único algoritmo de reconocimiento para esta clase no es eficiente.
 
@@ -46,7 +48,17 @@ Finalmente exhibimos que al añadir todas las posibles flechas y lazos en el eje
  
 Como se vio desde nuestro primer ejemplo, una digráfica de intervalos puede tener como subgráfica subyacente una gráfica la cual no sea de intervalos, como el siguiente ejemplo, el cual tiene como gráfica subyancete un 4-ciclo el cual se vio que no es gráfica de intervalos. 
 
-Ante la ausencia de una caracterización en términos de estrucutras prohibidas sencillas de las digráficas de intervalos, Tomás Feder, Pavol Hell, Jing Huang y Arash Rafiey, publicaron un artículo en 2011 donde introducen una pequeña modificación a las digráficas de intervalos, dando pie a la definición de digráfica de intervalos ajustada. Una digráfica de intervalos ajustada $G$ es una digráfica de intervalos $G$ la cual tiene una representación por pares de intervalos $I_v, J_v$ para cada $v\in V(G)$ de tal forma que $I_v$ y $J_v$ tienen el mismo extremo izquierdo. 
+Ante la ausencia de una caracterización en términos de estrucutras prohibidas sencillas de las digráficas de intervalos, Tomás Feder, Pavol Hell, Jing Huang y Arash Rafiey, publicaron un artículo en 2011 donde introducen una pequeña modificación a las digráficas de intervalos, dando pie a la definición de digráfica de intervalos ajustada.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Digr\'aficas de intervalos ajustadas}
+
+Una digráfica de intervalos ajustada $G$ es una digráfica de intervalos $G$ la cual tiene una representación por pares de intervalos $I_v, J_v$ para cada $v\in V(G)$ de tal forma que $I_v$ y $J_v$ tienen el mismo extremo izquierdo. 
 
 Con este pequeño ajuste, uno vuelve a recuperar la parte de la reflexividad, ya que $I_v,J_v$ tienen el mismo extremo izquierdo, entonces son no ajenos, luego se debe tener que $(v,v)\in E(G)$. Al mismo tiempo con esta modificación saldrá a relucir una estructura prohibida para esta nueva clase de digráficas.
 
@@ -74,7 +86,7 @@ Finalmente, si agregamos la flecha $(v_2, v_1)$ entonces damos la siguiente repr
 
 \begin{figure}[H]
   \centering
-  \includegraphics[width=0.45\textwidth]{recursos/capturas/Dgrf_Int_Adj03.jpg}
+  \includegraphics[width=0.4\textwidth]{recursos/capturas/Dgrf_Int_Adj03.jpg}
   \caption{Digráfica de intervalos ajustada con dos vértices y dos flechas.}
   \label{fig:DgrfAdj03}
 \end{figure}
@@ -83,7 +95,7 @@ A continuación introducimos definiciones muy sencillas. Dado un camino $P=x_0,\
 
 \begin{figure}[H]
   \centering
-  \includegraphics[width=0.6\textwidth]{recursos/capturas/CaminoCngrnt.jpg}
+  \includegraphics[width=0.4\textwidth]{recursos/capturas/CaminoCngrnt.jpg}
   \caption{Caminos $P=(1,2,6,5,7)$ y $Q=(4,3,5,1,2)$ congruentes.}
   \label{fig:CaminoCngrnt}
 \end{figure}
@@ -93,7 +105,7 @@ En \cref{fig:CaminoCngrnt} se puede observar un par de camino congruentes $P=(1,
 \begin{figure}[H]
   \centering
   \includegraphics[width=0.5\textwidth]{recursos/capturas/Esqm.jpg}
-  \caption{En este esquema las lineas punteadas son flechas que no pertenecen a $E(H)$, así a la izquierda se observa que $P$ evita a $Q$, a la derecha al se verifica que $Q$ no evita a $P$.}
+  \caption{En este esquema las lineas punteadas son flechas que no pertenecen a $E(G)$, así a la izquierda se observa que $P$ evita a $Q$, a la derecha al se verifica que $Q$ no evita a $P$.}
   \label{fig:Esqm}
 \end{figure}
 
@@ -119,9 +131,9 @@ A continuación hacemos simétricas las flechas de la gráfica anterior para ten
   \label{fig:InvrtblPair02}
 \end{figure}
 
-En los ejemplos pasados se puede verificar mediante argumentos simétricos que los vértices $2,4$ son también pares invertibles. A continuación definiremos una digráfica auxiliar, en la cual se rescata bastante información respecto a todos los pares invertible de una gráfica $G$, en caso de que existan.
+En los ejemplos pasados se puede verificar mediante argumentos simétricos que los vértices $2,4$ son también pares invertibles. 
 
-Dada una digráfica $G$, definimos la digráfica de pares asociada a $G$, denotada por $G^{+}$ la cual está definida como $V(G^{+})=\{ (u,v)\in G\times G \colon\ u\neq v \}$ y diremos que $((u,v),(u',v'))\in F(G^{+})$ si y solo si sucede una de las siguientes dos cosas; $(u,u'),(v,v')\in E(G)$ y $(u,v')\notin E(G)$ o si sucede que $(u',u),(v',v)\in E(G)$ y $(v',u)\notin E(G)$. Usemos como ejemplo \cref{fig:InvrtblPair01} para dar la digráfica de pares asociada.
+A continuación definiremos una digráfica auxiliar, en la cual se rescata bastante información respecto a todos los pares invertible de una gráfica $G$, en caso de que existan. Dada una digráfica $G$, definimos la digráfica de pares asociada a $G$, denotada por $G^{+}$ la cual está definida como $V(G^{+})=\{ (u,v)\in G\times G \colon\ u\neq v \}$ y diremos que $((u,v),(u',v'))\in F(G^{+})$ si y solo si sucede una de las siguientes dos cosas; $(u,u'),(v,v')\in E(G)$ y $(u,v')\notin E(G)$ o si sucede que $(u',u),(v',v)\in E(G)$ y $(v',u)\notin E(G)$. Usemos como ejemplo \cref{fig:InvrtblPair01} para dar la digráfica de pares asociada.
 
 \begin{figure}[H]
   \centering
@@ -130,7 +142,7 @@ Dada una digráfica $G$, definimos la digráfica de pares asociada a $G$, denota
   \label{fig:InvrtblPair02}
 \end{figure}
 
-Apoyándonos del esquema de la derecha, podemos verificar que en efecto las flechas que están dibujadas, son flechas según la definición de las flechas de la digráfica de pares. Coloreamos de colores distintos las tres componentes fuertes distintas. Como hicimos notar la pareja de vértices $2,4$ también constituye un par invertible, algo interesante es el hecho que los vértices $(1,3)$ y  $(2,4)$ pertenecen a la misma componente fuerte (verde). El siguiente teorema nos dice más sobre esta interesante observación y también arroja más información sobre el resto de vértices y las componentes conexas.
+Apoyándonos del esquema de la derecha, podemos verificar que en efecto las flechas que están dibujadas, son flechas según la definición de las flechas de la digráfica de pares. Coloreamos de colores distintos las tres componentes fuertes distintas. Como hicimos notar, la pareja de vértices $2,4$ también constituye un par invertible, algo interesante es el hecho que los vértices $(1,3)$ y  $(2,4)$ pertenecen a la misma componente fuerte (verde). El siguiente teorema nos dice más sobre esta interesante observación y también arroja más información sobre el resto de vértices y las componentes conexas.
 
 \begin{teorema}
 \label{teo:PairDigrph}
@@ -139,68 +151,95 @@ Apoyándonos del esquema de la derecha, podemos verificar que en efecto las flec
 
 
 Antes de continuar con la prueba veremos otra cosa interesante que sucede en la digráfica de pares $G^+$. Si tenemos que en $G^+$ hay un camino \textbf{P} de $(u,v)$ a $(v,u)$ digamos \textbf{P}$=( (u,v), (x_1,y_1), \dots, (x_{n},y_n), (v,u)) $ entonces en automático tendremos un par de caminos $P,Q$ congruentes, $P=(u, x_1, \dots, x_n,v)$ de $u$ a $v$ y $Q=(v,y_1, \dots, y_n, u)$ de $v$ a $u$ y que además $P$ evita a $Q$. De donde $P$ y $Q$ se obtienen al considerar solo las primeras entradas del camino \textbf{P} y al considerar solamente las segundas entradas del camino \textbf{P}, respectivamente.
-Análogamente, si también existe un camino en $G^+$ de $(v,u)$ a $(u,v)$, tendremos que existen otro par de caminos $P',Q'$ congruentes, $P'$ de $v$ a $u$ y $Q'$ de $u$ a $v$ tales que $P'$ evita a $Q'$. Donde $P', Q'$ se construirán de forma similar a como se construyeron $P$ y $Q$. Así, en el caso en el que hay un camino \textbf{P} de $(u,v)$ a $(v,u)$ y otro camino \textbf{Q} de $(v,u)$ a $(u,v)$, podremos afirmar que $u,v$ constituyen un par invertible de $G$. 
+Análogamente, si también existe un camino en $G^+$ de $(v,u)$ a $(u,v)$, tendremos que existen otro par de caminos $P',Q'$ congruentes, $P'$ de $v$ a $u$ y $Q'$ de $u$ a $v$ tales que $P'$ evita a $Q'$. Donde $P', Q'$ se construirán de forma similar a como se construyeron $P$ y $Q$. Así, en el caso en el que hay un camino \textbf{P} de $(u,v)$ a $(v,u)$ en $G^+$ y otro camino \textbf{Q} de $(v,u)$ a $(u,v)$ en $G^+$, podremos afirmar que $u,v$ constituyen un par invertible de $G$. 
 
 \begin{proof}
     Probemos como primer punto que si $u,v$ son un par invertible, entonces $(u,v)$ y $(v,u)$ pertenecen a la misma componente fuertemente conexa.
-    Ahora veamos que si $(x,y)\in C$ entonces $(y,x)\in C$. Para esto haremos una primera nota, $((u,v),(u',v'))\in E(H^+)$ implica que $((v',u'),(v,u))\in E(H^+)$, esto se puede corroborar observando la imagen 123123. Ahora sí, continuemos con la prueba, como $(x,y) \in C$ entonces la reversa de un camino cerrado que contiene a $(u,v),(x,y)$ es un camino cerrado que contiene a $(v,u),(y,x)$.    Luego, por concatenación de estos caminos cerrados, obtenemos otro camino cerrado que contiene a $(u,v),(v,u)$ y así podemos concluir que $(x,y),(y,x)$ pertenecen a la misma componente fuerte $C$.
+    Ahora veamos que si $(x,y)\in C$ entonces $(y,x)\in C$. Para esto haremos una primera nota, $((u,v),(u',v'))\in E(G^+)$ implica que $((v',u'),(v,u))\in E(G^+)$, esto se puede corroborar observando \cref{fig:FlechaRevertida}. Ahora sí, continuemos con la prueba, como $(x,y) \in C$ entonces la reversa de un camino cerrado que contiene a $(u,v),(x,y)$ (usando la observación) es un camino cerrado que contiene a $(v,u),(y,x)$.    Luego, por concatenación de estos caminos cerrados, obtenemos otro camino cerrado que contiene a $(u,v),(v,u)$ y así podemos concluir que $(x,y),(y,x)$ pertenecen a la misma componente fuerte $C$. Esto se puede observar en \cref{fig:RvrtdPath}. 
     Finalmente si no existe un par invertible, para cada $(x,y)$ sabemos que $(y,x)$ no pertenece a la misma componente de $(x,y)$ pues en ese caso $x,y$ en efecto constituye un par invertible. Luego para cada $(x,y)\in C$ existe una componente $C'$ tal que $(y,x)\in C'$. 
 \end{proof}
 
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.65\textwidth]{recursos/capturas/RvrtdPath.jpg}
+  \caption{En verde el camino cerrado que contiene a $(u,v),(x,y)$. En naranja el camino revertido del camino verde. Al seguir el sentido de las flechas se obtiene un camino que contiene a $(uv),(v,u)$ }
+  \label{fig:RvrtdPath}
+\end{figure}
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.85\textwidth]{recursos/capturas/(uv,u'v').jpg}
+  \caption{Si $(uv,u'v')\in E(G^+)$ entonces $(v'u',vu)\in E(G^+)$. Representamos en color verde y rojo las flechas de los dos casos distintos que se obtiene cuando $(uv,u'v')\in E(G^+)$. En color gris representamos una flecha que no pertenece a $E(G)$.}
+  \label{fig:FlechaRevertida}
+\end{figure}
+
+En el siguiente teorema, exhibimos un nuevo concepto, el de ordenamiento mínimo. Más adelante veremos que este concepto esta íntimamente relacionado con las digráficas de intervalos ajustadas, mas aún mostramos un pequeño algoritmo para dada una digráfica de intervalos ajustada construir un ordenamiento mínimo o dado un ordenamiento mínimo de una digráfica de intervalos ajustada, construir un representación por pares de intervalos de la digráfica.
+
 \begin{teorema}
 \label{teo:OrdLnl}
-    Sea $H$ una digráfica reflexiva, entonces un orden lineal $<$ es un ordenamiento m\'inimo si y solo si, para cualesquiera tres vértices $i<j<k$ tenemos que 
-    $$ik\in E(H) \text{ implica } ij\in E(H)$$
-    $$ki\in E(H) \text{ implica } ji\in E(H)$$
+    Sea $G$ una digráfica reflexiva, entonces un orden lineal $<$ es un ordenamiento m\'inimo si y solo si, para cualesquiera tres vértices $i<j<k$ tenemos que \textbf{}
+    $$ik\in E(G) \text{ implica } ij\in E(G)$$
+    $$ki\in E(G) \text{ implica } ji\in E(G)$$
 \end{teorema}
 \begin{proof}
-    Supongamos que $<$ es un ordenamiento m\'inimo, entonces $ab,jj\in E(H)$. Luego $\min(a,j) \min(b,j)\in E(H)$, donde $a,b \in \{ i,k\}$ con $a \neq b$.
-    Ahora dados $xy, x'y' \in E(H)$ veamos que $\min(x,x') \min(y,y')\in E(H)$. Todos los posibles casos son los siguientes:
+    Supongamos que $<$ es un ordenamiento m\'inimo, entonces $ab,jj\in E(G)$. Luego $\min(a,j) \min(b,j)\in E(G)$, donde $a,b \in \{ i,k\}$ con $a \neq b$.
+    Ahora dados $xy, x'y' \in E(G)$ veamos que $\min(x,x') \min(y,y')\in E(G)$. Todos los posibles casos son los siguientes:
     
-    $ i) x<x' \wedge y<y' $ \hspace{1cm} $iii) x<x' \wedge y'<y $
+    $ i) x<x' $ y $ y<y' $ \hspace{1cm} $iii) x<x' $ y $ y'<y $
     
-    $ ii) x'<x \wedge y'<y $ \hspace{1cm} $iv) x'<x \wedge y<y' $
+    $ ii) x'<x $ y $ y'<y $ \hspace{1cm} $iv) x'<x $ y $ y<y' $
 
-    De los dos primeros dos casos se concluye fácilmente que $\min(x,x') \min(y,y')\in E(H)$ pues:
-    $$x<x' \wedge y<y' \Rightarrow \min(x,x') \min(y,y')=xy \text{ y } xy\in E(H) \text{por hipótesis.}$$
-    $$x'<x \wedge y'<y \Rightarrow \min(x,x') \min(y,y')=x'y' \text{ y } x'y'\in E(H) \text{por hipótesis.}$$
+    De los dos primeros dos casos se concluye fácilmente que $\min(x,x') \min(y,y')\in E(G)$ pues:
+    $$x<x' \text{ y } y<y' \Rightarrow \min(x,x') \min(y,y')=xy \text{ y } xy\in E(G) \text{por hipótesis.}$$
+    $$x'<x \text{ y } y'<y \Rightarrow \min(x,x') \min(y,y')=x'y' \text{ y } x'y'\in E(G) \text{por hipótesis.}$$
+    
     Los casos iii) y iv) hay que tratarlos de otra forma, probaremos solo iii) pues iv) es totalmente análogo.
-    Tenemos que $x<x' \wedge y'<y\Rightarrow \min(x,x') \min(y,y')=xy' $ En este punto se nos presentan los siguientes casos; $x=y$ luego dado que $H$ es reflexiva, el lazo $xy\in E(H)$, el segundo caso $x<y' $. Como $y'<y$ obtenemos la cadena de desigualdades $x<y'<y$ y como $xy\in E(H)$ entonces $xy'\in E(H)$, como tercer y último caso, tenemos que $y'<x$. Entonces $x<x'$ así $y'<x<x'$ y $x'y'\in E(H)$ luego $xy'\in E(H)$. En cualquiera de los dos casos anteriores se tiene que $min(x,x')min(y,y')\in E(H)$. Por lo que podemos concluir que en efecto $<$ es un ordenamiento mínimo.
+    Tenemos que $x<x' $ y $ y'<y\Rightarrow \min(x,x') \min(y,y')=xy' $ En este punto se nos presentan los siguientes casos; $x=y$ luego dado que $H$ es reflexiva, el lazo $xy\in E(G)$, el segundo caso $x<y' $. Como $y'<y$ obtenemos la cadena de desigualdades $x<y'<y$ y como $xy\in E(G)$ entonces $xy'\in E(G)$, como tercer y último caso, tenemos que $y'<x$. Entonces $x<x'$ así $y'<x<x'$ y $x'y'\in E(G)$ luego $xy'\in E(G)$. En cualquiera de los dos casos anteriores se tiene que $min(x,x')min(y,y')\in E(G)$. Por lo que podemos concluir que en efecto $<$ es un ordenamiento mínimo.
 \end{proof}
 
 A partir del teorema anterior podemos obtener el siguiente corolario.
+
 \begin{corolario}
-    Sea $H$ una digráfica reflexiva. Un ordenamiento lineal de los vértices de $H$ es un ordenamiento mínimo si y solo si para cada vértice $v$, los vértices que siguen a $v$ en el orden, consisten de: i) Primero aparecen (en el orden) los vértices que son adyacentes a $v$ por flechas simétricas. ii) En segundo lugar aparecen los vértices que son adyacentes a v por aristas asimétricas, además son todas derechas o todas izquierdas, iii) Finalmente tenemos vértices que no tinen flechas desde o hacia $v$
+\label{cor:Orden_Flechas}
+    Sea $G$ una digráfica reflexiva. Un ordenamiento lineal de los vértices de $G$ es un ordenamiento mínimo si y solo si para cada vértice $v$, los vértices que siguen a $v$ en el orden, consisten de: i) Primero aparecen (en el orden) los vértices que son adyacentes a $v$ por flechas simétricas. ii) En segundo lugar aparecen los vértices que son adyacentes a v por aristas asimétricas, además son todas derechas o todas izquierdas, iii) Finalmente tenemos vértices que no tinen flechas desde o hacia $v$
 \end{corolario}
 
 \begin{proof}
-    Esto es fácil de verificar, supongamos que $u<v<w$ y supongamos que $uw,wu\in E(H)$ veremos que si esto pasa por fuerza $v$ debe tener también flechas dobles hacia $u$, es decir, no puede tener flechas asimétricas ni puede no tener flechas desde o hacia $u$.
-    Por la primera consecuencia de \cref{teo:OrdLnl} se tiene que $uv\in E(H)$, y por la segunda consecuencia, tenemos que $vu\in E(H)$. Así $v$ debe tener flechas simétricas hacia $u$. 
-    Verifiquemos rápidamente que si $u<v<w$ y hay una flecha asimétrica de $u$ a $w$, entonces debe haber una flecha asimétrica con la misma dirección de $u$ a $v$. Nuevamente el resultado es bastante inmediato del \cref{teo:OrdLnl}, ya que si $uw\in E(H)$ entonces $uv\in E(H)$ o análogamente si $wu\in E(H)$ entonces $vu\in E(H)$.
+    Esto es fácil de verificar, supongamos que $u<v<w$ y supongamos que $uw,wu\in E(G)$ veremos que si esto pasa por fuerza $v$ debe tener también flechas dobles hacia $u$, es decir, no puede tener flechas asimétricas ni puede no tener flechas desde o hacia $u$.
+    Por la primera consecuencia de \cref{teo:OrdLnl} se tiene que $uv\in E(G)$, y por la segunda consecuencia, tenemos que $vu\in E(G)$. Así $v$ debe tener flechas simétricas hacia $u$. 
+    Verifiquemos rápidamente que si $u<v<w$ y hay una flecha asimétrica de $u$ a $w$, entonces debe haber una flecha asimétrica con la misma dirección de $u$ a $v$. Nuevamente el resultado es bastante inmediato del \cref{teo:OrdLnl}, ya que si $uw\in E(G)$ entonces $uv\in E(G)$ o análogamente si $wu\in E(G)$ entonces $vu\in E(G)$.
 \end{proof}
 
 \begin{teorema}
+    \label{teo:DigrfIntAdj_OrdMin}
     Una digráfica reflexiva es una digráfica de intervalos ajustada si y solo si admite un ordenamiento mínimo.
 \end{teorema}
 
 \begin{proof}
-    Comencemos probando que si $G$ es una digráfica de intervalos ajustada entonces esta admite un ordenamineto mínimo de sus vértices. Para esto definimos $u<v$ si y solo si el extremo izquierdo de $I_u < I_v$. Esto corresponde a un ordenamiento mínimo de los vértices de $G$.  
-    Ahora, dado un ordenamiento mínimo de una digráfica reflexiva $H$, podemos ordenar los puntos iniciales de $I_v$ y de $J_v$ en el mismo orden en los cuales aparecen los vértices $v\in V(H)$ respecto al ordenamiento mínimo y definimos los intervalos $I_v$ y $J_v$ como: el intervalo $I_v$ termina en en el punto correspondiente al último vértice $w$ tal que $vw$ es una flecha derecha y el intervalo $J_v$ termina en el punto correspondiente al último vértice tal que $vw$ es un vértice es una flecha al revés.
+    Comencemos probando que si $G$ es una digráfica de intervalos ajustada entonces admite un ordenamineto mínimo de sus vértices. Para esto definimos $u<v$ si y solo si el extremo izquierdo de $I_u$ es menor que el extremo izquierdo de $I_v$. Esto corresponde a un ordenamiento mínimo de los vértices de $G$.  
+    Ahora, dado un ordenamiento mínimo de una digráfica reflexiva $G$, podemos ordenar los puntos iniciales de $I_v$ y de $J_v$ en el mismo orden en los cuales aparecen los vértices $v\in V(G)$ respecto al ordenamiento mínimo y definimos los intervalos $I_v$ y $J_v$ como: el intervalo $I_v$ termina en en el punto correspondiente al último vértice $w$ tal que $vw$ es una flecha derecha y el intervalo $J_v$ termina en el punto correspondiente al último vértice tal que $vw$ es un vértice es una flecha al revés.
 \end{proof}
 
-Veamos la figura 123123, 
+En \cref{fig:MinOrdToIntGrph}, observamos una digráfica reflexiva $G$ la cual admite un ordenamiento mínimo, definido precisamente por el orden natural de su etiqueta, es decir $1<2< \cdots <7$. Es fácil verificar mediante \cref{cor:Orden_Flechas} que este es en efecto un ordenamiento mínimo. Por ejemplo para el vértice $1$ tenemos que en el orden primero aparecen los vértices $1,2$ que tienen flechas dobles, luego aparecen los vértices $4,5$ que tienen flechas derechas y finalmente tenemos los vértices $6,7$ que no forman flechas con el vértice $1$. Este análisis se puede extender hacia el resto de los vértices.
+Ahora veamos cómo se realiza la construcción de los conjuntos de intervalos $\{I_v\}_{v\in V(G)}, \{J_v\}_{v\in V(G)}$. El algoritmo descrito en la prueba  d\cref{teo:DigrfIntAdj_OrdMin} Nos dice que $I_1, J_1$ empiezan en $1$ e $I_1$ termina en el último vértice $v$ tal que hay una flecha derecha, en este caso $5$ es el último vértice tal que $(1,5)$ es flecha derecha, así $I_1=[1,5]$, tal como se indica a la derecha de \cref{fig:MinOrdToIntGrph}. Ahora $J_1$ termina en el último vértice $v$ tal que $(1,v)$ es flecha al revés. En este caso es el vértice $3$. Un caso curioso es el del vértice $5$, veamos, $I_5,J_5$ ambos deben empezar con $5$ ahora $I_5$ debe terminar en el último vértice $v$ tal que $(5,v)$ es flecha derecha, debemos recordar que al estar en una digráfica reflexiva los lazos son flechas simétricas es decir, son derechas y al revés. Así el extremo derecho de $I_5$ es nuevamente $5$. Finalmente el extremo derecho de $J_5$ también corresponde a $5$. 
 
 
-A continuación vemos un ejemplo mas de una digráfica de intervalos ajustada
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.75\textwidth]{recursos/capturas/MinOrdToIntGrph.jpg}
+  \caption{Dada una digráfica reflexiva $G$ que admite un ordenamiento mínimo construimos la representación por pares de intervalos de $G$.}
+  \label{fig:MinOrdToIntGrph}
+\end{figure}
 
 \begin{teorema}
+    \label{teo:OrnMin_NoInvPair}
     Si $G$ tiene un par invertible, entonces $G$ no tiene un ordenamiento mínimo.
 \end{teorema}
 
 \begin{proof}
-    Sea $u,v$ un par invertible en $G$, luego por, \cref{teo:PairDigrph} sabemos que $(u,v),(v,u)$ pertenecen a la misma componente conexa de la digráfica de pares $G^+$. 
-    Ahora, supongamos que $(x,y)(x', y')$ es una flecha de la digráfica de pares $G^+$. Supongamos que $<$ es un ordenamiento mínimo de $G$ y supongamos que $ u < v$. Entonces también se tiene que $u'< v'$. Hagamos la prueba de este hecho. Como $(u,v)(u',v')\in E(G)$ entonces tenemos una de las siguientes dos situaciones, i) $uu', vv'\in E(G) \wedge uv'\notin E(G) $ o ii) $u'u, v'v \in E(G) \wedge v'u\notin E(G) $. En el primer caso, veamos vía contradicción que $u'<v'$, así las cosas supongamos que $v'<u'$. Como $(u,v)(u',v')\in E(G)$ entonces $\min \{u,u' \}\min \{v,v' \}\in E(G)$, ya que tenemos por hipótesis que tenemos un ordenamiento mínimo. Por otro lado, en el caso ii) también tenemos la hipótesis $uv'\notin E(G)$, luego $\min \{u,u' \}\min \{v,v' \} \neq uv'$. Por lo que $\min \{u,u' \}=u' \vee \min \{v,v' \}= v$. En el caso $\min \{u,u' \}=u'$, se tiene la siguiente cadena $v'<u'<u<v$ de donde $v'<u<v$ y dado que $vv'\in E(G)$, entonces por \cref{teo:OrdLnl} se tiene que $uv'\in E(G)$ lo cual es una contradicción. Ahora en el caso en el que $\min \{v,v' \}= v$ se tiene la cadena $u<v<v'<u'$ de donde $u<v'<u'$ y dado que $uu'\in e(G)$ usando nuevamente \cref{teo:OrdLnl} $uv' \in E(G)$ lo cual es nuevamente una contradicción. Ahora en el caso ii) como $u'u, v'v \in E(G)$ entonces $\min \{u',v' \}\min \{u,v \}\in E(G)$, ya que tenemos un ordenamiento mínimo. En este caso también tenemos que $v'u\notin E(G)$ así $\min \{u',v' \}  \min \{u,v \}\neq v'u$. Así las cosas $\min \{u',v' \}=u' \vee \min \{u,v \}=v$. En el caso en que $\min \{u',v' \}=u'$ se llega a $u'<v'$ que es precisamente lo que busacamos, mientras que el segundo caso $\min \{u,v \}=v$ no es posible, ya que en este caso $v<u$ pero por hipótesis $u<v$. Entonces $u = v$ lo cual no es posible. De todo lo anterior se concluye que $u'<v'$.    
-    Retomando la prueba, consideremos $P$ el camino cerrado dirigido que contiene a $(u,v),(v,u)$, siguiéndolo y haciendo uso de la nota anterior se llega a una contradicción del tipo $u<v \wedge v<u$.
+    Sea $u,v$ un {\color{malva} par invertible} en $G$. Por \cref{teo:PairDigrph} sabemos que $(u,v),(v,u)$ pertenecen a la misma componente conexa de la digráfica de pares $G^+$. 
+    Ahora, supongamos que $(x,y)(x', y')$ es una flecha de la digráfica de pares $G^+$. Supongamos que $<$ es un ordenamiento mínimo de $G$ y supongamos que $ u < v$. Entonces también se tiene que $u'< v'$. Hagamos la prueba de este hecho. Como $(u,v)(u',v')\in E(G)$ entonces tenemos una de las siguientes dos situaciones, i) $uu', vv'\in E(G)$ o $uv'\notin E(G) $ o ii) $u'u, v'v \in E(G)$ o $ v'u \notin E(G) $. En el primer caso, veamos vía contradicción que $u'<v'$.  Supongamos que $v'<u'$. Como $(u,v)(u',v')\in E(G)$ entonces $\min \{u,u' \}\min \{v,v' \}\in E(G)$, ya que por hipótesis tenemos un ordenamiento mínimo. Por otro lado, en el caso i) también tenemos la hipótesis $uv'\notin E(G)$, luego $\min \{u,u' \}\min \{v,v' \} \neq uv'$. Por lo que $\min \{u,u' \}=u'$ o $\min \{v,v' \}= v$. En el caso $\min \{u,u' \}=u'$, se tiene la siguiente cadena $v'<u'<u<v$ de donde $v'<u<v$ y dado que $vv'\in E(G)$, entonces por \cref{teo:OrdLnl} se tiene que $uv'\in E(G)$ lo cual es una contradicción. Ahora en el caso en el que $\min \{v,v' \}= v$ se tiene la cadena $u<v<v'<u'$ de donde $u<v'<u'$ y dado que $uu'\in E(G)$ usando nuevamente \cref{teo:OrdLnl} $uv' \in E(G)$ lo cual es nuevamente una contradicción. Ahora en el caso ii) como $u'u, v'v \in E(G)$ entonces $\min \{u',v' \}\min \{u,v \}\in E(G)$, ya que tenemos un ordenamiento mínimo. En este caso también tenemos que $v'u\notin E(G)$ así $\min \{u',v' \}  \min \{u,v \}\neq v'u$. Así las cosas $\min \{u',v' \}=u'$ o $\min \{u,v \}=v$. En el caso en que $\min \{u',v' \}=u'$ se llega a $u'<v'$ que es precisamente lo que buscamos, mientras que el segundo caso $\min \{u,v \}=v$ no es posible, ya que en este caso $v<u$ pero por hipótesis $u<v$. Entonces $u = v$ lo cual no es posible. De todo lo anterior se concluye que $u'<v'$.    
+    Retomando la prueba, consideremos $P$ el camino cerrado dirigido que contiene a $(u,v),(v,u)$, siguiéndolo y haciendo uso de la nota anterior se llega a una contradicción del tipo $u<v$ y $v<u$.
     Por lo que no es posible tener un ordenamiento mínimo en $G$ si hay presencia de un par invertible.
 \end{proof}
 
@@ -216,18 +255,31 @@ El teorema anterior lo probaremos vía las siguientes equivalencias.
 
  \begin{teorema}
      Sea $G$ una digráfica reflexiva, entonces las siguientes proposiciones son equivalentes.
-\begin{itemize}
+\begin{enumerate}
   \item $G$ es una digráfica de intervalos ajustada.
   \item $G$ no admite un ordenamiento mínimo.
   \item $G$ no tiene pares invertibles.
-  \item Los vértices de $G+$ pueden ser particionados en dos conjuntos $D, D'$ tales que:
-        \begin{itemize}
+  \item Los vértices de $G^+$ admiten una partici\'on en dos conjuntos $D, D'$ tales que:
+        \begin{enumerate}
             \item $(x,y)\in D $ si y solo si $ (y,x) \in D$
             \item $(x,y)\in D$ y $(x,y)$ domina a $(x',y')$ en $G^+$ implica que $(x',y')\in D$
             \item $(x,y), (y,z)\in D$ implica que $(x,z)\in D$
-        \end{itemize}
-\end{itemize}
-     
+        \end{enumerate}
+\end{enumerate}
+
+\begin{proof}
+    La equivalencia entre las primeras dos proposiciones se probó en \cref{teo:DigrfIntAdj_OrdMin}.
+    Por otro lado, mediante un uso de contrapositiva sobre \cref{teo:OrnMin_NoInvPair} se obtiene que la segunda proposición implica la tercera. 
+    {\color{malva}Para probar que la cuarta proposición implica la segunda, solo basta definir el ordenamiento $<$ como $u<v$ si y solo $(x,y) \in D$. }
+    Finalmente procedamos a probar que la tercer proposición implica la cuarta. Haremos la prueba de forma constructiva, es decir mediante un algoritmo veremos que asumiendo que $G$ es débilmente conexa, si no lo fuera, se puede aplicar el proceso a cada componente débilmente conexa y  suponiendo también que $G$ no tiene pares invertibles, construiremos una partición $\{D,D'\}$ de $V(G^+)$, la cual cumple a),b) y c). 
+    Haciendo uso de \cref{teo:PairDigrph} se tiene que para cada componente fuertemente conexa $C$ de $G^+$ existe su componente fuerte revertida $C'$, es decir aquella tal que $(x,y)\in C $ si y solo si $(y,x)\in C'$. A las componentes de esta forma les llamaremos componentes fuertemente conexas acopladas o simplemente componentes acopladas.
+    La partición de $V(G^+)$ en $D,D'$ corresponderá en separar cada par de componentes acopladas $C$ y $C'$ de $G^+$. Los vértices correspondientes a una componente $C$ los pondremos en $D$ y los vértices revertidos los colocaremos en la componente $D'$. Al realizar el proceso, deberemos tener cuidado en no crear cadenas circulares, es decir una sucesión de pares $(x_0,x_1)(x_1,x_2),\dots, (x_n,x_0)\in D$, ya que buscamos que se satisfaga c) y la existencia de una cadena así implicaría $(x_0,x_0)\in D$, es decir $(x_0,x_0)\in G^+$ pero por construcción en $G^+$ no hay vértices de este estilo (diagonal). 
+    Al comenzar el algoritmo los conjuntos $D$ y $D'$ son vacíos. Decimos que una componente fuerte $C$ de $G^+$ es madura si no existen flechas desde $C$ a otra componente fuerte en $G^+ -D$. Entonces el paso general de nuestro algoritmo consistirá precisamente en colocar una componente fuerte madura $C$ en $D$ y colocar a la componente fuerte acoplada $C' $ en $D'$ ($C'$ no será necesariamente madura, pero si se puede garantizar que no hay flechas desde $G^+ -D$ a $C'$, ver \cref{fig:FlechaRevertida}). 
+    Mostraremos que en cada paso del algoritmo, es posible añadir al menos una componente fuerte madura a $D$ sin crear cadenas circulares en $D$
+
+
+    
+ \end{proof}
         
         
         
