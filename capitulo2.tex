@@ -267,6 +267,8 @@ El teorema anterior lo probaremos vía las siguientes equivalencias.
         \end{enumerate}
 \end{enumerate}
 
+\end{teorema}
+
 \begin{proof}
   La equivalencia entre las primeras dos proposiciones se probó en \cref{teo:DigrfIntAdj_OrdMin}.
   Por otro lado, mediante un uso de contrapositiva sobre \cref{teo:OrnMin_NoInvPair} se obtiene que la segunda proposición implica la tercera. 
@@ -301,15 +303,21 @@ La cual es en efecto una cadena mas corta, ya que, en términos simples $(x_{j-1
 Ahora para probar la segunda observación, se tiene de forma análoga que si $x_j$ domina a $x_i$, pero $x_j$ no domina a $x_{i-1}$ en $G$, entonces $(x_{i-1}, x_i)$ domina a $(x_{i-1}, x_j)$ en $H^+$, implicando nuevamente la existencia de una cadena circular más pequeña. Esto no es dificil de verificar mediante un par de esquemas como los usados para probar la primer propiedad.
 
 Terminemos de ver que el hecho de tener una flechas entre dos vértices de $x_0,\dots,x_n$ nos lleva a que se tiene una gráfica completa en $x_0,\dots,x_n$. Supongamos que $x_a$ domina a $x_b$ en $G$. La observación 1, implica que todos los antecesores de $x_a$ dominan a $x_b$, es decir $x_{a-1}, x_{a-2},\dots, x_{b+1}$ dominan a $x_b$, observe el primer diagrama de la figura 123123. Ahora como $x_{b+1}$ domina a $x_b$ la propiedad 2, implica que $x_{b+1}$ domina $x_{b-1}, x_{b-2},\dots,x_{b+2}$ esto es, domina a todos los otros vértices, ver el segundo diagrama de la figura 123123. Ahora usando nuevamente la propiedad 1, tenemos que como $x_{b+1}$ domina a $x_{b-1}$ entonces $x_b$ domina a $x_{b-1}$, y aplicando la propiedad 2, se obtiene que $x_b$ domina al resto de vértices. Mediante la repetida aplicación de estas propiedades sobre toso los vértices, se puede concluir que los vértices $x_0,x_1,\dots,x_n$ inducen una gráfica completa en $G$.
+Finalmente veremos que $C$ es una componente trivial, es decir consta de un solo vértice, supongamos que esto no es así es decir supongamos que en $C$ hay un v\'ertice adicional del $(x_n,x_0)$, bajo estas hipótesis en la componente revertida $C'$ debe tener a como vértices a $(x_0,x_n)$ y a otro vértice, supongamos $(a,b)$, el cual no pertenece a $C\cup D$. 
+Como $C'$ es conexa, se tiene que $(x_0,x_n)$ domina a $(a,b)$, así podemos suponer que $x_0$ domina a $a$ en $G$, $x_n$ domina a $b$ en $G$ y que $x_0$ no domina a  $b$ en $G$. Dado que $(a,b)$ no pertenece a $C\cup D$, entonces la pareja $(x_0,x_1)$ que pertenece a $C\cup D$ no puede dominar a $(a,b)$ por lo que $x_1$ no domina a $b$ en $G$. Veamos que $x_2$ tampoco puede dominar a $b$, si $x_2$  domina a $b$ en $G$ entonces $(x_1,x_2)$ domina a $(x_0,b)$, recordemos que $x_1$ domina a $x_0$ porque $x_0,x_1,\dots,x_n$ induce una gráfica completa, continuando, tenemos que a su vez $(x_0,b)$ domina $(a,b)$ en $G^+$, pero esto no es posible ya que tendríamos un camino dirigido que comienza en $C$ y termina fuera de $C\cup D$, por lo que alguna flecha debe salir de $C\cup D$, que por hipótesis no puede pasar. Nuevamente si $x_3$ domina a $b$ entonces $(x_2,x_3)$ domina a $(x_1,b)$ que a su vez domina a $(a,b)$ y se llega a la misma contradicción. De forma análoga, se puede probar que $x_n$ no domina a $b$, lo cual es falso. La contradicción de todo lo anterior surge de suponer que en $C$ hubo mas de un vértice. Así $C=\{ (x_n,x_0)\} $ y $C'=\{ (x_0,x_n)\}$. Con esta misma pruba se muestra que $C'$ es una componente madura, pues no hay v\'ertices $(a,b)$ que sean dominados fuera de $C\cup D$. Finalmente si $(x_n,x_0)$ y $(x_0,x_n)$ completan ambos una cadena circular con $D$, entonces en $D$ existía ya una cadena circular. Por ejemplo 
+$$  (y_0,y_1),(y_1,y_2),\dots, (y_k,x_0), (x_0,x_n), (x_n,x_0), (x_0, y_{k+1}),\dots, (y_m,y_0) $$
+Es una cadena que se forma con vértices de $D$ y con $(x_n,x_0)$ y $(x_0,x_n)$. Sin embargo, se puede formar la cadena 
+$$  (y_0,y_1),(y_1,y_2),\dots, (y_k,x_0), (x_0, y_{k+1}),\dots, (y_m,y_0) $$
+Que consta de vértices de $D$. 
+
+Pasemos ahora a probar el segundo caso, en este caso suponemos que $x_0,x_1,\dots,x_n$ es un conjunto independiente en $G$. Probaremos un par de lemas auxiliares. 
+
+Lema Sea $x_0,x_1,\dots,x_n $ un conjunto independiente en $G$. Supongamos que $p$ es un vértice de $G$ distinto de $x_0,x_1,\dots,x_n$, el cual domina a $x_{i+1}$ pero no a $x_i$. Entonces $(x_0,x_1),\dots, (x_i,p)(p,x_{i+2}),\dots, (x_n,x_0)$ es también una cadena circular creada al mismo tiempo.
 
 
 
-
-
-
- \end{proof}
+\end{proof}
         
         
         
         
- \end{teorema}
