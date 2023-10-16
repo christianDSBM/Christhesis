@@ -237,10 +237,39 @@ Ahora veamos c\'omo se realiza la construcci\'on de los conjuntos de intervalos 
 \end{teorema}
 
 \begin{proof}
-    Sea $u,v$ un {\color{malva} par invertible} en $G$. Por \cref{teo:PairDigrph} sabemos que $(u,v),(v,u)$ pertenecen a la misma componente conexa de la digr\'afica de pares $G^+$. 
-    Ahora, supongamos que $(x,y)(x', y')$ es una flecha de la digr\'afica de pares $G^+$. Supongamos que $<$ es un ordenamiento mínimo de $G$ y supongamos que $ u < v$. Entonces tambi\'en se tiene que $u'< v'$. Hagamos la prueba de este hecho. Como $(u,v)(u',v')\in E(G)$ entonces tenemos una de las siguientes dos situaciones, i) $uu', vv'\in E(G)$ o $uv'\notin E(G) $ o ii) $u'u, v'v \in E(G)$ o $ v'u \notin E(G) $. En el primer caso, veamos vía contradicci\'on que $u'<v'$.  Supongamos que $v'<u'$. Como $(u,v)(u',v')\in E(G)$ entonces $\min \{u,u' \}\min \{v,v' \}\in E(G)$, ya que por hip\'otesis tenemos un ordenamiento mínimo. Por otro lado, en el caso i) tambi\'en tenemos la hip\'otesis $uv'\notin E(G)$, luego $\min \{u,u' \}\min \{v,v' \} \neq uv'$. Por lo que $\min \{u,u' \}=u'$ o $\min \{v,v' \}= v$. En el caso $\min \{u,u' \}=u'$, se tiene la siguiente cadena $v'<u'<u<v$ de donde $v'<u<v$ y dado que $vv'\in E(G)$, entonces por \cref{teo:OrdLnl} se tiene que $uv'\in E(G)$ lo cual es una contradicci\'on. Ahora en el caso en el que $\min \{v,v' \}= v$ se tiene la cadena $u<v<v'<u'$ de donde $u<v'<u'$ y dado que $uu'\in E(G)$ usando nuevamente \cref{teo:OrdLnl} $uv' \in E(G)$ lo cual es nuevamente una contradicci\'on. Ahora en el caso ii) como $u'u, v'v \in E(G)$ entonces $\min \{u',v' \}\min \{u,v \}\in E(G)$, ya que tenemos un ordenamiento mínimo. En este caso tambi\'en tenemos que $v'u\notin E(G)$ así $\min \{u',v' \}  \min \{u,v \}\neq v'u$. Así las cosas $\min \{u',v' \}=u'$ o $\min \{u,v \}=v$. En el caso en que $\min \{u',v' \}=u'$ se llega a $u'<v'$ que es precisamente lo que buscamos, mientras que el segundo caso $\min \{u,v \}=v$ no es posible, ya que en este caso $v<u$ pero por hip\'otesis $u<v$. Entonces $u = v$ lo cual no es posible. De todo lo anterior se concluye que $u'<v'$.    
-    Retomando la prueba, consideremos $P$ el camino cerrado dirigido que contiene a $(u,v),(v,u)$, sigui\'endolo y haciendo uso de la nota anterior se llega a una contradicci\'on del tipo $u<v$ y $v<u$.
-    Por lo que no es posible tener un ordenamiento mínimo en $G$ si hay presencia de un par invertible.
+    Sea $u,v$ un {\color{malva} par invertible} en $G$. Por
+    \cref{teo:PairDigrph} sabemos que $(u,v),(v,u)$ pertenecen a la misma
+    componente conexa de la digr\'afica de pares $G^+$. Ahora, supongamos que
+    $(x,y)(x', y')$ es una flecha de la digr\'afica de pares $G^+$. Supongamos
+    que $<$ es un ordenamiento mínimo de $G$ y supongamos que $ u < v$. Entonces
+    tambi\'en se tiene que $u'< v'$. Hagamos la prueba de este hecho. Como
+    $(u,v)(u',v')\in E(G)$ entonces tenemos una de las siguientes dos
+    situaciones, i) $uu', vv'\in E(G)$ o $uv'\notin E(G) $ o ii) $u'u, v'v \in
+    E(G)$ o $ v'u \notin E(G) $. En el primer caso, veamos vía contradicci\'on
+    que $u'<v'$.  Supongamos que $v'<u'$. Como $(u,v)(u',v')\in E(G)$ entonces
+    $\min \{u,u' \}\min \{v,v' \}\in E(G)$, ya que por hip\'otesis tenemos un
+    ordenamiento mínimo. Por otro lado, en el caso i) tambi\'en tenemos la
+    hip\'otesis $uv'\notin E(G)$, luego $\min \{u,u' \}\min \{v,v' \} \neq uv'$.
+    Por lo que $\min \{u,u' \}=u'$ o $\min \{v,v' \}= v$. En el caso $\min
+    \{u,u' \}=u'$, se tiene la siguiente cadena $v'<u'<u<v$ de donde $v'<u<v$ y
+    dado que $vv'\in E(G)$, entonces por \cref{teo:OrdLnl} se tiene que $uv'\in
+    E(G)$ lo cual es una contradicci\'on. Ahora en el caso en el que $\min
+    \{v,v' \}= v$ se tiene la cadena $u<v<v'<u'$ de donde $u<v'<u'$ y dado que
+    $uu'\in E(G)$ usando nuevamente \cref{teo:OrdLnl} $uv' \in E(G)$ lo cual es
+    nuevamente una contradicci\'on. Ahora en el caso ii) como $u'u, v'v \in
+    E(G)$ entonces $\min \{u',v' \}\min \{u,v \}\in E(G)$, ya que tenemos un
+    ordenamiento mínimo. En este caso tambi\'en tenemos que $v'u\notin E(G)$ así
+    $\min \{u',v' \}  \min \{u,v \}\neq v'u$. Así las cosas $\min \{u',v' \}=u'$
+    o $\min \{u,v \}=v$. En el caso en que $\min \{u',v' \}=u'$ se llega a
+    $u'<v'$ que es precisamente lo que buscamos, mientras que el segundo caso
+    $\min \{u,v \}=v$ no es posible, ya que en este caso $v<u$ pero por
+    hip\'otesis $u<v$. Entonces $u = v$ lo cual no es posible. De todo lo
+    anterior se concluye que $u'<v'$.    
+    Retomando la prueba, consideremos $P$ el camino cerrado dirigido que
+    contiene a $(u,v),(v,u)$, sigui\'endolo y haciendo uso de la nota anterior
+    se llega a una contradicci\'on del tipo $u<v$ y $v<u$. Por lo que no es
+    posible tener un ordenamiento mínimo en $G$ si hay presencia de un par
+    invertible.
 \end{proof}
 
 \section{Digr\'aficas de intervalos ajustadas.}
@@ -248,16 +277,18 @@ Ahora veamos c\'omo se realiza la construcci\'on de los conjuntos de intervalos 
 En esta secci\'on enunciamos y probamos el teorema central de la tesis. 
 
 \begin{teorema}
-    Una digr\'afica reflexiva $G$ es una digr\'afica de intervalos ajustada si y solo si no tiene pares invertibles.
+    Una digr\'afica reflexiva $G$ es una digr\'afica de intervalos ajustada si y
+    solo si no tiene pares invertibles.
 \end{teorema}
 
 El teorema anterior lo probaremos vía las siguientes equivalencias.
 
  \begin{teorema}
-     Sea $G$ una digr\'afica reflexiva, entonces las siguientes proposiciones son equivalentes.
+     Sea $G$ una digr\'afica reflexiva, entonces las siguientes proposiciones
+     son equivalentes.
 \begin{enumerate}
   \item $G$ es una digr\'afica de intervalos ajustada.
-  \item $G$ no admite un ordenamiento mínimo.
+  \item $G$ admite un ordenamiento mínimo.
   \item $G$ no tiene pares invertibles.
   \item Los v\'ertices de $G^+$ admiten una partici\'on en dos conjuntos $D, D'$ tales que:
         \begin{enumerate}
@@ -270,41 +301,149 @@ El teorema anterior lo probaremos vía las siguientes equivalencias.
 \end{teorema}
 
 \begin{proof}
-  La equivalencia entre las primeras dos proposiciones se prob\'o en \cref{teo:DigrfIntAdj_OrdMin}.
-  Por otro lado, mediante un uso de contrapositiva sobre \cref{teo:OrnMin_NoInvPair} se obtiene que la segunda proposici\'on implica la tercera. 
-  {\color{malva}Para probar que la cuarta proposici\'on implica la segunda, solo basta definir el ordenamiento $<$ como $u<v$ si y solo $(x,y) \in D$. }
-  Finalmente procedamos a probar que la tercer proposici\'on implica la cuarta. Haremos la prueba de forma constructiva, es decir mediante un algoritmo veremos que asumiendo que $G$ es d\'ebilmente conexa, si no lo fuera, se puede aplicar el proceso a cada componente d\'ebilmente conexa y  suponiendo tambi\'en que $G$ no tiene pares invertibles, construiremos una partici\'on $\{D,D'\}$ de $V(G^+)$, la cual cumple a),b) y c). 
-  Haciendo uso de \cref{teo:PairDigrph} se tiene que para cada componente fuertemente conexa $C$ de $G^+$ existe su componente fuerte revertida $C'$, es decir aquella tal que $(x,y)\in C $ si y solo si $(y,x)\in C'$. A las componentes de esta forma les llamaremos componentes fuertemente conexas acopladas o simplemente componentes acopladas.
-  La partici\'on de $V(G^+)$ en $D,D'$ corresponder\'a en separar cada par de componentes acopladas $C$ y $C'$ de $G^+$. Los v\'ertices correspondientes a una componente $C$ los pondremos en $D$ y los v\'ertices revertidos los colocaremos en la componente $D'$. Al realizar el proceso, deberemos tener cuidado en no crear cadenas circulares, es decir una sucesi\'on de pares $(x_0,x_1)(x_1,x_2),\dots, (x_n,x_0)\in D$, ya que buscamos que se satisfaga c) y la existencia de una cadena así implicaría $(x_0,x_0)\in D$, es decir $(x_0,x_0)\in G^+$ pero por construcci\'on en $G^+$ no hay v\'ertices de este estilo (diagonal). 
-  Al comenzar el algoritmo los conjuntos $D$ y $D'$ son vacíos. Decimos que una componente fuerte $C$ de $G^+$ es madura si no existen flechas desde $C$ a otra componente fuerte en $G^+ -D$. Entonces el paso general de nuestro algoritmo consistir\'a precisamente en colocar una componente fuerte madura $C$ en $D$ y colocar a la componente fuerte acoplada $C' $ en $D'$ ($C'$ no ser\'a necesariamente madura, pero si se puede garantizar que no hay flechas desde $G^+ -D$ a $C'$, ver \cref{fig:FlechaRevertida}). 
-  Mostraremos que en cada paso del algoritmo, es posible añadir al menos una componente fuerte madura a $D$ sin crear cadenas circulares en $D$
-  Los conjuntos $D,D'$ tendr\'an las siguientes propiedades, las cuales ser\'an ciertas de forma inicial. No existe ninguna cadena circular en $D$, cada componente fuerte de $H^+$ pertenece enteramente a $D, D'$ o $V(G)-\{D,D' \} $ los pares en $D'$ son precisamente los pares revertidos de los pares en $D$; no hay flechas de $G^+$ desde v\'ertices en $D$ a v\'ertices fuera de $D$ y no hay flechas en $G^+$ desde v\'ertices fuera de $D'$ a un v\'ertice en $D'$. Al final del algoritmo, cada par $(x,y)$ con $x\neq y$ pertenecer\'a a $D$ o a $D'$ y así el $D$ final no tendr\'a cadenas circulares, por lo que se cumplir\'a $4$.
-  Probemos que todas las propiedades anteriores se mantienen invariantes durante la ejecuci\'on del algoritmo.
-  Supongamos por contradicci\'on que el actual $D$ no tiene cadenas circulares pero que al añadir $C$, se crea una cadena en $C\cup D$, digamos $((x_0,x_1),(x_1,x_2),\dots, (x_n,x_0))$ adem\'as de esto supongamos que que es la primer vez que se obtiene la cadena durante la ejecuci\'on del algoritmo, adicionalmente supongase que no hay cadenas circulares mas cortas. Dado que por hip\'otesis no hay pares invertibles y que nunca se coloca un par y su par revertido en $D$, se tiene que $n\geq 2$. Con todo lo anterior, al menos un par de la cadena debe pertenecer a $C$ asumamos sin p\'erdida de generalidad que $(x_n,x_0)\in C$ (otros pares pueden estar tambi\'en en $C$).
-  Bajo todas las condiciones anteriores, tenemos los siguientes dos casos.
+  La equivalencia entre las primeras dos proposiciones se prob\'o en
+  \cref{teo:DigrfIntAdj_OrdMin}. Por otro lado, mediante un uso de
+  contrapositiva sobre \cref{teo:OrnMin_NoInvPair} se obtiene que la segunda
+  proposici\'on implica la tercera. {\color{malva}Para probar que la cuarta
+  proposici\'on implica la segunda, solo basta definir el ordenamiento $<$ como
+  $u<v$ si y solo $(x,y) \in D$. } Finalmente procedamos a probar que la tercera
+  proposici\'on implica la cuarta. Haremos la prueba de forma constructiva, es
+  decir mediante un algoritmo veremos que asumiendo que $G$ es d\'ebilmente
+  conexa (si no lo fuera, se puede aplicar el proceso a cada componente
+  d\'ebilmente conexa) y suponiendo tambi\'en que $G$ no tiene pares
+  invertibles, construiremos una partici\'on $\{D,D'\}$ de $V(G^+)$, que cumple
+  (a), (b) y (c). Haciendo uso de \cref{teo:PairDigrph} se tiene que para cada
+  componente fuertemente conexa $C$ de $G^+$ existe su componente fuerte
+  revertida $C'$, es decir aquella tal que $(x,y)\in C $ si y solo si $(y,x)\in
+  C'$. A las componentes de esta forma les llamaremos componentes fuertemente
+  conexas acopladas o simplemente componentes acopladas. La partici\'on de
+  $V(G^+)$ en $D,D'$ corresponder\'a a separar cada par de componentes acopladas
+  $C$ y $C'$ de $G^+$. Los v\'ertices correspondientes a una componente $C$ los
+  pondremos en $D$ y los v\'ertices revertidos los colocaremos en la componente
+  $D'$. Al realizar el proceso, deberemos tener cuidado en no crear cadenas
+  circulares, es decir una sucesi\'on de pares $(x_0,x_1)(x_1,x_2),\dots,
+  (x_n,x_0)\in D$, ya que buscamos que se satisfaga (c) y la existencia de una
+  cadena así implicaría $(x_0,x_0)\in D$, es decir $(x_0,x_0)\in G^+$ pero por
+  construcci\'on en $G^+$ no hay v\'ertices de este estilo (diagonal). Al
+  comenzar el algoritmo los conjuntos $D$ y $D'$ son vacíos. Decimos que una
+  componente fuerte $C$ de $G^+$ es madura si no existen flechas desde $C$ a
+  otra componente fuerte en $G^+ -D$. Entonces el paso general de nuestro
+  algoritmo consistir\'a precisamente en colocar una componente fuerte madura
+  $C$ en $D$ y colocar a la componente fuerte acoplada $C' $ en $D'$ ($C'$ no
+  ser\'a necesariamente madura, pero s\'i se puede garantizar que no hay flechas
+  desde $G^+ -D$ a $C'$, ver \cref{fig:FlechaRevertida}). Mostraremos que en
+  cada paso del algoritmo, es posible añadir al menos una componente fuerte
+  madura a $D$ sin crear cadenas circulares en $D$. Los conjuntos $D,D'$
+  tendr\'an las siguientes propiedades, las cuales ser\'an ciertas de forma
+  inicial. No existen cadenas circulares en $D$, cada componente fuerte de $G^+$
+  pertenece enteramente a $D, D'$ o $V(G)-\{D,D' \}$, los pares en $D'$ son
+  precisamente los pares revertidos de los pares en $D$; no hay flechas de $G^+$
+  desde v\'ertices en $D$ a v\'ertices fuera de $D$ y no hay flechas en $G^+$
+  desde v\'ertices fuera de $D'$ a un v\'ertice en $D'$. Al final del algoritmo,
+  cada par $(x,y)$ con $x\neq y$ pertenecer\'a a $D$ o a $D'$ y así el conjunto
+  final $D$ no tendr\'a cadenas circulares, por lo que se cumplir\'a $4$.
+  Probemos que todas las propiedades anteriores se mantienen invariantes durante
+  la ejecuci\'on del algoritmo. Supongamos por contradicci\'on que el $D$ actual
+  no tiene cadenas circulares, pero que al añadir $C$, se crea una cadena en
+  $C\cup D$, digamos $((x_0,x_1),(x_1,x_2),\dots, (x_n,x_0))$. Adem\'as,
+  supongamos que es la primera vez que se obtiene la cadena durante la
+  ejecuci\'on del algoritmo. Adicionalmente, sup\'ongase que no hay cadenas
+  circulares mas cortas. Dado que por hip\'otesis no hay pares invertibles y que
+  nunca se coloca un par y su par revertido en $D$, se tiene que $n\geq 2$. Con
+  todo lo anterior, al menos un par de la cadena debe pertenecer a $C$ asumamos
+  sin p\'erdida de generalidad que $(x_n,x_0)\in C$ (otros pares pueden estar
+  tambi\'en en $C$). Bajo todas las condiciones anteriores, tenemos los
+  siguientes dos casos.
 
-  Caso 1.- Supongamos que en $G$ hay al menos una flecha entre los v\'ertices $x_0,x_1,\dots,x_n$, digamos $(x_a,x_b)$. Veamos que esto nos implica que $H$ es completa en $x_0,x_1,\dots,x_n$. Para probar esto veamos las siguientes observaciones. \\
-  1.- Si $x_j$ domina a $x_i$, entonces $x_{j-1}$ domina a $x_i$ en $H$.\\
-  2.- Si $x_j$ domina a $x_i$, entonces $x_j$ domina a $x_{i-1}$ en $H$.
+  \textit{Caso 1.} Supongamos que en $G$ hay al menos una flecha entre un par de
+  v\'ertices del conunto $\{ x_0,x_1,\dots,x_n \}$, digamos $(x_a,x_b)$. Veamos
+  que esto implica que $\{ x_0,x_1,\dots,x_n \}$ es un clan de $G$. Para probar
+  esto veamos las siguientes observaciones.
+  \begin{enumerate}
+    \item Si $x_j$ domina a $x_i$, entonces $x_{j-1}$ domina a $x_i$ en $G$.
+    \item Si $x_j$ domina a $x_i$, entonces $x_j$ domina a $x_{i-1}$ en $G$.
+  \end{enumerate}
 
-  Para probar la primer observaci\'on, notamos que, si $x_j$ domina a $x_i$ pero $x_{j-1}$ no domina a $x_i$ en $H$, entonces $(x_{j-1},x_j)$ domina a $(x_{j-1},x_i)$ en $H^+$. Dado que $(x_{j-1},x_j)$ pertence a $C\cup D$, la pareja $(x_{j-1},x_i) $ debe pertenecer a $C\cup D$, ya que si $(x_{j-1},x_j)$ pertence a $C$ y $C$ es una componente fuertemente conexa, se sigue que $(x_{j-1},x_i)\in C$, ahora, si $(x_{j-1},x_j)$ pertence a $D$ como por hip\'otesis se tiene que para todo flecha que va desde un v\'ertice en $D$ entonces el v\'ertice al que se llega debe ser un v\'ertice tambi\'en en $D$, así $(x_{j-1},x_i)\in D$, por lo que en cualquier caso podemos afirmar que existe una cadena circular m\'as pequeña en $C\cup D$. Veamos este hecho apoy\'andonos con los siguientes esquemas:
-Si $i<j$, la cadena circular tendr\'a una representaci\'on de la siguiente forma:
-$$( (x_0,x_1),(x_1,x_2),\dots, (x_{i-1},x_i), {\color{malva}(x_i,x_{i+1}),\dots, (x_{j-2},x_{j-1}),(x_{j-1},x_{j})}, \dots , (x_n,x_0)   )$$
-Como $(x_{j-1},x_i) \in C\cup D$, podemos "sustituirlo" en la cadena por el v\'ertice $(x_{j-1},x_{j})$. Así, obtenemos la siguiente cadena, la cual en efecto es mas corta, pues su longitud se corresponde con la longitud de la subcadena en color malva.
-$$ ((x_i,x_{i+1}),\dots, (x_{j-2},x_{j-1}),(x_{j-1},x_i)) $$ 
 
-Ahora, si $j<i$ la cadena circular tendr\'a una represntaci\'on de la siguiente forma:
+Para probar la primera observaci\'on, notamos que, si $x_j$ domina a $x_i$ pero
+$x_{j-1}$ no domina a $x_i$ en $G$, entonces $(x_{j-1},x_j)$ domina a
+$(x_{j-1},x_i)$ en $G^+$. Dado que $(x_{j-1},x_j)$ pertence a $C\cup D$, la
+pareja $(x_{j-1},x_i) $ debe pertenecer a $C\cup D$, ya que si $(x_{j-1},x_j)$
+pertence a $C$ y $C$ es una componente fuertemente conexa, se sigue que
+$(x_{j-1},x_i)\in C$. Ahora, si $(x_{j-1},x_j)$ pertence a $D$, como por
+hip\'otesis se tiene que para toda flecha sale de un v\'ertice en $D$ tiene
+cabeza en $D$, tenemos que $(x_{j-1},x_i)\in D$. En cualquier caso afirmamos que
+existe una cadena circular m\'as pequeña en $C \cup D$. Veamos que siempre se
+cumple una de las siguientes posibilidades: Si $i<j$, la cadena circular
+tendr\'a una representaci\'on de la siguiente forma:
+\[
+  ( (x_0,x_1),(x_1,x_2),\dots, (x_{i-1},x_i), {\color{malva}(x_i,x_{i+1}),\dots,
+  (x_{j-2},x_{j-1}),(x_{j-1},x_{j})}, \dots , (x_n,x_0))
+\]
+Como $(x_{j-1},x_i) \in C\cup D$, podemos ``sustituirlo'' en la cadena por el
+v\'ertice $(x_{j-1},x_{j})$. Así, obtenemos la siguiente cadena, la cual en
+efecto es mas corta, pues su longitud se corresponde con la longitud de la
+subcadena en color malva.
+\[
+  ((x_i,x_{i+1}),\dots, (x_{j-2},x_{j-1}),(x_{j-1},x_i))
+\]
+
+Ahora, si $j<i$ la cadena circular tendr\'a una representaci\'on de la siguiente
+forma:
 $$( (x_0,x_1),\dots, (x_{j-2},x_{j-1}), {\color{malva}(x_{j-1},x_j),(x_j,x_{j+1}) \dots, (x_{i-1},x_{i})},(x_{i},x_{i+1}), \dots , (x_n,x_0))$$
 
-Como $(x_{j-1},x_i) \in C\cup D$, podemos "sustituirlo" en la cadena por el v\'ertice $(x_{j-1},x_{j})$. Así, obtenemos:
-$$( (x_0,x_1),\dots, (x_{j-2},x_{j-1}), (x_{j-1},x_i),(x_{i},x_{i+1}), \dots , (x_n,x_0))$$
-La cual es en efecto una cadena mas corta, ya que, en t\'erminos simples $(x_{j-1},x_i)$ viene a sustituir toda la subcadena en color malva.
+Como $(x_{j-1},x_i) \in C \cup D$, podemos ``sustituirlo'' en la cadena por el
+v\'ertice $(x_{j-1},x_{j})$. Así, obtenemos:
+$$( (x_0,x_1),\dots, (x_{j-2},x_{j-1}), (x_{j-1},x_i),(x_{i},x_{i+1}), \dots ,
+(x_n,x_0))$$ La cual es en efecto una cadena mas corta, ya que, en t\'erminos
+simples $(x_{j-1},x_i)$ viene a sustituir toda la subcadena en color malva.
 
-Ahora para probar la segunda observaci\'on, se tiene de forma an\'aloga que si $x_j$ domina a $x_i$, pero $x_j$ no domina a $x_{i-1}$ en $G$, entonces $(x_{i-1}, x_i)$ domina a $(x_{i-1}, x_j)$ en $H^+$, implicando nuevamente la existencia de una cadena circular m\'as pequeña. Esto no es dificil de verificar mediante un par de esquemas como los usados para probar la primer propiedad.
+Ahora para probar la segunda observaci\'on, se tiene de forma an\'aloga que si
+$x_j$ domina a $x_i$, pero $x_j$ no domina a $x_{i-1}$ en $G$, entonces
+$(x_{i-1}, x_i)$ domina a $(x_{i-1}, x_j)$ en $G^+$, implicando nuevamente la
+existencia de una cadena circular m\'as pequeña. Esto no es dif\'icil de
+verificar mediante un par de esquemas como los usados para probar la primer
+propiedad.
 
-Terminemos de ver que el hecho de tener una flechas entre dos v\'ertices de $x_0,\dots,x_n$ nos lleva a que se tiene una gr\'afica completa en $x_0,\dots,x_n$. Supongamos que $x_a$ domina a $x_b$ en $G$. La observaci\'on 1, implica que todos los antecesores de $x_a$ dominan a $x_b$, es decir $x_{a-1}, x_{a-2},\dots, x_{b+1}$ dominan a $x_b$, observe el primer diagrama de la figura 123123. Ahora como $x_{b+1}$ domina a $x_b$ la propiedad 2, implica que $x_{b+1}$ domina $x_{b-1}, x_{b-2},\dots,x_{b+2}$ esto es, domina a todos los otros v\'ertices, ver el segundo diagrama de la figura 123123. Ahora usando nuevamente la propiedad 1, tenemos que como $x_{b+1}$ domina a $x_{b-1}$ entonces $x_b$ domina a $x_{b-1}$, y aplicando la propiedad 2, se obtiene que $x_b$ domina al resto de v\'ertices. Mediante la repetida aplicaci\'on de estas propiedades sobre toso los v\'ertices, se puede concluir que los v\'ertices $x_0,x_1,\dots,x_n$ inducen una gr\'afica completa en $G$.
-Finalmente veremos que $C$ es una componente trivial, es decir consta de un solo v\'ertice, supongamos que esto no es así es decir supongamos que en $C$ hay un v\'ertice adicional del $(x_n,x_0)$, bajo estas hip\'otesis en la componente revertida $C'$ debe tener a como v\'ertices a $(x_0,x_n)$ y a otro v\'ertice, supongamos $(a,b)$, el cual no pertenece a $C\cup D$. 
-Como $C'$ es conexa, se tiene que $(x_0,x_n)$ domina a $(a,b)$, así podemos suponer que $x_0$ domina a $a$ en $G$, $x_n$ domina a $b$ en $G$ y que $x_0$ no domina a  $b$ en $G$. Dado que $(a,b)$ no pertenece a $C\cup D$, entonces la pareja $(x_0,x_1)$ que pertenece a $C\cup D$ no puede dominar a $(a,b)$ por lo que $x_1$ no domina a $b$ en $G$. Veamos que $x_2$ tampoco puede dominar a $b$, si $x_2$  domina a $b$ en $G$ entonces $(x_1,x_2)$ domina a $(x_0,b)$, recordemos que $x_1$ domina a $x_0$ porque $x_0,x_1,\dots,x_n$ induce una gr\'afica completa, continuando, tenemos que a su vez $(x_0,b)$ domina $(a,b)$ en $G^+$, pero esto no es posible ya que tendríamos un camino dirigido que comienza en $C$ y termina fuera de $C\cup D$, por lo que alguna flecha debe salir de $C\cup D$, que por hip\'otesis no puede pasar. Nuevamente si $x_3$ domina a $b$ entonces $(x_2,x_3)$ domina a $(x_1,b)$ que a su vez domina a $(a,b)$ y se llega a la misma contradicci\'on. De forma an\'aloga, se puede probar que $x_n$ no domina a $b$, lo cual es falso. La contradicci\'on de todo lo anterior surge de suponer que en $C$ hubo mas de un v\'ertice. Así $C=\{ (x_n,x_0)\} $ y $C'=\{ (x_0,x_n)\}$. Con esta misma pruba se muestra que $C'$ es una componente madura, pues no hay v\'ertices $(a,b)$ que sean dominados fuera de $C\cup D$. Finalmente si $(x_n,x_0)$ y $(x_0,x_n)$ completan ambos una cadena circular con $D$, entonces en $D$ existía ya una cadena circular. Por ejemplo 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+Terminemos de ver que el hecho de tener una flechas entre dos v\'ertices de
+$x_0,\dots,x_n$ nos lleva a que se tiene una gr\'afica completa en
+$x_0,\dots,x_n$. Supongamos que $x_a$ domina a $x_b$ en $G$. La observaci\'on 1,
+implica que todos los antecesores de $x_a$ dominan a $x_b$, es decir $x_{a-1},
+x_{a-2},\dots, x_{b+1}$ dominan a $x_b$, observe el primer diagrama de la figura
+123123. Ahora como $x_{b+1}$ domina a $x_b$ la propiedad 2, implica que
+$x_{b+1}$ domina $x_{b-1}, x_{b-2},\dots,x_{b+2}$ esto es, domina a todos los
+otros v\'ertices, ver el segundo diagrama de la figura 123123. Ahora usando
+nuevamente la propiedad 1, tenemos que como $x_{b+1}$ domina a $x_{b-1}$
+entonces $x_b$ domina a $x_{b-1}$, y aplicando la propiedad 2, se obtiene que
+$x_b$ domina al resto de v\'ertices. Mediante la repetida aplicaci\'on de estas
+propiedades sobre toso los v\'ertices, se puede concluir que los v\'ertices
+$x_0,x_1,\dots,x_n$ inducen una gr\'afica completa en $G$. Finalmente veremos
+que $C$ es una componente trivial, es decir consta de un solo v\'ertice,
+supongamos que esto no es así es decir supongamos que en $C$ hay un v\'ertice
+adicional del $(x_n,x_0)$, bajo estas hip\'otesis en la componente revertida
+$C'$ debe tener a como v\'ertices a $(x_0,x_n)$ y a otro v\'ertice, supongamos
+$(a,b)$, el cual no pertenece a $C\cup D$. Como $C'$ es conexa, se tiene que
+$(x_0,x_n)$ domina a $(a,b)$, así podemos suponer que $x_0$ domina a $a$ en $G$,
+$x_n$ domina a $b$ en $G$ y que $x_0$ no domina a  $b$ en $G$. Dado que $(a,b)$
+no pertenece a $C\cup D$, entonces la pareja $(x_0,x_1)$ que pertenece a $C\cup
+D$ no puede dominar a $(a,b)$ por lo que $x_1$ no domina a $b$ en $G$. Veamos
+que $x_2$ tampoco puede dominar a $b$, si $x_2$  domina a $b$ en $G$ entonces
+$(x_1,x_2)$ domina a $(x_0,b)$, recordemos que $x_1$ domina a $x_0$ porque
+$x_0,x_1,\dots,x_n$ induce una gr\'afica completa, continuando, tenemos que a su
+vez $(x_0,b)$ domina $(a,b)$ en $G^+$, pero esto no es posible ya que tendríamos
+un camino dirigido que comienza en $C$ y termina fuera de $C\cup D$, por lo que
+alguna flecha debe salir de $C\cup D$, que por hip\'otesis no puede pasar.
+Nuevamente si $x_3$ domina a $b$ entonces $(x_2,x_3)$ domina a $(x_1,b)$ que a
+su vez domina a $(a,b)$ y se llega a la misma contradicci\'on. De forma
+an\'aloga, se puede probar que $x_n$ no domina a $b$, lo cual es falso. La
+contradicci\'on de todo lo anterior surge de suponer que en $C$ hubo mas de un
+v\'ertice. Así $C=\{ (x_n,x_0)\} $ y $C'=\{ (x_0,x_n)\}$. Con esta misma pruba
+se muestra que $C'$ es una componente madura, pues no hay v\'ertices $(a,b)$ que
+sean dominados fuera de $C\cup D$. Finalmente si $(x_n,x_0)$ y $(x_0,x_n)$
+completan ambos una cadena circular con $D$, entonces en $D$ existía ya una
+cadena circular. Por ejemplo 
 $$  (y_0,y_1),(y_1,y_2),\dots, (y_k,x_0), (x_0,x_n), (x_n,x_0), (x_0, y_{k+1}),\dots, (y_m,y_0) $$
 Es una cadena que se forma con v\'ertices de $D$ y con $(x_n,x_0)$ y $(x_0,x_n)$. Sin embargo, se puede formar la cadena 
 $$  (y_0,y_1),(y_1,y_2),\dots, (y_k,x_0), (x_0, y_{k+1}),\dots, (y_m,y_0) $$
@@ -317,7 +456,7 @@ Pasemos ahora a probar el segundo caso, en este caso suponemos que $x_0,x_1,\dot
   Sea $x_0,x_1,\dots,x_n $ un conjunto independiente en $G$. Supongamos que $p$ es un v\'ertice de $G$ distinto de $x_0,x_1,\dots,x_n$, el cual domina a $x_{i+1}$ pero no a $x_i$. Entonces $(x_0,x_1),\dots, (x_i,p)(p,x_{i+2}),\dots, (x_n,x_0)$ es tambi\'en una cadena circular creada al mismo tiempo.
 \end{lema}
 \begin{proof}
-  Del hecho de que $(x_ix_{i+1})$ domina a $(x_i,p)$ en $H^+$ y dado que $(x_i,x_{i+1})$ pertenece a $C\cup D$ se debe tener que $(x_i,p)$ debe pertenecer tambien a $C\cup D$. Adem\'as, dado que $x_{i+1}$ no domina o es dmoinado por $x_{i+2}$ en $G$, tambi\'en debemos tener que $(x_{i+1},x_{1+2})$ domina a $(p,x_{+2})$ cuando $(p,x_{i+2})$ est\'a en $C\cup D$. En conclusi\'on vemps que cualquier v\'ertice $p$ podemos reemplazarlo por $x_{i+1}$ en la cadena circular $(x_0,x_1),(x_1,x_2),\dots , (x_n,x_0)$
+  Del hecho de que $(x_ix_{i+1})$ domina a $(x_i,p)$ en $G^+$ y dado que $(x_i,x_{i+1})$ pertenece a $C\cup D$ se debe tener que $(x_i,p)$ debe pertenecer tambien a $C\cup D$. Adem\'as, dado que $x_{i+1}$ no domina o es dmoinado por $x_{i+2}$ en $G$, tambi\'en debemos tener que $(x_{i+1},x_{1+2})$ domina a $(p,x_{+2})$ cuando $(p,x_{i+2})$ est\'a en $C\cup D$. En conclusi\'on vemps que cualquier v\'ertice $p$ podemos reemplazarlo por $x_{i+1}$ en la cadena circular $(x_0,x_1),(x_1,x_2),\dots , (x_n,x_0)$
 \end{proof}
 
 
@@ -339,7 +478,7 @@ Pasemos ahora a probar el segundo caso, en este caso suponemos que $x_0,x_1,\dot
   Los otros dos puntos pueden probarse de una manera similar.
 \end{proof}  
 
-Afirmamos ahora que en la cadena circular $(x_0,x_1),(x_1,x_2),\dots , (x_n,x_0)$ hay a lo mas una pareja en $C$, supongamos que es $(x_n,x_0)$ y el resto de parejas pertenecen a $D$. Supongamos que esto no es así, es decir que adem\'as de $(x_n,x_0)$ hay otra pareja $(x_i,x_{i+1})$ en $C$ $i\neq n$ y sea $P$ un camino dirigido en $C$ de $(x_n,x_0)$ a $(x_i,x_{i+1})$. Sea $(p,q)$ el penúltimo v\'ertice en este camino y supongamos sin p\'erdida de generalidad que $px_i,qx_{i+1}\in E(G), px_{i+1}\notin E(G)$. Por \cref{lem:Completa} $p$ no puede dominar a ningún otro $x_j$ ya que llegariamos a que domina a dos v\'ertices y por ende dominaría a todos e particular a $x_{i+1}$. Ahora, $q$ no domina a $x_i$, de hecho si $q$ domina a $x_i$ nuevamente por \cref{lem:Completa} tendremos que $q$ domina a todos los $x_i$, esto es una contradicci\'on ya que se llega a que $(p,q)$ domina a $(x_i,x_{i+2})$ en $H^+$ lo que nos dice que $(x_i,x_{i+2})$ pertenece a $C\cup D$ y así tendemos una cadena circular mas pequeña en $H$. Tal como se muestra abajo:
+Afirmamos ahora que en la cadena circular $(x_0,x_1),(x_1,x_2),\dots , (x_n,x_0)$ hay a lo mas una pareja en $C$, supongamos que es $(x_n,x_0)$ y el resto de parejas pertenecen a $D$. Supongamos que esto no es así, es decir que adem\'as de $(x_n,x_0)$ hay otra pareja $(x_i,x_{i+1})$ en $C$ $i\neq n$ y sea $P$ un camino dirigido en $C$ de $(x_n,x_0)$ a $(x_i,x_{i+1})$. Sea $(p,q)$ el penúltimo v\'ertice en este camino y supongamos sin p\'erdida de generalidad que $px_i,qx_{i+1}\in E(G), px_{i+1}\notin E(G)$. Por \cref{lem:Completa} $p$ no puede dominar a ningún otro $x_j$ ya que llegariamos a que domina a dos v\'ertices y por ende dominaría a todos e particular a $x_{i+1}$. Ahora, $q$ no domina a $x_i$, de hecho si $q$ domina a $x_i$ nuevamente por \cref{lem:Completa} tendremos que $q$ domina a todos los $x_i$, esto es una contradicci\'on ya que se llega a que $(p,q)$ domina a $(x_i,x_{i+2})$ en $G^+$ lo que nos dice que $(x_i,x_{i+2})$ pertenece a $C\cup D$ y así tendemos una cadena circular mas pequeña en $H$. Tal como se muestra abajo:
 $$ (x_,x_1), \dots , (x_{i-1},x_i ), {\color{malva} (x_i,x_{i+1}), (x_{i+1},x_{i+2})},(x_{i+2},x_{i+3}), \dots , (x_n,x_0) $$
 $$ (x_,x_1), \dots , (x_{i-1},x_i ), {\color{malva} (x_i,x_{i+2})},(x_{i+2},x_{i+3}), \dots , (x_n,x_0) $$
 Por lo tanto $q$ no domina a $x_i$. Mediante una doble aplicaci\'on d\cref{lem:Sustitucion} concluimos que $x_i,x_{i+1}$ pueden ser reemplazados por $p,q$ respectivamente en la cadena circular en $G$. Continuando de esta forma, podemos reemplazar $(p,q)$ por el par previo en el camino $P$, hasta obetener el par $(p',q')$ el cual es el primero en aparecer en el camino que es distinto de $(x_n,x_0)$. Dado que $x_0$ es adyacente a $q'$, regresamos al caso 1.
