@@ -3,22 +3,53 @@
 
 
 
-La gráficas de intervalos tienen una amplia gama de aplicaciones en el mundo real, y han resultado ser una herramienta matemática muy importante para modelar problemas como lo son la planificación de horarios. En la planificación de horarios, lo que uno busca es eficientar la distribución de recursos para la realización de ciertos trabajos en un tiempo dado. 
-Las gráficas de intervalos resultan ser una familia muy importante pues cuentan con propiedades estructurales muy ricas. Para empezar, tienen varias caracterizaciones, algunas en términos de estructuras prohibidas. En segundo lugar, las gráficas de intervalos cuentan con un algoritmo de reconocimiento de tiempo lineal. Además, el estudio de las gráficas de intervalos es importante pues es una familia que esta fuertemente relacionada con otras clases de gráficas como los son las gráficas de comparabilidad, las gráficas cordales y las gráficas de permutación. 
-La representación por intervalos de una gráfica es una herramienta bastante útil al momento de visualizar una gráfica, pues esta  se presenta de una forma natural y bastante intuitiva. La representación de una gráfica como una familia de intervalos en la recta real permite una forma alterna de visualizar la interacción entre vértices. Veremos mas adelante c\'omo la localización de los clanes maximales se vuelve una tarea sencilla ayudándonos de la representación por intervalos.
+La gráficas de intervalos tienen una amplia gama de aplicaciones en el mundo
+real, y han resultado ser una herramienta matemática muy importante para modelar
+problemas como lo son la planificación de horarios. En la planificación de
+horarios, lo que uno busca es eficientar la distribución de recursos para la
+realización de ciertos trabajos en un tiempo dado. Las gráficas de intervalos
+resultan ser una familia muy importante pues cuentan con propiedades
+estructurales muy ricas. Para empezar, tienen varias caracterizaciones, algunas
+en términos de estructuras prohibidas. En segundo lugar, las gráficas de
+intervalos cuentan con un algoritmo de reconocimiento de tiempo lineal. Además,
+el estudio de las gráficas de intervalos es importante pues es una familia que
+esta fuertemente relacionada con otras clases de gráficas como los son las
+gráficas de comparabilidad, las gráficas cordales y las gráficas de permutación.
+La representación por intervalos de una gráfica es una herramienta bastante útil
+al momento de visualizar una gráfica, pues esta  se presenta de una forma
+natural y bastante intuitiva. La representación de una gráfica como una familia
+de intervalos en la recta real permite una forma alterna de visualizar la
+interacción entre vértices. Veremos mas adelante c\'omo la localización de los
+clanes maximales se vuelve una tarea sencilla ayudándonos de la representación
+por intervalos.
 
-Con todo lo anterior en mente, tenemos diversas razones para hacer el estudio de las gráficas de intervalos. En las siguientes secciones veremos varios ejemplos de gráficas de intervalos, una vez contando con ejemplos nos fijaremos en las propiedades comunes y a partir de estos, daremos caracterizaciones.
+Con todo lo anterior en mente, tenemos diversas razones para hacer el estudio de
+las gráficas de intervalos. En las siguientes secciones veremos varios ejemplos
+de gráficas de intervalos, una vez contando con ejemplos nos fijaremos en las
+propiedades comunes y a partir de estos, daremos caracterizaciones.
 
 \section{Definiciones y ejemplos}
-En ésta sección comenzamos el estudio  de las gráficas de intervalos. Veremos algunos ejemplos y propiedades de estas.
+En ésta sección comenzamos el estudio  de las gráficas de intervalos. Veremos
+algunos ejemplos y propiedades de estas.
 
-Comencemos, entendemos a un gráfica de intervalos como una gráfica $G$ la cual admite una representación por intervalos. Es decir a cada vértice $v$ de $V$, lo representamos por medio de un intervalo $I_v$. Luego una representación de $G$ es una familia de intervalos $\{ I_v \}_{v\in V(H)}$ tal que $uv\in E(H)$ si y solo si $I_u \cap I_v \neq \emptyset$.
+Comencemos, entendemos a un gráfica de intervalos como una gráfica $G$ la cual
+admite una representación por intervalos. Es decir a cada vértice $v$ de $V$, lo
+representamos por medio de un intervalo $I_v$. Luego una representación de $G$
+es una familia de intervalos $\{ I_v \}_{v\in V(H)}$ tal que $uv\in E(H)$ si y
+solo si $I_u \cap I_v \neq \emptyset$.
 
-Veamos una propiedad que cumplen todas la gráficas de intervalos, es claro que $\forall I\subseteq \mathbb{R}, I\neq \emptyset, I\cap I \neq \emptyset$. Esto nos indica que toda gráfica de intervalos satisface ser transitiva, es decir, todo vértice tiene un lazo.
-Veamos un par de ejemplos de gráficas de intervalos.
+Veamos una propiedad que cumplen todas la gráficas de intervalos, es claro que
+$\forall I\subseteq \mathbb{R}, I\neq \emptyset, I\cap I \neq \emptyset$. Esto
+nos indica que toda gráfica de intervalos satisface ser transitiva, es decir,
+todo vértice tiene un lazo. Veamos un par de ejemplos de gráficas de intervalos.
 
 
-Comenzamos con una gráfica bastante simple. La gráfica de \cref{GrafInt01} consta de cuatro vértices y carece de aristas, salvo los propias lazos que ya vimos que tienen. Ahora para verificar que es gráfica de intervalos demos una representación por intervalos. Sean $J_i = (i-1, i)$ con $i=1,2,3,4$ como $J_i \cap J_j = \emptyset$ si $i\neq j$ entonces,  no hay aristas entre dos vértices que sean distintos.    
+Comenzamos con una gráfica bastante simple. La gráfica de \cref{fig:GrafInt01}
+consta de cuatro vértices y carece de aristas, salvo los propias lazos que ya
+vimos que tienen. Ahora para verificar que es gráfica de intervalos demos una
+representación por intervalos. Sean $J_i = (i-1, i)$ con $i=1,2,3,4$ como $J_i
+\cap J_j = \emptyset$ si $i\neq j$ entonces,  no hay aristas entre dos vértices
+que sean distintos.    
 
 \begin{figure}[H]
   \centering
@@ -30,9 +61,17 @@ Comenzamos con una gráfica bastante simple. La gráfica de \cref{GrafInt01} con
 
 
     \label{exmpl:202}
-    Ahora veamos si la gráfica que se muestra en \cref{fig:GrafInt01} sigue siendo gráfica de intervalos si a esta se le añade un arista. Para poder verificar esto, es necesario encontrar una nueva representación por intervalos.
-    Dada la nueva incidencia, solo bastaría modificar la representación de los intervalos que representan a $v_1 $ y a $v_2$ es decir solo necesitamos que $J_1 \cap J_2 \neq \emptyset$.
-    Así podemos simplemente extender el extremo derecho de $J_1$ digamos un $\varepsilon >0 $ lo suficientemente pequeño de tal forma que $1+\varepsilon \leq 2$, esto para evitar que $J_1 \cap J_3 \neq \emptyset$ pues nos generaría una adyacencia de $v_1 $ con $v_3$. Y respecto al resto de los intervalos $j_2, J_3, J_4$ los conservamos iguales.    
+    Ahora veamos si la gráfica que se muestra en \cref{fig:GrafInt01} sigue
+    siendo gráfica de intervalos si a esta se le añade un arista. Para poder
+    verificar esto, es necesario encontrar una nueva representación por
+    intervalos. Dada la nueva incidencia, solo bastaría modificar la
+    representación de los intervalos que representan a $v_1 $ y a $v_2$ es decir
+    solo necesitamos que $J_1 \cap J_2 \neq \emptyset$. Así podemos simplemente
+    extender el extremo derecho de $J_1$ digamos un $\varepsilon >0 $ lo
+    suficientemente pequeño de tal forma que $1+\varepsilon \leq 2$, esto para
+    evitar que $J_1 \cap J_3 \neq \emptyset$ pues nos generaría una adyacencia
+    de $v_1 $ con $v_3$. Y respecto al resto de los intervalos $j_2, J_3, J_4$
+    los conservamos iguales.    
 
 
 \begin{figure}[H]
@@ -43,9 +82,16 @@ Comenzamos con una gráfica bastante simple. La gráfica de \cref{GrafInt01} con
 \end{figure}
 
 
-Seguimos usando de base la gráfica de  \cref{fig:GrafInt01}, y ahora ponemos dos adyancencias mas. Notemos que tenemos ahora un 3-camino. 
-Y nos volvemos a preguntar si esta nueva gráfica sigue siendo gráfica de intervalos. Y para esto usamos una idea bastante similar a la del ejemplo pasado. Tomamos un $0 < \varepsilon \leq 1$, y nuestros intervalos quedan como $J_i=(i-1, i+\varepsilon)$ para $i=1,2,3$.
-En este punto lo único que hay que verificar es que las adyacencias queden como se desea en la gráfica. Notemos que $J_i \cup J_j $ si y solo si $i$ y $j$ son sucesivos. Por todo lo anterior tenemos que esta gráfica si es de intervalos, mas aún, usando un argumento inductivo, tenemos que cualquier k-camino es gráfica de intervalos.
+Seguimos usando de base la gráfica de  \cref{fig:GrafInt01}, y ahora ponemos dos
+adyancencias mas. Notemos que tenemos ahora un 3-camino. Y nos volvemos a
+preguntar si esta nueva gráfica sigue siendo gráfica de intervalos. Y para esto
+usamos una idea bastante similar a la del ejemplo pasado. Tomamos un $0 <
+\varepsilon \leq 1$, y nuestros intervalos quedan como $J_i=(i-1,
+i+\varepsilon)$ para $i=1,2,3$. En este punto lo único que hay que verificar es
+que las adyacencias queden como se desea en la gráfica. Notemos que $J_i \cup
+J_j $ si y solo si $i$ y $j$ son sucesivos. Por todo lo anterior tenemos que
+esta gráfica si es de intervalos, mas aún, usando un argumento inductivo,
+tenemos que cualquier k-camino es gráfica de intervalos.
 
 
 \begin{figure}[H]
@@ -55,17 +101,32 @@ En este punto lo único que hay que verificar es que las adyacencias queden como
   \label{fig:GrafInt03}
 \end{figure}
 
-En este punto surge naturalmente la pregunta ¿Qué pasa al añadir una adyacencia mas, es decir el 4 ciclo? ¿Es también gráfica de intervalos?
-Bien, intentemos modificar la representación que dimos en \cref{fig:GrafInt03}. ¿Qué podemos hacer? Lo único que le falta a la representación es que $J_1$ intersecte a $J_4$. Así tenemos una primer opción, podríamos intentar extender el extremo derecho de $J_1$ de tal forma que este rebase al tres (En la recta real). Pero una tendremos una consecuencia inmediata, la cual es que $v_1$ es adyacente a todos los vértices, el problema es que nos da la adyacencia de $v_1$ con $v_3$ nosotros no la buscamos, entonces descartamos esta opción.
+En este punto surge naturalmente la pregunta ¿Qué pasa al añadir una adyacencia
+mas, es decir el 4 ciclo? ¿Es también gráfica de intervalos? Bien, intentemos
+modificar la representación que dimos en \cref{fig:GrafInt03}. ¿Qué podemos
+hacer? Lo único que le falta a la representación es que $J_1$ intersecte a
+$J_4$. Así tenemos una primer opción, podríamos intentar extender el extremo
+derecho de $J_1$ de tal forma que este rebase al tres (En la recta real). Pero
+una tendremos una consecuencia inmediata, la cual es que $v_1$ es adyacente a
+todos los vértices, el problema es que nos da la adyacencia de $v_1$ con $v_3$
+nosotros no la buscamos, entonces descartamos esta opción.
 
-Sin duda uno podría seguir intentando hacer modificaciones a la representación, pero desafortunadamente nunca podremos dar con alguna que nos dé la correcta representación del 4-ciclo, ya que en efecto el 4-ciclo no es gráfica de intervalos.   Exploraremos algunas propiedades b\'asicas de las gr\'aficas de intervalos en la siguiente secci\'on.
+Sin duda uno podría seguir intentando hacer modificaciones a la representación,
+pero desafortunadamente nunca podremos dar con alguna que nos dé la correcta
+representación del 4-ciclo, ya que en efecto el 4-ciclo no es gráfica de
+intervalos.   Exploraremos algunas propiedades b\'asicas de las gr\'aficas de
+intervalos en la siguiente secci\'on.
 
 \section{Propiedades b\'asicas}
 
-Como es de suponerse, la última afirmación de la secci\'on anterior, que resulta ser tan contundente, debe ir respaldada por una prueba formal. 
-A continuación daremos una definición y un teorema, los cuales nos ayudarán a concluir que en efecto el 4-ciclo no es de intervalos.
+Como es de suponerse, la última afirmación de la secci\'on anterior, que resulta
+ser tan contundente, debe ir respaldada por una prueba formal. A continuación
+daremos una definición y un teorema, los cuales nos ayudarán a concluir que en
+efecto el 4-ciclo no es de intervalos.
 
-Decimos que una gráfica cordal es aquella en la cual todos los ciclos de cuatro mas vértices tiene una cuerda. Esto es un arista la cual no es parte del ciclo, pero que conecta a dos vértices dentro del ciclo.
+Decimos que una gráfica cordal es aquella en la cual todos los ciclos de cuatro
+mas vértices tiene una cuerda. Esto es un arista la cual no es parte del ciclo,
+pero que conecta a dos vértices dentro del ciclo.
 
 \begin{teorema}
 \label{teo:Int-Chord}
@@ -73,30 +134,53 @@ Decimos que una gráfica cordal es aquella en la cual todos los ciclos de cuatro
 \end{teorema}
 
 \begin{proof}
-    Sea G una gráfica de intervalos. Y $\{ J_v \}_{v \in V(G)}$ una representación de intervalos de $G$.
-    Supongamos además que $G$ es no cordal, así, existe un ciclo $[v_0,v_1,v_2,...,v_{l-1},v_0]$ con $l \geq 4$, el cual no tiene aristas entre dos vértices no consecutivos.
+    Sea G una gráfica de intervalos. Y $\{ J_v \}_{v \in V(G)}$ una
+    representación de intervalos de $G$. Supongamos además que $G$ es no cordal,
+    así, existe un ciclo $[v_0,v_1,v_2,...,v_{l-1},v_0]$ con $l \geq 4$, el cual
+    no tiene aristas entre dos vértices no consecutivos.
     
-    Notemos que $J_{v_i}$ y $J_{v_{i-1}}$ no pueden ser disjuntos, pues sus respectivos vértices son adyacentes al pertenecer y ser consecutivos en el ciclo. Por lo anterior $\forall 1 \leq i \leq n  (\exists p_i \in J_{v_{i-1}}\cap J_{v_i})$.
+    Notemos que $J_{v_i}$ y $J_{v_{i-1}}$ no pueden ser disjuntos, pues sus
+    respectivos vértices son adyacentes al pertenecer y ser consecutivos en el
+    ciclo. Por lo anterior $\forall 1 \leq i \leq n  (\exists p_i \in
+    J_{v_{i-1}}\cap J_{v_i})$.
     
-    Dado que por hipótesis $G$ es no cordal, $J_{i-1}$ y $J_{i+1}$ no se traslapan, y aunado a la tricotomía, obtenemos que $p_i$ está o bien a la derecha o bien a la izquierda de $p_{i+1}$.
-    Luego, la sucesión de números $\{ p_i \}_{i=1}^{l-1}$ es creciente o decreciente, y justo en este punto surge la contradicción, pues debería suceder que $J_{l-1}$ y $J_0$ se intersequen, por ser la parte final del ciclo.
+    Dado que por hipótesis $G$ es no cordal, $J_{i-1}$ y $J_{i+1}$ no se
+    traslapan, y aunado a la tricotomía, obtenemos que $p_i$ está o bien a la
+    derecha o bien a la izquierda de $p_{i+1}$. Luego, la sucesión de números
+    $\{ p_i \}_{i=1}^{l-1}$ es creciente o decreciente, y justo en este punto
+    surge la contradicción, pues debería suceder que $J_{l-1}$ y $J_0$ se
+    intersequen, por ser la parte final del ciclo.
 \end{proof}
 
 \begin{corolario}
     Todo k-ciclo, con $k \geq 4$ no es gráfica de intervalos. 
 \end{corolario}
 
-En particular al completar el ciclo de \cref{fig:03} se tiene que ya no es gráfica de intervalos.
+En particular al completar el ciclo de \cref{fig:03} se tiene que ya no es
+gráfica de intervalos.
 
-Así hasta el momento hemos visto que toda gráfica de intervalos debe ser cordal. En este punto, como dirían varios exprofesores, todo buen matemático debería ahora preguntarse si toda gráfica cordal tiene una representación por intervalos. Es decir veamos si el ser cordal es una condición suficiente para ser gráficas de intervalos.
-Desafortunadamente, aunque al mismo tiempo afortunadamente, para los fines literarios de esta tesis, la respuesta es no.
-Veamos el siguiente ejemplo. A partir de este punto en los dibujos omitiremos dibujar los lazos, los cuales ya sabemos que existen en toda gráfica de intervalos.
+Así hasta el momento hemos visto que toda gráfica de intervalos debe ser cordal.
+En este punto, como dirían varios exprofesores, todo buen matemático debería
+ahora preguntarse si toda gráfica cordal tiene una representación por
+intervalos. Es decir veamos si el ser cordal es una condición suficiente para
+ser gráficas de intervalos. Desafortunadamente, aunque al mismo tiempo
+afortunadamente, para los fines literarios de esta tesis, la respuesta es no.
+Veamos el siguiente ejemplo. A partir de este punto en los dibujos omitiremos
+dibujar los lazos, los cuales ya sabemos que existen en toda gráfica de
+intervalos.
 
 
-Afirmamos que la gráfica de \cref{fig:GrafCrdlnodeInt} no es gráfica de intervalos. Supongamos que $ \{ J_v \}_{v\in V(G)}$ es una representación de intervalos de $G$. 
-Así las cosas, tenemos que $I_d$ debe intersecar a $I_a$, $I_b$ e $I_c$. Por otro lado al ser $a,b,c$ no adyacentes $I_a$, $I_b$ e $I_c$ deben ser disjuntos, de todo lo anterior se tiene que uno de estos tres intervalos debe quedar propiamente contenido en $I_d$.
-Supongamos sin perdida de generalidad que $I_a$ fue el que quedó totalmente contenido en $I_d$. 
-Ya como ultima nota, $I_d$ debe ser disjunto de $I_x$  ($x$ y $d$ no son adyacentes), pero al estar $I_a$ contenido propiamente en $I_d$, no habrá forma de que $I_x$ sea disjunto con $I_d$ Por lo que no es posible que La gráfica sea de intervalos.
+Afirmamos que la gráfica de \cref{fig:GrafCrdlnodeInt} no es gráfica de
+intervalos. Supongamos que $ \{ J_v \}_{v\in V(G)}$ es una representación de
+intervalos de $G$. Así las cosas, tenemos que $I_d$ debe intersecar a $I_a$,
+$I_b$ e $I_c$. Por otro lado al ser $a,b,c$ no adyacentes $I_a$, $I_b$ e $I_c$
+deben ser disjuntos, de todo lo anterior se tiene que uno de estos tres
+intervalos debe quedar propiamente contenido en $I_d$. Supongamos sin perdida de
+generalidad que $I_a$ fue el que quedó totalmente contenido en $I_d$. Ya como
+ultima nota, $I_d$ debe ser disjunto de $I_x$  ($x$ y $d$ no son adyacentes),
+pero al estar $I_a$ contenido propiamente en $I_d$, no habrá forma de que $I_x$
+sea disjunto con $I_d$ Por lo que no es posible que La gráfica sea de
+intervalos.
 
 \begin{figure}[H]
   \centering
@@ -105,27 +189,81 @@ Ya como ultima nota, $I_d$ debe ser disjunto de $I_x$  ($x$ y $d$ no son adyacen
   \label{fig:GrafCrdlnodeInt}
 \end{figure}
 
-Siguiendo con el proceso del estudio de las gráficas de intervalos, ahora nos gustaría encontrar una propiedad adicional de las gráficas de intervalos y nuevamente preguntarnos si esta propiedad es suficiente para que la gráfica sea de intervalos y en caso de no serlo, preguntarnos entonces si esta nueva propiedad en junto a la propiedad de ser cordal nos den la suficiencia para ser de intervalos.
-De acuerdo a lo anterior, se presentan tres actores. El primero de ellos se presenta de forma natural al hacer un par de observaciones basadas en la representación por intervalos de una gráfica de intervalos. Más en especifico en observar el comportamiento de las componentes conexas de la gráfica. Este actor veremos que resulta ser suficiente para caracterizar a las gráficas de intervalos. Respecto a los otros dos actores, uno consiste en tener una estructura prohibida, las tripletas asteroidales y el segundo se refiere a una propiedad del complemento de la gráfica, el complemento debe admitir una orientación transitiva. Cada uno de ellos se complementan con la propiedad de ser cordal para así poder caracterizar a las gráficas de intervalos. 
-Por el momento veremos un par de ejemplos de gráficas de intervalos un poco mas elaborados y veamos como surge de forma intuitiva la primer caracterización. Y posponemos para secciones posteriores el estudio de los otros dos actores.
+Siguiendo con el proceso del estudio de las gráficas de intervalos, ahora nos
+gustaría encontrar una propiedad adicional de las gráficas de intervalos y
+nuevamente preguntarnos si esta propiedad es suficiente para que la gráfica sea
+de intervalos y en caso de no serlo, preguntarnos entonces si esta nueva
+propiedad en junto a la propiedad de ser cordal nos den la suficiencia para ser
+de intervalos. De acuerdo a lo anterior, se presentan tres actores. El primero
+de ellos se presenta de forma natural al hacer un par de observaciones basadas
+en la representación por intervalos de una gráfica de intervalos. Más en
+especifico en observar el comportamiento de las componentes conexas de la
+gráfica. Este actor veremos que resulta ser suficiente para caracterizar a las
+gráficas de intervalos. Respecto a los otros dos actores, uno consiste en tener
+una estructura prohibida, las tripletas asteroidales y el segundo se refiere a
+una propiedad del complemento de la gráfica, el complemento debe admitir una
+orientación transitiva. Cada uno de ellos se complementan con la propiedad de
+ser cordal para así poder caracterizar a las gráficas de intervalos. Por el
+momento veremos un par de ejemplos de gráficas de intervalos un poco mas
+elaborados y veamos como surge de forma intuitiva la primer caracterización. Y
+posponemos para secciones posteriores el estudio de los otros dos actores.
 
-Una nota importante a hacer respecto a las gráficas de intervalos es pueden ser conexas o disconexas. En \crefrange{fig:GrafInt01}{fig:GrafInt02} se exponen gráficas de intervalos disconexas mientras que en \cref{fig:GrafInt03} se muestra una gráfica de intervalos que es conexa. 
+Una nota importante a hacer respecto a las gráficas de intervalos es pueden ser
+conexas o disconexas. En \crefrange{fig:GrafInt01}{fig:GrafInt02} se exponen
+gráficas de intervalos disconexas mientras que en \cref{fig:GrafInt03} se
+muestra una gráfica de intervalos que es conexa. 
 
-Como comentamos al principio del capítulo la representación por intervalos de las gráficas ayuda a visualizar la relación de incidencia entre los vértices. Por ejemplo, si tenemos una gráfica que es de intervalos y sucede que al unir todos los intervalos de la representación de la gráfica esto nos da nuevamente un intervalo, se puede concluir que la gráfica es conexa.
-Esta afirmación se observa en la representación que dimos en \cref{fig:GrafInt03}, la unión de los cuatro intervalos resulta en el intervalo $(0,4)$.
+Como comentamos al principio del capítulo la representación por intervalos de
+las gráficas ayuda a visualizar la relación de incidencia entre los vértices.
+Por ejemplo, si tenemos una gráfica que es de intervalos y sucede que al unir
+todos los intervalos de la representación de la gráfica esto nos da nuevamente
+un intervalo, se puede concluir que la gráfica es conexa. Esta afirmación se
+observa en la representación que dimos en \cref{fig:GrafInt03}, la unión de los
+cuatro intervalos resulta en el intervalo $(0,4)$.
 
-Otra propiedad importante respecto a visualizar una gráfica mediante su representación por intervalos es que los clanes maximales son fácilmente localizables. Mas aún dado el orden que tenemos en la recta real, los clanes podrán ser ordenados linealmente.
+Otra propiedad importante respecto a visualizar una gráfica mediante su
+representación por intervalos es que los clanes maximales son fácilmente
+localizables. Mas aún dado el orden que tenemos en la recta real, los clanes
+podrán ser ordenados linealmente.
 
-Por ejemplo si uno quiere localizar los clanes maximales que contienen al vértice $v$ nos fijamos en el intervalo $I_v$ y entonces los clanes maximales que tienen a $v$ serán los conjuntos $C = \{w \in V(G)| I_v \cap (\bigcap I_w) \neq \emptyset\}$.
-Y tales que $\nexists u \in V(G)$ tal que $I_u \cap C \neq \emptyset$.
-Todo este algoritmo se simplifica de la siguiente forma, tomemos el intervalo $I_v$, a continuación tracemos una linea vertical de tal forma que esta interseque al máximo número posible de intervalos, entonces el clan maximal estará conformado por aquellos vértices correspondientes a los intervalos $I_w$ tales que fueron intersecados.  
+Por ejemplo si uno quiere localizar los clanes maximales que contienen al
+vértice $v$ nos fijamos en el intervalo $I_v$ y entonces los clanes maximales
+que tienen a $v$ serán los conjuntos $C = \{w \in V(G)| I_v \cap (\bigcap I_w)
+\neq \emptyset\}$. Y tales que $\nexists u \in V(G)$ tal que $I_u \cap C \neq
+\emptyset$. Todo este algoritmo se simplifica de la siguiente forma, tomemos el
+intervalo $I_v$, a continuación tracemos una linea vertical de tal forma que
+esta interseque al máximo número posible de intervalos, entonces el clan maximal
+estará conformado por aquellos vértices correspondientes a los intervalos $I_w$
+tales que fueron intersecados.  
 
-En \cref{fig:MaxClqs01} se muestra una gráfica de intervalos $G=\{ 0,1, ..., 11\}$, y su representación por intervalos se muestra en la parte inferior de la gráfica. Denotamos sus intervalos con la misma etiqueta correspondiente al vértice (omitiremos los puntos iniciales y finales de los intervalos pues carece de importancia en el presente ejemplo).     
+En \cref{fig:MaxClqs01} se muestra una gráfica de intervalos $G=\{ 0,1, ...,
+11\}$, y su representación por intervalos se muestra en la parte inferior de la
+gráfica. Denotamos sus intervalos con la misma etiqueta correspondiente al
+vértice (omitiremos los puntos iniciales y finales de los intervalos pues carece
+de importancia en el presente ejemplo).     
 Comencemos a ver sus clanes maximales.\\
-1.- Si nos fijamos en el intervalo (de etiqueta) $1$ vemos que podemos trazar una linea vertical que intersecte al intervalo 2 (linea roja delgada), sin embargo esta no cumple ser la linea que intersecta al mayor número de intervalos, por ejemplo la linea roja mas gruesa no solo intersecta a los intervalos 1 y 2 si no que también intersecta al intervalo 3. Así el primer clan maximal que hemos detectado es $C_1$ y está conformado por los vértices $1,2,3$.\\
-2.- A continuación nos fijamos en el intervalo 2, y notamos que al trazar una línea vertical la cual intersecte a otros intervalos las únicas posibilidades son que la linea intersecte a los intervalos 1,2 o 2,3 o 1,2,3. Pero en cualquiera de los tres casos, estos son clanes contenidos ya en $C_1$.\\
-3.- Ahora pasamos al siguiente intervalo, notamos que en el intervalo 3, podemos trazar la linea vertical azul, la cual intersecta a los intervalos 3, 4 y 5. Dando pie a un nuevo clan maximal $C_2$. \\
-Siguiendo este pequeño algoritmo de verificación de intersección máxima, trazamos las lineas verticales; azul, naranja, morado, rosa y verde. Coloreamos adicionalmente los vértices de acuerdo a los clanes a los cuales pertenecen. Así los vértices pintados de un solo color son aquellos vértices que pertenecen a un  único clan maximal. Los vértices bicolor pertenecen a dos clanes maximales, mientras que los tricolor pertenecen a tres clanes maximales. Con todo lo anterior los clanes maximales de $G$ son $C_1, C_2, ..., C_6$ estos están coloreados del color correspondiente a la linea vertical.    
+1.- Si nos fijamos en el intervalo (de etiqueta) $1$ vemos que podemos trazar
+una linea vertical que intersecte al intervalo 2 (linea roja delgada), sin
+embargo esta no cumple ser la linea que intersecta al mayor número de
+intervalos, por ejemplo la linea roja mas gruesa no solo intersecta a los
+intervalos 1 y 2 si no que también intersecta al intervalo 3. Así el primer clan
+maximal que hemos detectado es $C_1$ y está conformado por los vértices
+$1,2,3$.\\
+2.- A continuación nos fijamos en el intervalo 2, y notamos que al trazar una
+línea vertical la cual intersecte a otros intervalos las únicas posibilidades
+son que la linea intersecte a los intervalos 1,2 o 2,3 o 1,2,3. Pero en
+cualquiera de los tres casos, estos son clanes contenidos ya en $C_1$.\\
+3.- Ahora pasamos al siguiente intervalo, notamos que en el intervalo 3, podemos
+trazar la linea vertical azul, la cual intersecta a los intervalos 3, 4 y 5.
+Dando pie a un nuevo clan maximal $C_2$. \\
+Siguiendo este pequeño algoritmo de verificación de intersección máxima,
+trazamos las lineas verticales; azul, naranja, morado, rosa y verde. Coloreamos
+adicionalmente los vértices de acuerdo a los clanes a los cuales pertenecen. Así
+los vértices pintados de un solo color son aquellos vértices que pertenecen a un
+único clan maximal. Los vértices bicolor pertenecen a dos clanes maximales,
+mientras que los tricolor pertenecen a tres clanes maximales. Con todo lo
+anterior los clanes maximales de $G$ son $C_1, C_2, ..., C_6$ estos están
+coloreados del color correspondiente a la linea vertical.    
 
 
 \begin{figure}[H]
@@ -135,9 +273,22 @@ Siguiendo este pequeño algoritmo de verificación de intersección máxima, tra
   \label{fig:MaxClqs01}
 \end{figure}
 
-\Cref{fig:MaxClqs02} es un ejemplo mas en cual mostramos la ventaja de contar con la representación por intervalos de una gráfica. El proceso de colocar lineas verticales sirve para identificar rápidamente los clanes maximales $C_1,C_2, C_3, C_4, C_5, C_6, C_7, C_8$.
+\Cref{fig:MaxClqs02} es un ejemplo mas en cual mostramos la ventaja de contar
+con la representación por intervalos de una gráfica. El proceso de colocar
+lineas verticales sirve para identificar rápidamente los clanes maximales
+$C_1,C_2, C_3, C_4, C_5, C_6, C_7, C_8$.
 
-En \cref{sec:SbGrfcs} se introdujo el concepto de vértice simplicial. Notemos que también al contar con la representación por intervalos de una gráfica, nos facilita la tarea de reconocerlos, pues los vértices simpliciales serán aquellos vértices para los cuales sus intervalos  correspondientes solo son intersectados por una linea vertical correspondiente a clanes maximales. En \cref{fig:MaxClqs02}, al fijarnos en la representación por intervalos, vemos que los intervalos 1,2,3,4 solo son intersectados por una linea correspondiente a un clan maximal, mientras que el intervalo 5, es intersectado por dos, la naranja y la azul. Así en el ejemplo en cuestión tenemos que los vértices simpliciales son los monocrom\'aticos, es decir $1,2,3,4,9,14,15,16$ todos ellos son vértices simpliciales.
+En \cref{sec:SbGrfcs} se introdujo el concepto de vértice simplicial. Notemos
+que también al contar con la representación por intervalos de una gráfica, nos
+facilita la tarea de reconocerlos, pues los vértices simpliciales serán aquellos
+vértices para los cuales sus intervalos  correspondientes solo son intersectados
+por una linea vertical correspondiente a clanes maximales. En
+\cref{fig:MaxClqs02}, al fijarnos en la representación por intervalos, vemos que
+los intervalos 1,2,3,4 solo son intersectados por una linea correspondiente a un
+clan maximal, mientras que el intervalo 5, es intersectado por dos, la naranja y
+la azul. Así en el ejemplo en cuestión tenemos que los vértices simpliciales son
+los monocrom\'aticos, es decir $1,2,3,4,9,14,15,16$ todos ellos son vértices
+simpliciales.
 
 \begin{figure}[H]
   \centering
@@ -146,13 +297,38 @@ En \cref{sec:SbGrfcs} se introdujo el concepto de vértice simplicial. Notemos q
   \label{fig:MaxClqs02}
 \end{figure}
 
-Una vez que uno cuenta con un la representación por intervalos de una gráfica, la representación sugiere un ordenamiento muy natural de los clanes maximales, de izquierda a derecha. Por ejemplo en \cref{fig:MaxClqs02} podemos ordenar los clanes maximales como $(C_1,C_2, C_3, C_4, C_5, C_6, C_7)$. Alternamente si proponemos la representación por intervalos que resulta de reflejar, por una linea vertical a la izquierda del intervalo 16, la representación dada en \cref{fig:MaxClqs02}. Ahora se obtiene el ordenamiento $(C_7,C_6,C_5,C_4,C_3,C_2,C_1)$. Ciertamente uno puede dar cualquier ordenamiento de los clanes maximales de la gráfica, sin embargo los que surgen de forma natural dada la representación por intervalos, tienen una peculiaridad. Los clanes que tienen a un vértice $v$ aparecen consecutivamente en el orden dado. Veamos esto. Supongamos que $G$ es una gráfica de intervalos y que $\{C_i\}_{i=1} ^n$ es el ordenamiento de sus clanes maximales dado por la representación de intervalos, supongamos adicionalmente que $v\in C_k$ y $v\in C_l$ y $k<j<l$ entonces $v\in C_j$. Esto se puede observar en \crefrange{fig:MaxClqs01}{fig:MaxClqs02}. 
+Una vez que uno cuenta con un la representación por intervalos de una gráfica,
+la representación sugiere un ordenamiento muy natural de los clanes maximales,
+de izquierda a derecha. Por ejemplo en \cref{fig:MaxClqs02} podemos ordenar los
+clanes maximales como $(C_1,C_2, C_3, C_4, C_5, C_6, C_7)$. Alternamente si
+proponemos la representación por intervalos que resulta de reflejar, por una
+linea vertical a la izquierda del intervalo 16, la representación dada en
+\cref{fig:MaxClqs02}. Ahora se obtiene el ordenamiento
+$(C_7,C_6,C_5,C_4,C_3,C_2,C_1)$. Ciertamente uno puede dar cualquier
+ordenamiento de los clanes maximales de la gráfica, sin embargo los que surgen
+de forma natural dada la representación por intervalos, tienen una peculiaridad.
+Los clanes que tienen a un vértice $v$ aparecen consecutivamente en el orden
+dado. Veamos esto. Supongamos que $G$ es una gráfica de intervalos y que
+$\{C_i\}_{i=1} ^n$ es el ordenamiento de sus clanes maximales dado por la
+representación de intervalos, supongamos adicionalmente que $v\in C_k$ y $v\in
+C_l$ y $k<j<l$ entonces $v\in C_j$. Esto se puede observar en
+\crefrange{fig:MaxClqs01}{fig:MaxClqs02}. 
 
 
 
     \begin{comment}
-    Sin embargo ambos ordenes son dependientes de la representación por intervalos que uno haya elegido. 
-    En \cref{fig:OrdMaxClns} tenemos una estrella de 5 picos y a la derecha se muestran tres posibles representaciones por intervalos de dicha gráfica. La estrella tiene como clanes maximales a los conjuntos $C_{i-1}=\{1,i\}$ con $i \in \{2,3,4,5,6\}$, es decir un pico de la estrella acompañado del centro. En la representación por intervalos de la parte superior se ocurre inmediatamente dos ordenaciones de los clanes maximales, $(C_1,C_2,C_3,C_4,C_5)$ y $(C_5,C_4,C_3,C_2,C_1)$. De forma análoga las representaciones del centro y de la parte inferior nos sugieren cada una dos ordenaciones, de derecha a izquierda y de izquierda a derecha. En general, en este acaso particular cualquier permutación de los clanes nos da una ordenación. 
+    Sin embargo ambos ordenes son dependientes de la representación por
+    intervalos que uno haya elegido. En \cref{fig:OrdMaxClns} tenemos una
+    estrella de 5 picos y a la derecha se muestran tres posibles
+    representaciones por intervalos de dicha gráfica. La estrella tiene como
+    clanes maximales a los conjuntos $C_{i-1}=\{1,i\}$ con $i \in
+    \{2,3,4,5,6\}$, es decir un pico de la estrella acompañado del centro. En la
+    representación por intervalos de la parte superior se ocurre inmediatamente
+    dos ordenaciones de los clanes maximales, $(C_1,C_2,C_3,C_4,C_5)$ y
+    $(C_5,C_4,C_3,C_2,C_1)$. De forma análoga las representaciones del centro y
+    de la parte inferior nos sugieren cada una dos ordenaciones, de derecha a
+    izquierda y de izquierda a derecha. En general, en este acaso particular
+    cualquier permutación de los clanes nos da una ordenación. 
     
     \begin{figure}[H]
       \centering
@@ -161,31 +337,55 @@ Una vez que uno cuenta con un la representación por intervalos de una gráfica,
       \label{fig:OrdMaxClns}
     \end{figure}
     
-    La finalidad de todo lo anterior es para hacer notar que, si bien los clanes pueden ser ordenados, necesitamos una característica la cual no dependa de la representación, si no mas bien de la interacción entre los vértices y los clanes maximales. Así notemos de \crefrange{fig:208} cualquier orden que demos de 
+    La finalidad de todo lo anterior es para hacer notar que, si bien los clanes
+    pueden ser ordenados, necesitamos una característica la cual no dependa de
+    la representación, si no mas bien de la interacción entre los vértices y los
+    clanes maximales. Así notemos de \crefrange{fig:208} cualquier orden que
+    demos de 
 \end{comment}
 
-En efecto, la propiedad de poder ordenar los clanes maximales de tal forma que para todo vértice $v\in V$ los clanes maximales que contienen a $v$ aparecen consecutivamente en el orden, es una condición necesaria y suficiente para ser una gráfica de intervalos. A este tipo de ordenamiento de los clanes le llamaremos \indice{enumeración consecutiva de clanes}.
+En efecto, la propiedad de poder ordenar los clanes maximales de tal forma que
+para todo vértice $v\in V$ los clanes maximales que contienen a $v$ aparecen
+consecutivamente en el orden, es una condición necesaria y suficiente para ser
+una gráfica de intervalos. A este tipo de ordenamiento de los clanes le
+llamaremos \indice{enumeración consecutiva de clanes}.
 
 \begin{teorema}
     \label{teo:Int-MaxClns}
-    Sea $G$ una gráfica. $G$ es gráfica de intervalos si y solo si $G$ tiene una enumeración consecutiva de sus clanes maximales.
+    Sea $G$ una gráfica. $G$ es gráfica de intervalos si y solo si $G$ tiene una
+    enumeración consecutiva de sus clanes maximales.
 \end{teorema}
 
-La prueba de esta primer caracterización la posponemos hasta el final del capítulo junto a la prueba de las otras dos caracterizaciones que daremos.
+La prueba de esta primer caracterización la posponemos hasta el final del
+capítulo junto a la prueba de las otras dos caracterizaciones que daremos.
 
 \section{Orientaciones transitivas}
-Como vimos en el capitulo anterior, que una gráfica sea cordal no es una condición suficiente para que una gráfica sea de intervalos. En esta sección introducimos una propiedad adicional, la cual nos da la suficiencia.
+Como vimos en el capitulo anterior, que una gráfica sea cordal no es una
+condición suficiente para que una gráfica sea de intervalos. En esta sección
+introducimos una propiedad adicional, la cual nos da la suficiencia.
 
-Dada un gráfica $G$, una \indice{orientación transitiva} consiste en, nosotros poder asignar una orientación a las aristas de la gráfica formando así una gráfica dirigida $(V(G),F)$ de tal forma que $ab\in F$ y $bc\in F$ implica que $ac\in F$ $\forall a,b,c \in V(G)$
+Dada un gráfica $G$, una \indice{orientación transitiva} consiste en, nosotros
+poder asignar una orientación a las aristas de la gráfica formando así una
+gráfica dirigida $(V(G),F)$ de tal forma que $ab\in F$ y $bc\in F$ implica que
+$ac\in F$ $\forall a,b,c \in V(G)$
 
 Veamos el siguiente ejemplo bastante sencillo.
 
-Tenemos un 3-ciclo. Y nos preguntamos si este tiene la propiedad de orientación transitiva. Para esto debemos asignar dirección $F$ a sus aristas, de tal forma que $ab\in F$ y $bc\in F$ implica que $ac\in F$.
-Por ejemplo, damos la orientación $F_1$ tal que; al arista diagonal de la izquierda le damos sentido de arriba hacia abajo, al arista horizontal le damos sentido de izquierda a derecha, y finalmente al arista diagonal restante (de la derecha) debe ir de arriba hacia abajo.
+Tenemos un 3-ciclo. Y nos preguntamos si este tiene la propiedad de orientación
+transitiva. Para esto debemos asignar dirección $F$ a sus aristas, de tal forma
+que $ab\in F$ y $bc\in F$ implica que $ac\in F$. Por ejemplo, damos la
+orientación $F_1$ tal que; al arista diagonal de la izquierda le damos sentido
+de arriba hacia abajo, al arista horizontal le damos sentido de izquierda a
+derecha, y finalmente al arista diagonal restante (de la derecha) debe ir de
+arriba hacia abajo.
     
-Como un segundo ejemplo damos la orientación $F_2$ tal que; al arista diagonal de la izquierda le damos sentido de abajo hacia arriba, al arista horizontal le damos sentido de derecha a izquierda, y al arista diagonal de la derecha abajo hacia arriba.
+Como un segundo ejemplo damos la orientación $F_2$ tal que; al arista diagonal
+de la izquierda le damos sentido de abajo hacia arriba, al arista horizontal le
+damos sentido de derecha a izquierda, y al arista diagonal de la derecha abajo
+hacia arriba.
 
-Es fácil comprobar que este par de orientaciones son en efecto un par de orientaciones transitivas de la gráfica $G$.
+Es fácil comprobar que este par de orientaciones son en efecto un par de
+orientaciones transitivas de la gráfica $G$.
 
 
 \begin{figure}[H]
@@ -195,30 +395,46 @@ Es fácil comprobar que este par de orientaciones son en efecto un par de orient
   \label{fig:GrfTrnsOrtbl}
 \end{figure}
 
-Aquellas gráficas no dirigidas que pueden ser transitivamente orientables, les llamaremos \textbf{gráficas} \indiceSub{gráfica}{de comparabilidad}.
+Aquellas gráficas no dirigidas que pueden ser transitivamente orientables, les
+llamaremos \textbf{gráficas} \indiceSub{gráfica}{de comparabilidad}.
 
-A continuación dejamos un par mas de gráficas de comparabilidad y sus respectivas orientaciones $H$ y $E$.
+A continuación dejamos un par mas de gráficas de comparabilidad y sus
+respectivas orientaciones $H$ y $E$.
 
 \begin{figure}[H]
   \centering
-  \includegraphics[width=0.6
-  \textwidth]{recursos/capturas/206.jpg}
+  \includegraphics[width=0.6 \textwidth]{recursos/capturas/206.jpg}
   \caption{Gráficas $G_1$ y $G_2$ y las orientaciones transitivas $H$ y $E$ de $G_1$ y $G_2$ respectivamente.}
   \label{fig:206}
 \end{figure}
 
-Para terminar de nutrir el concepto de gráfica de comparabilidad, veamos un ejemplo de una gráfica la cual no es transitivamente orientable.
+Para terminar de nutrir el concepto de gráfica de comparabilidad, veamos un
+ejemplo de una gráfica la cual no es transitivamente orientable.
 
-En el siguiente ejemplo tenemos el 5-ciclo, y afirmamos que no es posible dar una orientación de las aristas de tal forma que esta resulte una orientación transitiva.
+En el siguiente ejemplo tenemos el 5-ciclo, y afirmamos que no es posible dar
+una orientación de las aristas de tal forma que esta resulte una orientación
+transitiva.
     
-Veamos la \cref{fig:207}.
-Tratemos de dar una orientación transitiva, empecemos tomando un vértice cualquiera, por ejemplo tomamos el vértice $A$ y tomamos una de sus aristas y le asignamos un sentido a esta, por ejemplo como se ve en la gráfica de en medio, asiganamos una flecha que va de $A$ a $B$.
-Continuemos con $B$ podemos ahora asignarle a su arista restante la dirección hacia $C$. Sin embargo, con esta orientación tendríamos que debería haber una flecha de $A$ a $C$ (Ya que queremos que la orientación sea transitiva), lo cual no puede ser. Esto nos dice que el arista de $BC$ debe ser orientada de $C$ a $B$, como la ilustración de la derecha indica.
+Veamos la \cref{fig:207}. Tratemos de dar una orientación transitiva, empecemos
+tomando un vértice cualquiera, por ejemplo tomamos el vértice $A$ y tomamos una
+de sus aristas y le asignamos un sentido a esta, por ejemplo como se ve en la
+gráfica de en medio, asiganamos una flecha que va de $A$ a $B$. Continuemos con
+$B$ podemos ahora asignarle a su arista restante la dirección hacia $C$. Sin
+embargo, con esta orientación tendríamos que debería haber una flecha de $A$ a
+$C$ (Ya que queremos que la orientación sea transitiva), lo cual no puede ser.
+Esto nos dice que el arista de $BC$ debe ser orientada de $C$ a $B$, como la
+ilustración de la derecha indica.
     
-En general debemos de evitar que haya 2-caminos cuyas  flechas tengan la misma orientación (Gráfica del centro). Así siguiendo la asignación de orientaciones, el arista $CD$, debe ir de $C$ hasta $D$, continuando, el arista $DE$ debe ir de $E$ a $D$ y siguiendo de esta forma, el arista $EA$ debería ir de ... ¿$E$ a $A$? ¿$A$ hacia $E$? ¡Ambos casos nos llevan a flechas con las que no contamos!
-Aquí se observa la imposibilidad de encontrar una orientación transitiva para $C_5$
+En general debemos de evitar que haya 2-caminos cuyas  flechas tengan la misma
+orientación (Gráfica del centro). Así siguiendo la asignación de orientaciones,
+el arista $CD$, debe ir de $C$ hasta $D$, continuando, el arista $DE$ debe ir de
+$E$ a $D$ y siguiendo de esta forma, el arista $EA$ debería ir de ... ¿$E$ a
+$A$? ¿$A$ hacia $E$? ¡Ambos casos nos llevan a flechas con las que no contamos!
+Aquí se observa la imposibilidad de encontrar una orientación transitiva para
+$C_5$
 
-Y es fácil observar, que este fenómeno puede ser fácilmente extendible hacia los ciclos de longitud $k$ impar, $k\geq 5$
+Y es fácil observar, que este fenómeno puede ser fácilmente extendible hacia los
+ciclos de longitud $k$ impar, $k\geq 5$
 
 \begin{figure}[H]
   \centering
@@ -227,8 +443,11 @@ Y es fácil observar, que este fenómeno puede ser fácilmente extendible hacia 
   \label{fig:207}
 \end{figure}
 
-Una vez ya asimilado el concepto, regresamos a nuestra tarea, queríamos ver si esta es una propiedad que nos ayude a caracterizar a las gráficas de intervalos. La respuesta, como es de esperarse, es que si nos ayudará a caracterizar a las gráficas de intervalos.
-Algo interesante que veremos y probaremos a continuación es que el complemento de una gráfica de intervalos es gráfica de comparación.
+Una vez ya asimilado el concepto, regresamos a nuestra tarea, queríamos ver si
+esta es una propiedad que nos ayude a caracterizar a las gráficas de intervalos.
+La respuesta, como es de esperarse, es que si nos ayudará a caracterizar a las
+gráficas de intervalos. Algo interesante que veremos y probaremos a continuación
+es que el complemento de una gráfica de intervalos es gráfica de comparación.
 
 \begin{teorema}
     \label{teo:Int-Comprbldd}
@@ -236,32 +455,56 @@ Algo interesante que veremos y probaremos a continuación es que el complemento 
 \end{teorema}
 
 \begin{proof}
-    Sea $G=(V,E)$ una gráfica de intervalos y sea $\{I_v \}_{v\in V(G)}$ una representación de intervalos de $G$. Y ahora consideremos $ \bar{G} =(V, \bar{E})$ aquí buscamos encontrar un orientación $F$ de las aristas de $\bar{E}$ la cual sea transitiva.
+    Sea $G=(V,E)$ una gráfica de intervalos y sea $\{I_v \}_{v\in V(G)}$ una
+    representación de intervalos de $G$. Y ahora consideremos $ \bar{G} =(V,
+    \bar{E})$ aquí buscamos encontrar un orientación $F$ de las aristas de
+    $\bar{E}$ la cual sea transitiva.
     
     La definimos de la siguiente forma.
     
-    $xy\in F \iff I_x<I_y$ $(\forall xy\in \bar{E})$
-    Donde entendemos que $I_x$ esta a la izquierda de $I_y$ si,
-    $\forall a\in I_x, \forall b \in I_y(a<b)$
+    $xy\in F \iff I_x<I_y$ $(\forall xy\in \bar{E})$ Donde entendemos que $I_x$
+    esta a la izquierda de $I_y$ si, $\forall a\in I_x, \forall b \in I_y(a<b)$
 
-    Finalmente esta orientación resulta ser transitiva como mera consecuencia de la transitividad de $\mathbb{R}$.
-    $(I_x < I_y) \wedge (I_y < I_z) \Rightarrow (I_x<I_z) $
+    Finalmente esta orientación resulta ser transitiva como mera consecuencia de
+    la transitividad de $\mathbb{R}$. $(I_x < I_y) \wedge (I_y < I_z)
+    \Rightarrow (I_x<I_z) $
 \end{proof}
 
-Ya hemos advertido que nuestra caracterización de las gráficas de intervalos, necesita de la propiedad cordal y que el complemento sea una gráfica de comparación. Sin embargo, es necesario comprobar antes si no es suficiente el hecho de que una gráfica satisfaga que su complemento es de comparabilidad, para garantizar que la gráfica es de intervalos. Un ejemplo muy sencillo para exhibir la insuficiencia es el 4-ciclo sin cuerdas. Es decir tomamos a $G=C_4$, luego $\bar{G}$ consta de solo dos aristas y se cumple que es orientable transitivamente casi por vacuidad.
+Ya hemos advertido que nuestra caracterización de las gráficas de intervalos,
+necesita de la propiedad cordal y que el complemento sea una gráfica de
+comparación. Sin embargo, es necesario comprobar antes si no es suficiente el
+hecho de que una gráfica satisfaga que su complemento es de comparabilidad, para
+garantizar que la gráfica es de intervalos. Un ejemplo muy sencillo para exhibir
+la insuficiencia es el 4-ciclo sin cuerdas. Es decir tomamos a $G=C_4$, luego
+$\bar{G}$ consta de solo dos aristas y se cumple que es orientable
+transitivamente casi por vacuidad.
 
-Por lo tanto, se hace visible la necesidad de una segunda propiedad. En el siguiente teorema damos la caracterización completa.
+Por lo tanto, se hace visible la necesidad de una segunda propiedad. En el
+siguiente teorema damos la caracterización completa.
 
 \begin{teorema}
 \label{teo:Crctzn1}
-    $G$ es gráfica de intervalos si y solo si $G$ es cordal y su complemento es gráfica de comparabilidad.
+    $G$ es gráfica de intervalos si y solo si $G$ es cordal y su complemento es
+    gráfica de comparabilidad.
 \end{teorema}
 
 \section{Tripletas asteroidales}
 \label{sec:AstTrpls}
-Por ultimo introducimos una estructura la cual es imposible tener en una gráfica la cual es de intervalos, y este hecho complementa la propiedad cordal para caracterizar a las gráficas de intervalos.
+Por ultimo introducimos una estructura la cual es imposible tener en una gráfica
+la cual es de intervalos, y este hecho complementa la propiedad cordal para
+caracterizar a las gráficas de intervalos.
 
-Dada una gráfica $G$. Decimos que tres vértices distintos $a_1,a_2,a_3$ forman una \indice{tripleta asteroidal} si y solo si cualesquiera de ellos dos son conectados por un camino el cual evita al tercer vértice y todos sus vecinos. Una gráfica la cual tenga una tripleta asteroidal es llamada \indiceSub{gráfica}{asteroidal}. En \cref{fig:GrafAstrdl} exhibimos una gráfica la cual tiene una tripleta asteroidal. Más en especifico, los vértices $1,5,10$ conforman una tripeta asteroidal, ya que por ejemplo podemos tomar $(1,2,4,7,5)$ la cual es una 1,5-trayectoria y esta evita a la vecindad cerrada del vértice 10, también se tiene que $(1,2,4,8,10)$ es una 1,10-trayectoria que evita a $V[10]$, la vecindad cerrada del vértice 10 y finalmente se tiene la trayectoria $(5,7,4,8,10)$ la cual es una 5,10-trayectoria que evita a $V[1]$.
+Dada una gráfica $G$. Decimos que tres vértices distintos $a_1,a_2,a_3$ forman
+una \indice{tripleta asteroidal} si y solo si cualesquiera de ellos dos son
+conectados por un camino el cual evita al tercer vértice y todos sus vecinos.
+Una gráfica la cual tenga una tripleta asteroidal es llamada
+\indiceSub{gráfica}{asteroidal}. En \cref{fig:GrafAstrdl} exhibimos una gráfica
+la cual tiene una tripleta asteroidal. Más en especifico, los vértices $1,5,10$
+conforman una tripeta asteroidal, ya que por ejemplo podemos tomar $(1,2,4,7,5)$
+la cual es una 1,5-trayectoria y esta evita a la vecindad cerrada del vértice
+10, también se tiene que $(1,2,4,8,10)$ es una 1,10-trayectoria que evita a
+$V[10]$, la vecindad cerrada del vértice 10 y finalmente se tiene la trayectoria
+$(5,7,4,8,10)$ la cual es una 5,10-trayectoria que evita a $V[1]$.
 
 \begin{figure}[H]
   \centering
@@ -270,14 +513,28 @@ Dada una gráfica $G$. Decimos que tres vértices distintos $a_1,a_2,a_3$ forman
   \label{fig:GrafAstrdl}
 \end{figure}
 
-A continuación mostramos que es incompatible el hecho de que una gráfica tenga una enumeración consecutiva de sus clanes maximales y la presencia de tripletas asteroidales. Sea $G$ una gráfica de intervalos y $x,y,z \in V(G)$ una terna arbitraria de vértices de $G$. Supongamos adicionalmente que $\{C_i\}_{i=1}^n$ es una enumeración consecutiva de los clanes maximales de $G$. Supongamos sin pérdida de generalidad que $x\in C_i, y \in C_j, z\in C_h$ e $i\leq j \leq h$. Luego cualquier $xz$-camino debe pasar por $C_j$, esto es no puede evitar a $y$ o algún vecino de $y$. Por ende no puede haber tripletas asteroidales en una gráfica que tenga una enumeración consecutiva de clanes maximales. Luego, asumiendo verdadero \cref{teo:Int-MaxClns}, se deduce que es imposible la presencia de tripletas asteroidales en una gráfica de intervalos. Este hecho se ve reflejado en el teorema de Lekkerkerker y Boland, que enunciamos a continuación.
+A continuación mostramos que es incompatible el hecho de que una gráfica tenga
+una enumeración consecutiva de sus clanes maximales y la presencia de tripletas
+asteroidales. Sea $G$ una gráfica de intervalos y $x,y,z \in V(G)$ una terna
+arbitraria de vértices de $G$. Supongamos adicionalmente que $\{C_i\}_{i=1}^n$
+es una enumeración consecutiva de los clanes maximales de $G$. Supongamos sin
+pérdida de generalidad que $x\in C_i, y \in C_j, z\in C_h$ e $i\leq j \leq h$.
+Luego cualquier $xz$-camino debe pasar por $C_j$, esto es no puede evitar a $y$
+o algún vecino de $y$. Por ende no puede haber tripletas asteroidales en una
+gráfica que tenga una enumeración consecutiva de clanes maximales. Luego,
+asumiendo verdadero \cref{teo:Int-MaxClns}, se deduce que es imposible la
+presencia de tripletas asteroidales en una gráfica de intervalos. Este hecho se
+ve reflejado en el teorema de Lekkerkerker y Boland, que enunciamos a
+continuación.
 
 \begin{teorema}
     \label{teo:Int-Ast-free}
-    Una gráfica finita $G$ es de intervalos si y solo si es cordal y no tiene tripletas asteroidales.
+    Una gráfica finita $G$ es de intervalos si y solo si es cordal y no tiene
+    tripletas asteroidales.
 \end{teorema}
 
-Con todo lo anterior, podemos dar paso al siguiente teorema que caracteriza a las gráficas de intervalos.
+Con todo lo anterior, podemos dar paso al siguiente teorema que caracteriza a
+las gráficas de intervalos.
 
 \begin{teorema}
 \label{teo:CarGrfsInt}
@@ -289,18 +546,121 @@ Con todo lo anterior, podemos dar paso al siguiente teorema que caracteriza a la
 \end{teorema}
 
 \begin{proof}
-    i)$\to$ ii) En \cref{teo:Int-Chord} y \cref{teo:Int-Comprbldd} probamos que el hecho de ser gráfica de intervaos implica que la gráfica debe ser cordal y su complemento es necesariamente de comparabilidad, por lo que esta primer implicación queda cubierta.
+    i)$\to$ ii) En \cref{teo:Int-Chord} y \cref{teo:Int-Comprbldd} probamos que
+    el hecho de ser gráfica de intervaos implica que la gráfica debe ser cordal
+    y su complemento es necesariamente de comparabilidad, por lo que esta primer
+    implicación queda cubierta.
     
-    ii) $\to$ iii) Supongamos que $(G,E)$ es una gráfica cordal y que $(\bar{G}, \bar{E})$ es gráfica de comparación, con $F$ un ordenamiento transitivo de $\bar{E}$. A continuación damos un ordenamiento, el cual afirmamos que ordenamiento lineal de $\Sigma$ el conjunto de todos los clanes maximales de $G$. Dados  $A_1, A_2$ clanes maximales, definimos la relación $<$ como $A_1 < A_2$ si y solo si hay una flecha de la orientación transitiva $F$, desde $A_1$ hasta $A_2$, es decir que existan vértices $a_1 \in A_1$ y $a_2 \in A_2$ tales que $(a_1,a_2)\in F$. 
-    Ahora deberemos comprobar que dicha relación está bien definida, por lo que hay que garantizar dos cosas. En principio que dados dos clanes maximales, en efecto exista una flecha de $F$ que los conecte. Como segunda punto habrá que verificar que en caso de existir un par de flechas en $F$, que unan a $A_1$ y $A_2$ estas tengan la misma orientación. Para probar lo primero, tomemos $A_1,A_2$ un par de clanes maximales de $G$ ahora supongamos que no existe ninguna flecha en $F$ que este conformada por un vértice en $A_1$ y otro en $A_2$. Esto nos llevaría por definición de complemento que para todo par de vértices $a_1\in A_1$ y $a_2 \in A_2$,  $a_1a_2\in E$ o $a_2a_1\in E$, lo que nos lleva a que $A_1 \cup A_2$ es una clan de $G$, lo que contradice la maximalidad tanto de $A_1$ como de $A_2$. Ahora veamos vía contradicción que el segundo punto es satisfecho. Supongamos que tenemos un par de flechas que están conformadas por elementos de $A_1$ y $A_2$ pero que tienen sentidos contrarios, es decir tomamos $(a,b)\in F$ y $(d,c)\in F$ con $a,c \in A_1$ y $b,d\in A_2$, notemos que si $a=c $ o $b=d$ por transitividad se llega a una contradicción, en el primer caso $a=c$ se tiene que $(a,b), (d,a)\in F$ luego $(a,a)\in F$ pero al ser $G$ reflexiva esto no puede ser. El segundo caso es totalmente análogo. Ahora veamos que al asumir que los cuatro vértices son distintos entre sí, sigue arrojándonos una contradicción. En este caso, tenemos que $ac, bd\in E$ al pertenecer a los mismos clanes maximales, adicionalmente tenemos que $ad$ y $bc$ no pueden ser ambas aristas de $E$ pues de serlo tendríamos el 4-ciclo $(a,d,b,c,a)$ y al ser $G$ cordal se llegaría a $ab\in E$ o $cd\in E$ lo que no es posible al pertenecer ambos a $\bar{E}$. Luego podemos asumir sin perdida de generalidad que $ad \in \bar{E}$. Si se tiene que $(a,d)\in F$ usando la transitividad y que $(d,c)\in F$ se llega a que $(a,c)\in F$ y en particular $ac\in \bar{E}$ lo que es imposible ya que $a$ y $c$ pertenecen al mismo clan. De forma análoga, si $(d,a)\in F$ usando transitividad, se tiene que $(d,b)\in F$ y nuevamente se llega a una contradicción al pertenecer ambos al mismo clan. Por todo lo anterior, dados dos clanes maximales, y dos flechas incidentes en estos, las flechas tienen la misma orientación. 
-    Finalmente verifiquemos que en efecto es un ordenamiento lineal de $\Sigma$. Ya hemos visto que cualesquiera dos clanes maximales, estos siempre tienen una flecha que los une, así cualesquiera dos clanes siempre son comparables. Ahora veamos que se tiene la transitividad, supongamos que $C_1,C_2, C_3$ son tres clanes maximales de $G$ tales que $C_1<C_2$ y $C_2 <C_3$, por como esta definida la relación, existen $w\in C_1, x,y\in C_2, z\in C_3$ de tal forma que $wx, yz \in F$ luego si $xz \in \bar{E}$ o $wy \in \bar{E}$ usando el hecho que las flechas tienen la misma orientación, y la hipótesis de que la orientación es transitiva, se llega a que $wz \in F$ y así $C_1 < C_3$. Así podemos suponer que $wy, xz \in E$, esto aunado al hecho de que $x,y\in C_2$ y $C_2$ es clan, se tiene que $wz\notin E$ ya que en caso contrario se tendría que hay un 4 ciclo sin cuerdas $(w,y,x,z,w)$, lo que por hipótesis no es posible al suponer $G$ cordal. Así $wz\in \bar{E}$ y mas aún $wz \in F$ ya que si $zw\in F$ al ser $F$ orientable transitivamente $zx \in F$ lo que no es posible pues $yz\in F$ y se tendrían un par de flechas incidentes de $C_2, C_3$ en sentidos opuestos. Por lo que, la relación es transitiva. Finalmente supongamos que $\Sigma$ ha sido ordenado y que ${C_i}_{i=1}^m$ es el ordenamiento de los clanes con $C_i<C_j si i<j$ veamos que si $C_i<C_j<C_k$ y $x\in C_i $, $x\in C_k$ entonces $x\in C_j$. Veamos vía contradicción que esto sucede. Supongamos entonces que $x\notin C_j$. Tomemos a continuación $y\in C_j$ tal que $xy\notin E$ esto nos lleva a que $xy\in bar{E}$ y aunado a $C_i<C_j$ se tiene que $xy\in F$ por otro lado $C_j< C_k$ nos lleva a que $yx\in F$ lo que nos es posible. Por lo tanto acabamos de exhibir una enumeración consecutiva de los clanes maximales de $G$.
+    ii) $\to$ iii) Supongamos que $(G,E)$ es una gráfica cordal y que $(\bar{G},
+    \bar{E})$ es gráfica de comparación, con $F$ un ordenamiento transitivo de
+    $\bar{E}$. A continuación damos un ordenamiento, el cual afirmamos que
+    ordenamiento lineal de $\Sigma$ el conjunto de todos los clanes maximales de
+    $G$. Dados  $A_1, A_2$ clanes maximales, definimos la relación $<$ como $A_1
+    < A_2$ si y solo si hay una flecha de la orientación transitiva $F$, desde
+    $A_1$ hasta $A_2$, es decir que existan vértices $a_1 \in A_1$ y $a_2 \in
+    A_2$ tales que $(a_1,a_2)\in F$. Ahora deberemos comprobar que dicha
+    relación está bien definida, por lo que hay que garantizar dos cosas. En
+    principio que dados dos clanes maximales, en efecto exista una flecha de $F$
+    que los conecte. Como segunda punto habrá que verificar que en caso de
+    existir un par de flechas en $F$, que unan a $A_1$ y $A_2$ estas tengan la
+    misma orientación. Para probar lo primero, tomemos $A_1,A_2$ un par de
+    clanes maximales de $G$ ahora supongamos que no existe ninguna flecha en $F$
+    que este conformada por un vértice en $A_1$ y otro en $A_2$. Esto nos
+    llevaría por definición de complemento que para todo par de vértices $a_1\in
+    A_1$ y $a_2 \in A_2$,  $a_1a_2\in E$ o $a_2a_1\in E$, lo que nos lleva a que
+    $A_1 \cup A_2$ es una clan de $G$, lo que contradice la maximalidad tanto de
+    $A_1$ como de $A_2$. Ahora veamos vía contradicción que el segundo punto es
+    satisfecho. Supongamos que tenemos un par de flechas que están conformadas
+    por elementos de $A_1$ y $A_2$ pero que tienen sentidos contrarios, es decir
+    tomamos $(a,b)\in F$ y $(d,c)\in F$ con $a,c \in A_1$ y $b,d\in A_2$,
+    notemos que si $a=c $ o $b=d$ por transitividad se llega a una
+    contradicción, en el primer caso $a=c$ se tiene que $(a,b), (d,a)\in F$
+    luego $(a,a)\in F$ pero al ser $G$ reflexiva esto no puede ser. El segundo
+    caso es totalmente análogo. Ahora veamos que al asumir que los cuatro
+    vértices son distintos entre sí, sigue arrojándonos una contradicción. En
+    este caso, tenemos que $ac, bd\in E$ al pertenecer a los mismos clanes
+    maximales, adicionalmente tenemos que $ad$ y $bc$ no pueden ser ambas
+    aristas de $E$ pues de serlo tendríamos el 4-ciclo $(a,d,b,c,a)$ y al ser
+    $G$ cordal se llegaría a $ab\in E$ o $cd\in E$ lo que no es posible al
+    pertenecer ambos a $\bar{E}$. Luego podemos asumir sin perdida de
+    generalidad que $ad \in \bar{E}$. Si se tiene que $(a,d)\in F$ usando la
+    transitividad y que $(d,c)\in F$ se llega a que $(a,c)\in F$ y en particular
+    $ac\in \bar{E}$ lo que es imposible ya que $a$ y $c$ pertenecen al mismo
+    clan. De forma análoga, si $(d,a)\in F$ usando transitividad, se tiene que
+    $(d,b)\in F$ y nuevamente se llega a una contradicción al pertenecer ambos
+    al mismo clan. Por todo lo anterior, dados dos clanes maximales, y dos
+    flechas incidentes en estos, las flechas tienen la misma orientación.
+    Finalmente verifiquemos que en efecto es un ordenamiento lineal de $\Sigma$.
+    Ya hemos visto que cualesquiera dos clanes maximales, estos siempre tienen
+    una flecha que los une, así cualesquiera dos clanes siempre son comparables.
+    Ahora veamos que se tiene la transitividad, supongamos que $C_1,C_2, C_3$
+    son tres clanes maximales de $G$ tales que $C_1<C_2$ y $C_2 <C_3$, por como
+    esta definida la relación, existen $w\in C_1, x,y\in C_2, z\in C_3$ de tal
+    forma que $wx, yz \in F$ luego si $xz \in \bar{E}$ o $wy \in \bar{E}$ usando
+    el hecho que las flechas tienen la misma orientación, y la hipótesis de que
+    la orientación es transitiva, se llega a que $wz \in F$ y así $C_1 < C_3$.
+    Así podemos suponer que $wy, xz \in E$, esto aunado al hecho de que $x,y\in
+    C_2$ y $C_2$ es clan, se tiene que $wz\notin E$ ya que en caso contrario se
+    tendría que hay un 4 ciclo sin cuerdas $(w,y,x,z,w)$, lo que por hipótesis
+    no es posible al suponer $G$ cordal. Así $wz\in \bar{E}$ y mas aún $wz \in
+    F$ ya que si $zw\in F$ al ser $F$ orientable transitivamente $zx \in F$ lo
+    que no es posible pues $yz\in F$ y se tendrían un par de flechas incidentes
+    de $C_2, C_3$ en sentidos opuestos. Por lo que, la relación es transitiva.
+    Finalmente supongamos que $\Sigma$ ha sido ordenado y que ${C_i}_{i=1}^m$ es
+    el ordenamiento de los clanes con $C_i<C_j si i<j$ veamos que si
+    $C_i<C_j<C_k$ y $x\in C_i $, $x\in C_k$ entonces $x\in C_j$. Veamos vía
+    contradicción que esto sucede. Supongamos entonces que $x\notin C_j$.
+    Tomemos a continuación $y\in C_j$ tal que $xy\notin E$ esto nos lleva a que
+    $xy\in bar{E}$ y aunado a $C_i<C_j$ se tiene que $xy\in F$ por otro lado
+    $C_j< C_k$ nos lleva a que $yx\in F$ lo que nos es posible. Por lo tanto
+    acabamos de exhibir una enumeración consecutiva de los clanes maximales de
+    $G$.
 
-    iii) $\to$ i) Supongamos que hay una enumeración consecutiva de los clanes maximales de $G$, ahora para cada vértice $x$ definimos $I(x)$ como el conjunto de todos los clanes maximales que tienen a $x$. Los conjuntos $I(x)$ así definidos son intervalos en el conjunto linealmente ordenado $(\Sigma,<)$. Ahora hay que probar que $xy\in E \Leftrightarrow I(x)\cap I(y)\neq \emptyset$. Si $xy\in E$ entonces debe existir un clan maximal $C$ tal que $x,y \in C$ luego $C\in I(x)$ y $C\in I(y)$. Así $I(x)\cap I(y)\neq \emptyset$, ahora si $I(x)\cap I(y)\neq \emptyset$ entonces existe $C\in I(x)\cap I(y)$ y así $x,y\in C$. Luego al pertenecer al mismo clan, se tiene que $xy\in E$. Por lo que $G$ es de intervalos.
+    iii) $\to$ i) Supongamos que hay una enumeración consecutiva de los clanes
+    maximales de $G$, ahora para cada vértice $x$ definimos $I(x)$ como el
+    conjunto de todos los clanes maximales que tienen a $x$. Los conjuntos
+    $I(x)$ así definidos son intervalos en el conjunto linealmente ordenado
+    $(\Sigma,<)$. Ahora hay que probar que $xy\in E \Leftrightarrow I(x)\cap
+    I(y)\neq \emptyset$. Si $xy\in E$ entonces debe existir un clan maximal $C$
+    tal que $x,y \in C$ luego $C\in I(x)$ y $C\in I(y)$. Así $I(x)\cap I(y)\neq
+    \emptyset$, ahora si $I(x)\cap I(y)\neq \emptyset$ entonces existe $C\in
+    I(x)\cap I(y)$ y así $x,y\in C$. Luego al pertenecer al mismo clan, se tiene
+    que $xy\in E$. Por lo que $G$ es de intervalos.
     
-    i) $\to $ iv) Ya sabemos que ser cordal es una necesidad para toda gráfica de intervalos. Ahora usando que las primeras tres proposiciones son equivalentes, en particular la primera y la tercera. Se llega a que una gráfica de intervalos no puede tener tripletas asteroidales, como se demostró un párrafo antes d\cref{teo:Int-Ast-free}.    
+    i) $\to $ iv) Ya sabemos que ser cordal es una necesidad para toda gráfica
+    de intervalos. Ahora usando que las primeras tres proposiciones son
+    equivalentes, en particular la primera y la tercera. Se llega a que una
+    gráfica de intervalos no puede tener tripletas asteroidales, como se
+    demostró un párrafo antes d\cref{teo:Int-Ast-free}.    
 
-    iii) $\to$ iv) Para concluir la cadena de equivalencias, probaremos lo siguiente vía inducción sobre el número de clanes maximales. Si $G $ es una gráfica cordal, entonces $G$ tiene una tripleta asteroidal ó $G$ tiene una enumeración consecutiva de sus clanes maximales. Si $G$ tiene un único clan maximal etonces trivialmente se tiene una enumeración consecutiva de sus clanes maximales.  Ahora supongamos que toda gráfica cordal con $k$ o menos clanes maximales o bien tiene una tripleta asteroidal o tiene una enumeración consecutiva de sus clanes maximales. Ahora supongamos que $G$ es una gráfica cordal con $k+1$ clanes maximales $\{C_i\}_{i=1}^{k+1}$. Denotemos con $H$ a la gráfica que se obtiene al unir los clanes $C_1, \dots , C_k$, es decir $H=G[\bigcup_{i=1}^k C_i ]$. Denotamos con $C$ al clan $C_{k+1}$ y por $S_i$ a lo que se obtiene de $C_{i}\cap (\bigcup_{j=1}^{i-1} C_j)$, en especifico, denotaremos por $S$ a $S_{k+1}$. Por hipótesis inductiva, $H$ tiene una tripleta asteroidal o bien una enumeración consecutiva de sus clanes maximales. En el caso en el que $H$ tiene una tripleta asteroidal, se concluye que dicha tripleta asteroidal también lo es de $G$. Ahora bien, si $H$ no contiene tripletas asteroidales, podemos asumir sin pérdida de generalidad que la enumeración consecutiva de los clanes maximales de $H$ es precisamente $C_1,\dots, C_k$ (en otro caso basta hacer un reacomodo de los índices).
-    Así las cosas, buscamos cómo acomodar al clan $C$ dentro de la enumeracíon consecutiva de los clanes maximales de $H$, de forma que ahora nos quede una enumeracíon consecutiva de clanes maximales de $G$. Empecemos descartando dos casos sencillos, el primero de ellos, si $S\subseteq C_1$ o $S\subseteq C_k$ entonces al situar a $C$ antes de $C_1$ o situarlo después de $C_k$ obtenemos una enumeración consecutiva de los clanes maximales de $G$. Por lo que solo basta atacar el caso en el que $S$ se queda contenida en algún clan maximal intermedio, es decir $S\subseteq C_j$ tal que $1<j<k$. 
+    iii) $\to$ iv) Para concluir la cadena de equivalencias, probaremos lo
+    siguiente vía inducción sobre el número de clanes maximales. Si $G $ es una
+    gráfica cordal, entonces $G$ tiene una tripleta asteroidal ó $G$ tiene una
+    enumeración consecutiva de sus clanes maximales. Si $G$ tiene un único clan
+    maximal etonces trivialmente se tiene una enumeración consecutiva de sus
+    clanes maximales.  Ahora supongamos que toda gráfica cordal con $k$ o menos
+    clanes maximales o bien tiene una tripleta asteroidal o tiene una
+    enumeración consecutiva de sus clanes maximales. Ahora supongamos que $G$ es
+    una gráfica cordal con $k+1$ clanes maximales $\{C_i\}_{i=1}^{k+1}$.
+    Denotemos con $H$ a la gráfica que se obtiene al unir los clanes $C_1, \dots
+    , C_k$, es decir $H=G[\bigcup_{i=1}^k C_i ]$. Denotamos con $C$ al clan
+    $C_{k+1}$ y por $S_i$ a lo que se obtiene de $C_{i}\cap (\bigcup_{j=1}^{i-1}
+    C_j)$, en especifico, denotaremos por $S$ a $S_{k+1}$. Por hipótesis
+    inductiva, $H$ tiene una tripleta asteroidal o bien una enumeración
+    consecutiva de sus clanes maximales. En el caso en el que $H$ tiene una
+    tripleta asteroidal, se concluye que dicha tripleta asteroidal también lo es
+    de $G$. Ahora bien, si $H$ no contiene tripletas asteroidales, podemos
+    asumir sin pérdida de generalidad que la enumeración consecutiva de los
+    clanes maximales de $H$ es precisamente $C_1,\dots, C_k$ (en otro caso basta
+    hacer un reacomodo de los índices). Así las cosas, buscamos cómo acomodar al
+    clan $C$ dentro de la enumeracíon consecutiva de los clanes maximales de
+    $H$, de forma que ahora nos quede una enumeracíon consecutiva de clanes
+    maximales de $G$. Empecemos descartando dos casos sencillos, el primero de
+    ellos, si $S\subseteq C_1$ o $S\subseteq C_k$ entonces al situar a $C$ antes
+    de $C_1$ o situarlo después de $C_k$ obtenemos una enumeración consecutiva
+    de los clanes maximales de $G$. Por lo que solo basta atacar el caso en el
+    que $S$ se queda contenida en algún clan maximal intermedio, es decir
+    $S\subseteq C_j$ tal que $1<j<k$. 
 
     
     \end{proof}
@@ -420,12 +780,12 @@ documento.
 \begin{figure}[ht!]
 \centering
 \begin{tikzpicture}
-\node (0) [vertex,label=180:$v_1$] at (0,0){};
-\node (1) [vertex,label=90:$v_2$]  at (1,0){};
+\node (0) [vertex,label=180:$v_1$] at (0,0){}; \node (1) [vertex,label=90:$v_2$]
+at (1,0){};
 \begin{scope}[xshift=2cm]
-\node (2) [vertex,label=90:$v_3$]  at (270:1){};
-\node (3) [vertex,label=0:$v_4$]   at (0:1){};
-\node (4) [vertex,label=90:$v_5$]  at (90:1){};
+\node (2) [vertex,label=90:$v_3$]  at (270:1){}; \node (3)
+[vertex,label=0:$v_4$]   at (0:1){}; \node (4) [vertex,label=90:$v_5$]  at
+(90:1){};
 \end{scope}
 
 \draw [myloop,in=60,out=120,looseness=12]
@@ -435,35 +795,31 @@ documento.
 \draw [myloop,in=240,out=300,looseness=12]
       (2) to node[below]{$e_9$} (2);
 
-\draw [edge]               (0) to node [above] {$e_3$} (1);
-\draw [edge]               (1) to node [below] {$e_4$} (2);
-\draw [edge]               (2) to node [below] {$e_5$} (3);
-\draw [edge,bend right=20] (3) to node [above] {$e_6$} (4);
-\draw [edge,bend left=20]  (3) to node [below] {$e_7$} (4);
-\draw [edge]               (4) to node [above] {$e_8$} (1);
+\draw [edge]               (0) to node [above] {$e_3$} (1); \draw [edge]
+(1) to node [below] {$e_4$} (2); \draw [edge]               (2) to node [below]
+{$e_5$} (3); \draw [edge,bend right=20] (3) to node [above] {$e_6$} (4); \draw
+[edge,bend left=20]  (3) to node [below] {$e_7$} (4); \draw [edge]
+(4) to node [above] {$e_8$} (1);
 
 
 % Componente derecha
 \begin{scope}[xshift=6cm]
-\node (5) [vertex,label=90:$v_6$]    at (0:1.5){};
-\node (6) [vertex,label=120:$v_7$]   at (120:1.5){};
-\node (7) [vertex,label=240:$v_8$]   at (240:1.5){};
-\node (8) [vertex,label=0:$v_9$]     at (3,1.2){};
-\node (9) [vertex,label=0:$v_{10}$]  at (3,-1.2){};
+\node (5) [vertex,label=90:$v_6$]    at (0:1.5){}; \node (6)
+[vertex,label=120:$v_7$]   at (120:1.5){}; \node (7) [vertex,label=240:$v_8$]
+at (240:1.5){}; \node (8) [vertex,label=0:$v_9$]     at (3,1.2){}; \node (9)
+[vertex,label=0:$v_{10}$]  at (3,-1.2){};
 
-\draw [edge,bend right=10] (5) to node [above] {$e_{10}$} (6);
-\draw [edge,bend left=10]  (5) to node [below] {$e_{11}$} (6);
-\draw [edge,bend right=10] (6) to node [left]  {$e_{12}$} (7);
-\draw [edge,bend left=10]  (6) to node [right] {$e_{13}$} (7);
-\draw [edge,bend right=10] (7) to node [below] {$e_{14}$} (5);
-\draw [edge,bend left=10]  (7) to node [above] {$e_{15}$} (5);
-\draw [edge]               (5) to node [above] {$e_{16}$} (8);
-\draw [edge]               (5) to node [below] {$e_{17}$} (9);
+\draw [edge,bend right=10] (5) to node [above] {$e_{10}$} (6); \draw [edge,bend
+left=10]  (5) to node [below] {$e_{11}$} (6); \draw [edge,bend right=10] (6) to
+node [left]  {$e_{12}$} (7); \draw [edge,bend left=10]  (6) to node [right]
+{$e_{13}$} (7); \draw [edge,bend right=10] (7) to node [below] {$e_{14}$} (5);
+\draw [edge,bend left=10]  (7) to node [above] {$e_{15}$} (5); \draw [edge]
+(5) to node [above] {$e_{16}$} (8); \draw [edge]               (5) to node
+[below] {$e_{17}$} (9);
 \end{scope}
 
 \end{tikzpicture}
-\caption{El diagrama de una gr\'afica con lazos y
-aristas m\'ultiples.}
+\caption{El diagrama de una gr\'afica con lazos y aristas m\'ultiples.}
 \label{fig:grafica}
 \end{figure}
 
@@ -496,8 +852,7 @@ Incluso es posible usar un color a lo largo de distintos p\'arrafos.}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{scope}
 % if label is needed -> label={(360/4)*\i}:$\i$
-\foreach \i in {0,...,3}
-	\node (\i) [vertex,fill=cyan] at ({(360/4)*\i}:1){};
+\foreach \i in {0,...,3} \node (\i) [vertex,fill=cyan] at ({(360/4)*\i}:1){};
 
 \node (L) at (-1,1){$G_1$};
 \end{scope}
@@ -506,14 +861,11 @@ Incluso es posible usar un color a lo largo de distintos p\'arrafos.}
 %%%%%%%%%%       Complete Graph       %%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{scope}[xshift=3.1cm,yshift=-0.3cm]
-\node (4) [vertex,fill=verdeAzulado] at (0,0){};
-\foreach \i in {0,1,2}
-	\node (\i) [vertex,fill=verdeAzulado] at ({90+(360/3)*\i}:1.2){};
+\node (4) [vertex,fill=verdeAzulado] at (0,0){}; \foreach \i in {0,1,2} \node
+(\i) [vertex,fill=verdeAzulado] at ({90+(360/3)*\i}:1.2){};
 
-\foreach \i in {0,1,2}
-	\draw [edge] let \n1={int(mod(\i+1,3))} in (\i) to (\n1);
-\foreach \i in {0,1,2}
-	\draw [edge] (\i) to (4);
+\foreach \i in {0,1,2} \draw [edge] let \n1={int(mod(\i+1,3))} in (\i) to (\n1);
+	\foreach \i in {0,1,2} \draw [edge] (\i) to (4);
 
 \node (L) at (-1,1){$G_2$};
 \end{scope}
@@ -523,13 +875,11 @@ Incluso es posible usar un color a lo largo de distintos p\'arrafos.}
 %%%%%%%%%%       Bipartite Graph      %%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{scope}[xshift=6.2cm,yshift=0cm]
-\foreach \i in {0,2,4}
-	\node (\i) [vertex,fill=red]  at ({(360/6)*\i}:1){};
-\foreach \i in {1,3,5}
-	\node (\i) [vertex,fill=blue] at ({(360/6)*\i}:1){};
+\foreach \i in {0,2,4} \node (\i) [vertex,fill=red]  at ({(360/6)*\i}:1){};
+	\foreach \i in {1,3,5} \node (\i) [vertex,fill=blue] at ({(360/6)*\i}:1){};
 
-\foreach \i in {0,...,5}
-	\draw [edge] let \n1={int(mod(\i+1,6))} in (\i) to (\n1);
+\foreach \i in {0,...,5} \draw [edge] let \n1={int(mod(\i+1,6))} in (\i) to
+	(\n1);
 
 \node (L) at (-1,1){$G_3$};
 \end{scope}
@@ -539,12 +889,10 @@ Incluso es posible usar un color a lo largo de distintos p\'arrafos.}
 %%%%%%%%%%            Star            %%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{scope}[xshift=9.3cm]
-\node (6) [vertex,fill=violet] at (0,0){};
-\foreach \i in {0,...,4}
-	\node (\i) [vertex,fill=green] at ({90+(360/5)*\i}:1){};
+\node (6) [vertex,fill=violet] at (0,0){}; \foreach \i in {0,...,4} \node (\i)
+[vertex,fill=green] at ({90+(360/5)*\i}:1){};
 
-\foreach \i in {0,...,4}
-	\draw [edge] (\i) to (6);
+\foreach \i in {0,...,4} \draw [edge] (\i) to (6);
 
 \node (L) at (-1,1){$G_4$};
 \end{scope}
@@ -554,22 +902,20 @@ Incluso es posible usar un color a lo largo de distintos p\'arrafos.}
 %%%%%%%%%%           Split            %%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{scope}[xshift=12.4cm]
-\foreach \i in {0,2,4}
-	\node (\i) [vertex,fill=black] at ({30+(360/6)*\i}:0.7){};
-\foreach \i in {1,3,5}
-	\node (\i) [vertex] at ({30+(360/6)*\i}:1.4){};
+\foreach \i in {0,2,4} \node (\i) [vertex,fill=black] at
+	({30+(360/6)*\i}:0.7){}; \foreach \i in {1,3,5} \node (\i) [vertex] at
+	({30+(360/6)*\i}:1.4){};
 
-\foreach \i in {0,...,5}
-	\draw [edge] let \n1={int(mod(\i+1,6))} in (\i) to (\n1);
-\foreach \i in {0,2,4}
-	\draw [edge] let \n1={int(mod(\i+2,6))} in (\i) to (\n1);
+\foreach \i in {0,...,5} \draw [edge] let \n1={int(mod(\i+1,6))} in (\i) to
+	(\n1); \foreach \i in {0,2,4} \draw [edge] let \n1={int(mod(\i+2,6))} in (\i)
+	to (\n1);
 
 \node (L) at (-1,1){$G_5$};
 \end{scope}
 
 \end{tikzpicture}
-\caption{Ejemplos de gr\'aficas vac\'ia, completa,
-bipartita, bipartita completa y escindible.}
+\caption{Ejemplos de gr\'aficas vac\'ia, completa, bipartita, bipartita completa
+y escindible.}
 \label{fig:fam1}
 \end{figure}
 
@@ -600,34 +946,20 @@ opciones que se pueden utilizar.   Se recomienda revisar la documentaci\'on del
 paquete para conocer todas las posibilidades.
 
 \begin{algorithm}[ht!]
-\SetAlgorithmName{Algoritmo}{}
-  \DontPrintSemicolon
+\SetAlgorithmName{Algoritmo}{} \DontPrintSemicolon
   \SetKwData{False}{false}\SetKwData{True}{true}
   \SetKwFunction{New}{new}\SetKwFunction{End}{end}\SetKwFunction{Used}{used}
   \SetKwInOut{Input}{input}\SetKwInOut{Output}{output}
 
   \KwIn{Una gr\'afica conexa $G$ con un v\'ertice distingido $r$.}
   \KwOut{Funciones de parentesco $p$, nivel $\ell$ y tiempo de exploraci\'on
-         $t$.}
-  \BlankLine
-  $Q \leftarrow []$; $i \leftarrow 0$\;
-  $i \leftarrow i+1$\;
-  colorear a $r$ de negro\;
-  a\~nadir $r$ al final de $Q$\;
-  $t(r) \leftarrow i$, $p(r) \leftarrow \varnothing$, $\ell (r) \leftarrow 0$\;
-  {\While{$Q \ne []$}{
-  	elegir a la cabeza $x$ de $Q$\;
- 	\If{$x$ tiene un vecino $y$ sin colorear}{
-		$i \leftarrow i+1$\;
-		colorear a $y$ de negro\;
-		a\~nadir $y$ al final de $Q$\;
-		$t(y) \leftarrow i$, $p(y) \leftarrow x$, $\ell(y) \leftarrow \ell(x) + 1$\;
-	}\Else{
-		eliminar $x$ de $Q$\;
-	}
-  }
-  }
-  {\Return $(p,\ell,t)$}
+  $t$.} \BlankLine $Q \leftarrow []$; $i \leftarrow 0$\; $i \leftarrow i+1$\;
+  colorear a $r$ de negro\; a\~nadir $r$ al final de $Q$\; $t(r) \leftarrow i$,
+  $p(r) \leftarrow \varnothing$, $\ell (r) \leftarrow 0$\; {\While{$Q \ne []$}{
+  elegir a la cabeza $x$ de $Q$\; \If{$x$ tiene un vecino $y$ sin colorear}{ $i
+  \leftarrow i+1$\; colorear a $y$ de negro\; a\~nadir $y$ al final de $Q$\;
+  $t(y) \leftarrow i$, $p(y) \leftarrow x$, $\ell(y) \leftarrow \ell(x) + 1$\;
+  }\Else{ eliminar $x$ de $Q$\; } } } {\Return $(p,\ell,t)$}
   \caption{Breadth First Search}
   \label{alg:bfs}
 \DecMargin{1em}
@@ -635,9 +967,9 @@ paquete para conocer todas las posibilidades.
 
 \Cref{alg:bfs} muestra algunas opciones sencillas del paquete.   Quiz\'a la
 observaci\'on m\'as importante para considerar respecto a \ttt{algorithm2e} es
-que, por dise\~no, el paquete no divide los algoritmos para aparecer en m\'as
-de una p\'agina.   Por lo tanto, un algoritmo largo usualmente se recorrer\'a
-a la siguiente p\'agina (y posiblemente ocupar\'a una p\'agina completa).
+que, por dise\~no, el paquete no divide los algoritmos para aparecer en m\'as de
+una p\'agina.   Por lo tanto, un algoritmo largo usualmente se recorrer\'a a la
+siguiente p\'agina (y posiblemente ocupar\'a una p\'agina completa).
 
 \section{\'Indice alfab\'etico}
 \label{sec:indice}
@@ -692,7 +1024,7 @@ El comando anterior generar\'a el archivo \ttt{tesis.ind}, mismo que contiene la
 informaci\'on necesaria para incluir el \'indice en el PDF final.
 
 Los conceptos aparecen en orden alfab\'etico en el \'indice, sin embargo, el uso
-de caracteres especiales (como letras acentuadas) afecta el orden habitual.
-Para corregir problemas derivados del uso de caracteres especiales, se refiere
-al lector al siguiente \href{https://en.wikibooks.org/wiki/LaTeX/%
+de caracteres especiales (como letras acentuadas) afecta el orden habitual. Para
+corregir problemas derivados del uso de caracteres especiales, se refiere al
+lector al siguiente \href{https://en.wikibooks.org/wiki/LaTeX/%
 Indexing#Using_special_characters}{art\'iculo sobre indexaci\'on}.
