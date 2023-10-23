@@ -82,7 +82,7 @@ Finalmente exhibimos que al añadir todas las posibles flechas y lazos en el
 ejemplo dado en \cref{fig:Dgrf01} seguimos teniendo una digr\'afica de
 intervalos. Tomamos la representaci\'on del ejemplo anterior y para añadir el
 lazo en $v_1$ tenemos que $I_1$ debe intersecar a $J_1$ y an\'alogamente tenemos
-que hacer que $I_2$ intersecte a $J_2$ para así tener el lazo en $v_2$. Notese
+que hacer que $I_2$ intersecte a $J_2$ para así tener el lazo en $v_2$. N\'otese
 que $I_1$ e $I_2$ pueden o no intersectarse pues esto no afecta a las flechas,
 aquí los ponemos disjuntos.
 
@@ -98,7 +98,7 @@ tener como subgr\'afica subyacente una gr\'afica la cual no sea de intervalos,
 como el siguiente ejemplo, el cual tiene como gr\'afica subyancete un 4-ciclo el
 cual se vio que no es gr\'afica de intervalos. 
 
-Ante la ausencia de una caracterizaci\'on en t\'erminos de estrucutras
+Ante la ausencia de una caracterizaci\'on en t\'erminos de estructuras
 prohibidas sencillas de las digr\'aficas de intervalos, Tom\'as Feder, Pavol
 Hell, Jing Huang y Arash Rafiey, publicaron un artículo en 2011 donde introducen
 una pequeña modificaci\'on a las digr\'aficas de intervalos, dando pie a la
@@ -361,19 +361,19 @@ construir un representaci\'on por pares de intervalos de la digr\'afica.
 \label{teo:OrdLnl}
     Sea $G$ una digr\'afica reflexiva, entonces un orden lineal $<$ es un
     ordenamiento m\'inimo si y solo si, para cualesquiera tres v\'ertices
-    $i<j<k$ tenemos que \textbf{}
+    $i<j<k$ tenemos que:
     $$ik\in E(G) \text{ implica } ij\in E(G)$$
     $$ki\in E(G) \text{ implica } ji\in E(G)$$
 \end{teorema}
 \begin{proof}
     Supongamos que $<$ es un ordenamiento m\'inimo, entonces $ab,jj\in E(G)$.
-    Luego $\min(a,j) \min(b,j)\in E(G)$, donde $a,b \in \{ i,k\}$ con $a \neq
+    Luego $\min (a,j) \min(b,j)\in E(G)$, donde $a,b \in \{ i,k\}$ con $a \neq
     b$. Ahora dados $xy, x'y' \in E(G)$ veamos que $\min(x,x') \min(y,y')\in
     E(G)$. Todos los posibles casos son los siguientes:
     
-    $ i) x<x' $ y $ y<y' $ \hspace{1cm} $iii) x<x' $ y $ y'<y $
+    $ (i) x<x' $ y $ y<y' $ \hspace{1cm} $(iii) x<x' $ y $ y'<y $
     
-    $ ii) x'<x $ y $ y'<y $ \hspace{1cm} $iv) x'<x $ y $ y<y' $
+    $ (ii) x'<x $ y $ y'<y $ \hspace{1cm} $(iv) x'<x $ y $ y<y' $
 
     De los dos primeros dos casos se concluye f\'acilmente que $\min(x,x')
     \min(y,y')\in E(G)$ pues:
@@ -382,8 +382,8 @@ construir un representaci\'on por pares de intervalos de la digr\'afica.
     $$x'<x \text{ y } y'<y \Rightarrow \min(x,x') \min(y,y')=x'y' \text{ y }
     x'y'\in E(G) \text{por hip\'otesis.}$$
     
-    Los casos iii) y iv) hay que tratarlos de otra forma, probaremos solo iii)
-    pues iv) es totalmente an\'alogo. Tenemos que $x<x' $ y $ y'<y\Rightarrow
+    Los casos (iii) y (iv) hay que tratarlos de otra forma, probaremos solo (iii)
+    pues (iv) es totalmente an\'alogo. Tenemos que $x<x' $ y $ y'<y\Rightarrow
     \min(x,x') \min(y,y')=xy' $ En este punto se nos presentan los siguientes
     casos; $x=y$ luego dado que $H$ es reflexiva, el lazo $xy\in E(G)$, el
     segundo caso $x<y' $. Como $y'<y$ obtenemos la cadena de desigualdades
@@ -400,11 +400,11 @@ A partir del teorema anterior podemos obtener el siguiente corolario.
 \label{cor:Orden_Flechas}
     Sea $G$ una digr\'afica reflexiva. Un ordenamiento lineal de los v\'ertices
     de $G$ es un ordenamiento mínimo si y solo si para cada v\'ertice $v$, los
-    v\'ertices que siguen a $v$ en el orden, consisten de: i) Primero aparecen
+    v\'ertices que siguen a $v$ en el orden, consisten de: (i) Primero aparecen
     (en el orden) los v\'ertices que son adyacentes a $v$ por flechas
-    sim\'etricas. ii) En segundo lugar aparecen los v\'ertices que son
+    sim\'etricas. (ii) En segundo lugar aparecen los v\'ertices que son
     adyacentes a v por aristas asim\'etricas, adem\'as son todas derechas o
-    todas izquierdas, iii) Finalmente tenemos v\'ertices que no tinen flechas
+    todas izquierdas, (iii) Finalmente tenemos v\'ertices que no tinen flechas
     desde o hacia $v$
 \end{corolario}
 
@@ -488,11 +488,11 @@ tambi\'en corresponde a $5$.
     que $<$ es un ordenamiento mínimo de $G$ y supongamos que $ u < v$. Entonces
     tambi\'en se tiene que $u'< v'$. Hagamos la prueba de este hecho. Como
     $(u,v)(u',v')\in E(G)$ entonces tenemos una de las siguientes dos
-    situaciones, i) $uu', vv'\in E(G)$ o $uv'\notin E(G) $ o ii) $u'u, v'v \in
+    situaciones, (i) $uu', vv'\in E(G)$ o $uv'\notin E(G) $ o (ii) $u'u, v'v \in
     E(G)$ o $ v'u \notin E(G) $. En el primer caso, veamos vía contradicci\'on
     que $u'<v'$.  Supongamos que $v'<u'$. Como $(u,v)(u',v')\in E(G)$ entonces
     $\min \{u,u' \}\min \{v,v' \}\in E(G)$, ya que por hip\'otesis tenemos un
-    ordenamiento mínimo. Por otro lado, en el caso i) tambi\'en tenemos la
+    ordenamiento mínimo. Por otro lado, en el caso (i) tambi\'en tenemos la
     hip\'otesis $uv'\notin E(G)$, luego $\min \{u,u' \}\min \{v,v' \} \neq uv'$.
     Por lo que $\min \{u,u' \}=u'$ o $\min \{v,v' \}= v$. En el caso $\min
     \{u,u' \}=u'$, se tiene la siguiente cadena $v'<u'<u<v$ de donde $v'<u<v$ y
@@ -500,7 +500,7 @@ tambi\'en corresponde a $5$.
     E(G)$ lo cual es una contradicci\'on. Ahora en el caso en el que $\min
     \{v,v' \}= v$ se tiene la cadena $u<v<v'<u'$ de donde $u<v'<u'$ y dado que
     $uu'\in E(G)$ usando nuevamente \cref{teo:OrdLnl} $uv' \in E(G)$ lo cual es
-    nuevamente una contradicci\'on. Ahora en el caso ii) como $u'u, v'v \in
+    nuevamente una contradicci\'on. Ahora en el caso (ii) como $u'u, v'v \in
     E(G)$ entonces $\min \{u',v' \}\min \{u,v \}\in E(G)$, ya que tenemos un
     ordenamiento mínimo. En este caso tambi\'en tenemos que $v'u\notin E(G)$ así
     $\min \{u',v' \}  \min \{u,v \}\neq v'u$. Así las cosas $\min \{u',v' \}=u'$
@@ -790,24 +790,29 @@ $(x'_0,x'_1),(x'_1,x'_2),\dots,(x'_n,x'_0)$ es también una cadena circular. El
 conjunto $K$ corresponde a todos los vértices de $G$ que dominan a cada $x_i$ o
 que son dominados por cada $x_i$. Recordando \cref{lem:Completa} se tiene que
 para que un $p$ pertenezca a $K$ basta dominar o ser dominado por dos elementos
-de $\{x_0,x_1,\dots,x_n \}$. Ahora, debe existir un $p\in K$ ya que
-estamos asumiendo que la cadena minimiza la suma de la longitud de las
-distancias entre los v\'ertices, de otra forma podemos reemplazar $x_j$ por su
-vecino $p$ en un camino que une a $x_j$ con $x_k$ por \cref{lem:Sustitucion}.
+de $\{x_0,x_1,\dots,x_n \}$. Ahora, debe existir un $p\in K$ ya que estamos
+asumiendo que la cadena minimiza la suma de la longitud de las distancias entre
+los v\'ertices, es decir si no existe un $p$ el cual domina (o es dominado) por
+al menos dos elementos de $\{x_i \}_{i=1} ^n$, entonces eso quiere decir que
+todo $p$ v\'ertice de $G-\{x_i\}_{i=1} ^n$ domina a un único $x_i$, mas aún
+domina a $x_i$ y no domina a $x_{i-1}$. Entonces, haciendo uso
+d\cref{lem:Sustitucion}, obtenemos una cadena circular mas pequeña, lo que
+contradice el hecho de haber tomado una cadena que minimiza la suma de las
+longitudes.
 
 El mismo argumento muestra que dos v\'ertices distintos $x_j, x_k$ no pueden
 estar en la misma componente débil $C_i$ de $G - K$, ya que se demostró que
 cualquier camino que conecta $x_j$ con $x_k$ contiene un vértice de $K$. Por lo
 tanto, podemos numerar los componentes de manera que $C_i$ contenga a $x_i$ para
 $i = 1, 2, \dots, n$. (Puede haber componentes adicionales $Ci $ con $i = n + 1,
-\dots , m$.) Ahora, el Lema 3.3 implica que cada $x_i$ puede ser reemplazado por
-cualquier vecino en $C_i$; así, cualquier vértice de $C_i$ puede tomarse como
-$x_i$. De esta manera, cada $p \in K$ que domina un vértice en $C_i$ también
-domina todos los vértices en $C_i$, y de manera similar para los vértices $p$
-dominados por un vértice en $C_i$.
+\dots , m$.) Ahora, \cref{lem:Sustitucion} implica que cada $x_i$ puede ser
+reemplazado por cualquier vecino en $C_i$; así, cualquier vértice de $C_i$ puede
+tomarse como $x_i$. De esta manera, cada $p \in K$ que domina un vértice en
+$C_i$ también domina todos los vértices en $C_i$, y de manera similar para los
+vértices $p$ dominados por un vértice en $C_i$.
 
-Esto crea una situación en la que cualquier par $(y, y')$ en el componente
-fuerte $C$ de $G +$ que contiene $(x_n, x_0)$ debe satisfacer $y \in  C_n, y'
+Esto crea una situación en la que cualquier par $(y, y')$ en la componente
+fuerte $C$ de $G^+$ que contiene $(x_n, x_0)$ debe satisfacer $y \in  C_n, y'
 \in C_0$. Esto implica fácilmente que la componente fuerte $C$ no tiene aristas
 que ingresen desde el exterior, y por lo tanto, la componente fuerte $C'$ junto
 con $C$ son maduras. $C'$ no puede completar una cadena circular con $D$. De lo
