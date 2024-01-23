@@ -451,7 +451,7 @@ todo vértice de $Y$. Esta condición no se cumple en \cref{fig:05}, por ejemplo
 los dos vértices de la derecha, de arriba y abajo, no son adyacentes. Aquellas
 gráficas que cumplen esta propiedad, son llamadas gráficas bipartitas completas.
 Mas aún si $|X| = m, |Y| = n $ le llamamos gráfica bipartita completa, y dado
-que resultan \'única salvo isomorfismos estas se denotan por $K_{m,n}$.
+que resultan \'unicas salvo isomorfismos estas se denotan por $K_{m,n}$.
 
 
 \begin{figure}[H]
@@ -654,14 +654,16 @@ un esquema perfecto de eliminación de vértices a partir de un vértice simplic
   \label{fig:16}
 \end{figure}
 
-Así tenemos el siguiente teorema. 
+Dirac en 1961 nos da el siguiente teorema sobre las gráficas cordales. 
+TEOREMA Toda gráfica cordal $G$ tiene un vértice simplicial, más aún si $G$ no es una gráfica completa, entonces tiene dos vértices simpliciales no adyacentes.
+PRUEBA Probemos este hecho vía indución sobre el grado de $G$, el caso base es trivial, así, consideremos una gráfica $G$ y supongamos que el resultado es válido para gráficas con orden menor al orden de $G$. Analicemos los dos casos siguientes, $G$ es un gráfica completa, en este caso cualquier vértice es simplicial y el resultado es trivial. El caso interesante es cuando $G$ no es una gráfica completa, en esta situación, tomemos $u,v$ un par de vértices no adyacentes. Ahora consideremos $S\subseteq V(G)$ un conjunto mínimo $uv$-separador, y sean $G_u, G_v$ las componentes que contienen a $u$ y a $v$ respectivamente en $G-S$. 
 
 \begin{teorema}
 \label{teo:102}
     Sea $G$ una gráfica. Las siguientes proposiciones son equivalentes.\\
     (i) $G$ es una gráfica cordal.\\
     (ii) $G$ tiene un esquema perfecto de eliminación de vértices.\\
-    (iii) Cada vértice mínimo separador de vértices induce una subgráfica
+    (iii) Cada conjunto separador minimal de vértices induce una subgráfica
     completa de $G$.
 \end{teorema}
 
@@ -689,13 +691,13 @@ Así tenemos el siguiente teorema.
     
 \end{proof}
 
-Para concluir la prueba \cref{teo:202} probaremos un teorema auxiliar. Una vez
-teniendo este teorema, regresamos a la prueba del \cref{teo:202}. 
+Para concluir la prueba \cref{teo:102} probaremos un teorema auxiliar. Una vez
+teniendo este teorema, regresamos a la prueba del \cref{teo:102}. 
 \begin{proof}
     (i) $\Rightarrow$ (ii) Probemos esto por inducción. Supongamos que toda
     gráfica cordal de grado menor al de $G$ tiene un esquema perfecto de
     eliminación de vértices. Probemos que $G$ en efecto tiene un esquema
-    perfecto de eliminación de vértices. Usando \cref{teo:203}, tenemos que $G$
+    perfecto de eliminación de vértices. Usando \cref{teo:103}, tenemos que $G$
     tiene un vértice simplicial $x$. Al considerar $G-\{x\}$ tenemos una gráfica
     cordal luego por inducción $G-\{x\}$ cuenta con un esquema perfecto de
     eliminación de vértices $\sigma $. Para obtener un esquema perfecto de

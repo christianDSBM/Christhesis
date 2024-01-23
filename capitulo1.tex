@@ -347,17 +347,30 @@ C_l$ y $k<j<l$ entonces $v\in C_j$. Esto se puede observar en
 En efecto, la propiedad de poder ordenar los clanes maximales de tal forma que
 para todo vértice $v\in V$ los clanes maximales que contienen a $v$ aparecen
 consecutivamente en el orden, es una condición necesaria y suficiente para ser
-una gráfica de intervalos. A este tipo de ordenamiento de los clanes le
-llamaremos \indice{enumeración consecutiva de clanes}.
+una gráfica de intervalos. A este tipo de ordenamiento de los clanes tambi\'en se les suele decir la descomposici\'on consecutiva de $G$ en gr\'aficas primas que consta de clanes. 
 
-\begin{teorema}
-    \label{teo:Int-MaxClns}
-    Sea $G$ una gráfica. $G$ es gráfica de intervalos si y solo si $G$ tiene una
-    enumeración consecutiva de sus clanes maximales.
-\end{teorema}
+A continuaci\'on formalizamos las ideas anteriores, pues resultan \'utiles para resultados posteriores. 
 
-La prueba de esta primer caracterización la posponemos hasta el final del
-capítulo junto a la prueba de las otras dos caracterizaciones que daremos.
+Dada una gr\'afica $G$, decimos que $G_0,G_1,\dots,G_n$ es una descomposici\'on de $G$ en gr\'aficas primas, si sucede que $G=G_0 \cup G_1\cup \cdots \cup G_n$ donde cada $G_i$ es una gr\'afica prima, es decir $G_i$ no tiene clanes separadores para todo $0\leq i \leq n$. Adem\'as se debe cumplir que $S_i=(G_0\cup G_1\cup \cdots \cup G_{i-1})\cap G_i$ es un clan el cual est\'a propiamente contenido en $G_i$ y en $G_0\cup G_1\cup G_{i-1}$ tales conjuntos $S_i$ son llamados clanes de adjunci\'on de la descomposici\'on en gr\'aficas primas en cuesti\'on. 
+
+Veamos un par de ejemplos sencillos sobre la descomposición de gráficas en gráficas primas. Como primer ejemplo, tenemos la gráfica $G$ que consta de tres vértices y una sola arista, digamos $V(G)=\{v_0,v_1,v_2\}, E(G)=\{v_1,v_0\}$. Dicha gráfica la podemos descomponer de la siguiente manera $G_0,G_1$ con  $V(G_0)=\{v_0,v_1\}, E(G_0)=\{ \{v_0,v_1\} \} $ y con $V(G_1)=\{v_2\}, E(G_1)=\emptyset $. En este caso, es claro que tanto $G_0$ como $G_1$ ambas carecen de clanes separadores, y por tanto son gráficas primas, en segundo lugar $G_0\cap G_1= \emptyset$ la cual es por vacuidad una gráfica completa. En este mismo ejemplo, nos podemos percatar que se pudo tomar otra descomposición en gráficas primas, simplemente intercambiando los nombres de las gráficas primas, es decir renombrarlas, que $G_0$ sea ahora la gráfica $G_1$ y que $G_1$ sea ahora $G_0$. 
+
+Como segundo ejemplo, tenemos un cuatro ciclo $(v_0,v_1,v_2,v_3)$, en este caso el mismo cuatro ciclo es ya una gráfica prima, no tiene clanes separadores. Los únicos conjuntos de corte, son pares de vértices opuestos, pero estos no conforman un clan. Así, en este caso, la descomposición es el mismo cuatro-ciclo. Un tercer ejemplo, lo podemos construir a partir del cuatro-ciclo, añadiendo una arista diagonal, supongamos $\{v_0,v_2\}$, con esta pequeña modificación, ahora la gráfica ya no es prima, ya que ahora el conjunto $\{v_0,v_2\}$ es un conjunto de corte, más aún es un clan de corte. Dada esta situación, procederemos a buscar otra descomposición en gráficas primas, proponemos $G_0,G_1$ como $G_0=(\{v_0,v_1,v_2 \},\ \{ \{v_0,v_1\},\{v_1,v_2\},\{v_2,v_0\} \} )$ y $G_1= ( \{v_0,v_3,v_2\}, \ \{ \{v_0,v_3\},\{v_3,v_2\},\{v_2,v_3\} \} )$. Así definidas las gráficas, es fácil verificar que ambas son gráficas primas, ya que son gráficas completas y entonces no tienen clanes de corte, además $G_0\cap G_1 = \{v_0,v_2 \}$ y este es un clan. Por lo tanto, $G_0, G_1$ es una descomposición en gráficas primas.
+Un ejemplo más es el seis-ciclo, $(v_0,v_1,v_2,v_3,v_4,v_5)$, con un vértice extra $v_6$ y las siguientes adyacencias adicionales $\{v_6,v_0\},\{v_6,v_2\},\{v_6,v_4\}$. En la figura 6464646, se ilustra dicha gráfica, y las gráficas primas de descomposición son las siguientes $G_0=\{v_0,v_1,v_2,v_6\},G_1= \{v_2,v_3,v_4,v_6\},G_2=\{v_4,v_5,v_0,v_6\}$ (las gráficas inducidas).
+
+Con esté último ejemplo, mostramos que las gráficas primas en una descomposición, no son necesariamente clanes, sin embargo hay casos en los que precisamente las gráficas primas de descomposición son clanes, cuando este sea el caso, diremos que tenemos una descomposición en gráficas primas que consta de clanes, o simplemente una descomposición en clanes, puesto que cada clan es de por sí una gráfica prima.
+
+Por supuesto, también tenemos el ejemplo de \cref{fig:MaxClqs02}. La gr\'afica $G$ se puede descomponer en los siete clanes maximales exhibidos, los cuales son claramente gráficas primas, así $G=C_1 \cup \dots \cup C_7$ y los respectivos clanes de adjunci\'on en este caso son aquellos v\'ertices multicolor. Algo aún más interesante de nuestro ejemplo es el hecho de que los clanes cumplen lo siguiente, para cada $1\leq i\leq n$ se tiene que $S_i\subseteq C_{i-q}$. Esto no pasa en general, pero en el caso de las gr\'aficas que son de intervalos tenemos esta interesante propiedad. Así si $G$ es una gráfica y $G_0,G_1,\dots,G_k$ es una descomposición de $G$ en gráficas primas decimos que la descomposición es consecutiva si y solo si $v\in G_i, v\in G_h$ con $i<j<h$ implica que $x\in G_j$. Además si cada $G_i $ es un clan, decimos que tenemos una descomposici\'on consecutiva de $G$ en clanes.
+
+Veamos propiedades interesantes referentes a las descomposiciones en gráficas primas. La primer observación que haremos es que dada una gráfica $G$ y una descomposición en gráficas primas $G_0,G_1,\dots,G_{k}$ de $G$, los clan de adjunción $S_i$ separan a $G$, mas precisamente, los vértices de $(G_0\cup \cdots \cup G_{i-1})- S_i$ están separados de los vértices de $G_i- S_i$. En efecto esto sucede, ya que todas las aristas que hay después de quitar el clan $S_i$ son aristas $uv$ con $u,v\in G_0\cup G_1 \cup \cdot \cup G_{i-1}$ o bien con ambos vértices en $G_i$, es decir no hay aristas conformadas por vértices en componentes distintas. Así queda claro que en efecto $S_i$ separa a $G$. Una gráfica es cordal si y solo si esta  tiene una descomposición en clanes. Veamos mediante un argumento inductivo sobre el número de vértices de $G$ que $G$ se puede descomponer en unión de clanes. Claramente si $|G|$ es uno, entonces $G$ es un clan y entonces se representa como unión de clanes. Ahora, supongamos que si el cardinal de $G$ es menor que $k$ entonces $G$ se puede descomponer como unión de clanes. Finalmente si $G$ tiene orden $k+1$ y además no es un clan, entonces por el teorema 1.5.3 sabemos que $G$ tiene un vértice simplicial, digamos $v$, así, consideremos $K$ como la subgráfica completa inducida por $v$ y todos sus vecinos. Tomemos ahora, $G'=G-K$, por hipótesis inductiva, hay una descomposición en clanes de $G'$, digamos $K_1,K_2\dots, K_l$. Finalmente podemos concluir que $K_1,K_2\dots, K_l, K$ es una descomposición de $G$ en clanes. Además notemos que el teorema 1.5.4 nos lleva a concluir que los conjuntos $S_i$ son efecto clanes. Ahora, supongamos que tenemos una gráfica $G$ la cual podemos descomponer en clanes, y sea $(u_1,u_2,u_3,u_4,u_1)$ un cuatro ciclo, veamos que forzosamente debe haber una cuerda. Como $G$ tiene una descomposición en gráficas primas, debe suceder que cada $u_i$ pertenece a $G_j$ algún clan. Como $u_1$ es adyacente a $u_2$ y a $u_4$, entonces ambos $u_2, u_4$ pertenecen a $G_j$ es decir luego, debe haber un arista entre $u_2$ y $u_4$. Por lo que $G$ es una gráfica cordal.
+
+Supongamos que $G_0,G_1,\dots,G_k$ es una descomposición consecutiva de $G$ en clanes. Entonces también tenemos las siguientes propiedades. $G_k,\dots,G_1,G_0$ es también una descomposición consecutiva de $G$ en clanes. Verificar este resultado es inmediato, pues, cada subgráfica $G_i$ es completa por hipótesis, así como cada $S_i$, y además se mantiene que si $i>j>h$ y $v\in G_i$ y $v\in G_h$ entonces $v\in G_j$. Nuestra segunda propiedad nos dice que para todo índice $i$ entre 1 y $k$, tenemos que $(G_0\cup \cdots \cup G_{i-1})-S_i$ está separado de $(G_i \cup \cdots \cup G_k)-S_i$. Veamos esto por inducción, sobre el número de componentes en la descomposición. Si tenemos una única componente el resultado no es relevante, cuando tenemos dos componentes el argumento que prueba nuestra proposición es que las aristas están compuestas únicamente por vértices de la misma componente. Así supongamos que cualquier gráfica la cual tiene una descomposición consecutiva en $k$ clanes, cumple nuestra proposición. Ahora supongamos que tenemos una gráfica $G$ y que esta tiene una descomposición consecutiva en $k+1$ clanes. Veamos algunos casos que surgen en este punto. Si $i\in \{1,k\}$ entonces nuevamente es sencillo ver que separa por la naturaleza de las aristas. Ahora supongamos que $i\notin \{1,k\}$, veamos que dado $u\in (G_0\cup \cdots \cup G_{i-1})-S_i $ y $v \in (G_i \cup \cdots \cup G_k)-S_i $ estos quedan separados. Caso 1, sea $i_u$ el índice correspondiente al clan en el cual se encuentra $u$ y sea $j_v$ el índice del clan en el cual se encuentra $v$. Ahora, si $j_v-i_u\leq k$ entonces podemos suponer que $G_l$ con $l\in \{0,k+1\}$ es tal que no contiene a $u$ ni a $v$. Así podemos considerar la gráfica $G^*=G-G_l$ y entonces por hipótesis inductiva en $G^* - S_i$ los vértices $u,v$ están separados. Luego, al considerar nuevamente la gráfica $G$, $u,v$ vuelven a quedar separados. Ahora el caso de mayor interés es cuando $j_v-i_u = k+1$, en este caso $u\in G_0$ y $v_\in G_{k+1}$. Ahora tomemos un $uv$-camino, digamos $(u,x_1,\dots,x_n,v)$, luego, tomamos $x_j$ donde $j =\min\{i | x_i \in G_{k}, v_\notin C_{k+1}\}$, este debe existir, ya que si no, esto implicaría que todo el $uv$-camino pertenece a $G_{k+1} $. Así las cosas, por hipótesis inductiva, debe suceder que $u$ y $x_j$ están separados en $G-S_i$, luego $u,v$ quedan separados en $G$.
+
+Ahora supongamos que $T\subseteq V(G)$ el cual separa a $G$, veamos que entonces $T$ contiene a algún $S_i$. Como $T$ es separador, consideremos algún subconjuto de $T$ que sea separador mínimo. Ya vimos que si una gráfica tiene una descomposición consecutiva en clanes, entonces $G$ es una gráfica de intervalos, en particular una gráfica cordal, entonces tenemos que cualquier conjunto separador mínimo es un clan. Es decir $T$ en efecto contine a un clan separador. Otra observación sencilla es que $G_i $ con $i\in \{1,\dots, k-1\}$ separa a $G$, esto es directo del hecho de tener una descomposición consecutiva, pues $S_{i-1}\subseteq G_i$ y ya vimos que los clanes de adjunción en efecto separan a $G$. Por otro lado, si $G_i$ no separa a $G$, entonces $i\in \{0,k\}$. 
+El último resultado referente a las descomposiciones cosecutivas en clanes maximales, es que para cualquier subgráfica $H$ de $G$ nosotros obtenemos una descomposición consecutiva de $H$ en clanes maximales al intersecar cada clan $G_i$ con $H$, así la descomposición es $H\cap G_0, H\cap G_1, \dots, H\cap G_k$, para verificar que esta es en efecto una descomposición consecutiva en clanes, hay que verificar que cada $G_i\cap H$, es en efecto un clan, lo cual ciertamente se cumple pues $G_i\cap H$ es un clan al ser una subgráfica de un clan. Luego cada $S_i\cap H$ por la misma razón vuelve a ser un clan. Finalmente basta ver que $S_i\cap H \subseteq G_{i-1} \cap H$ pero nuevamente esto vuelve a ser inmediato del hecho que $S_i$ es subconjunto de $G_{i-1}$. 
+
+De momento dejaremos estos resultados y posteriormente los retomaremos para probar que el tener una descomposición consecutiva en clanes maximales es una condición suficiente para garantizar que 
+
 
 \section{Orientaciones transitivas}
 Como vimos en el capitulo anterior, que una gráfica sea cordal no es una
@@ -633,7 +646,7 @@ las gráficas de intervalos.
     gráfica de intervalos no puede tener tripletas asteroidales, como se
     demostró un párrafo antes d\cref{teo:Int-Ast-free}.    
 
-    iii) $\to$ iv) Para concluir la cadena de equivalencias, probaremos lo
+    iv) $\to$ i) Para concluir la cadena de equivalencias, probaremos lo
     siguiente vía inducción sobre el número de clanes maximales. Si $G $ es una
     gráfica cordal, entonces $G$ tiene una tripleta asteroidal ó $G$ tiene una
     enumeración consecutiva de sus clanes maximales. Si $G$ tiene un único clan
@@ -657,16 +670,36 @@ las gráficas de intervalos.
     $H$, de forma que ahora nos quede una enumeracíon consecutiva de clanes
     maximales de $G$. Empecemos descartando dos casos sencillos, el primero de
     ellos, si $S\subseteq C_1$ o $S\subseteq C_k$ entonces al situar a $C$ antes
-    de $C_1$ o situarlo después de $C_k$ obtenemos una enumeración consecutiva
+    de $C_1$ o ponerlo después de $C_k$ obtenemos una enumeración consecutiva
     de los clanes maximales de $G$. Por lo que solo basta atacar el caso en el
     que $S$ se queda contenida en algún clan maximal intermedio, es decir
-    $S\subseteq C_j$ tal que $1<j<k$. 
+    $S\subseteq C_j$ tal que $1<j<k$, $S$ debe estar propiamente contenido en $C_j$, si no $C_j$ no sería clan m\'aximal.
+
+    Caso 1. $S\supseteq S_i$ para alg\'un $i, l\leq i\leq k$. Definimos\\
+    $$S_0=S_{k+i}=\emptyset$$ y hacemos
+    $$p = max \{i | S_i \subseteq S, 0 \leq i \leq  m\}$$
+    $$q = \min \{i | Si \subseteq S, m + 1\leq  i \leq  k + 1 \}$$
+    $Z = C_p \cup \dots \cup C_m \cup \dots \cup C_{q-1}.$
+    Por hip\'otesis $p\geq  1$  o $q \leq k$
+    Por (5), ii) and iii) $Z - S$ es la componente de  $H - S$ la cual contiene a $C_m-S$.
+    Por ( 4 ) tenemos que $ C_j\supseteq S_p$, para $p\leq j \leq m, C_j \supseteq S_q$ con $m\leq j\leq q-1$. $Z\cup C$ tiene menos clanes que $G$ (por (*)); por lo tanto podemos asumir que $Z \cup C$ tiene una enumeraci\'on consecutiva de sus clanes maximales $Z_0 \cup \dots  \cup Z_t$, conteniendo sus clanes maximales $C_p,\dots,  C_{q-1}$, $C$ como sus elementos. Como $S$ no separa a $Z$, por (5), v) tenemos que $C = Z_0$ o $=Z_t$, sin perdida de generalidad asumimos $C=Z_0$ (Ya que en otro caso 
+    podemos revertir el orden de acuerdo a (5), i)). Asumimos $Z_t=C_s$ ( $p \leq s \leq q - 1$ ) . Si $s\leq m$ entonces $S_p \subseteq C_s = Z_t$, y $C_0,\dots, C_{p-1}, Z_t, Z_{t-1}, \dots ,Z_1, C, C_q ,\dots , C_k$ es una enumeraci\'on consecutiva de los clanes maximales de $G$. Si $s\geq m+1$ entonces $S_q\subseteq G =Z_t$, y sim\'etricamente $C_0,\dots, C_{p-1}, C, Z_1, \dots, Z_t, C_q, \dots , C_k$ es una enumeraci\'on consecutiva de los clanes maximales de $G$.
+    
+    Caso 2. $S_i \nsubseteq S$ para toda $i = 1,\dots , k$.
+    Si
+    (i) $S_k \nsupseteq S$, $\supseteq S_i$ para $i = 1, \dots , k - 1$
+    y
+    (ii) $S_1 \nsupseteq S$, $\supseteq S_i$ para $i = 2 , \dots ,k$,
+    
+    Entonces escogemos los v\'ertices  $x$ en $C_0-S_1$, $y$ en $C_k-S_k, z$ en $C - S$ ; cualquier par de estos v\'ertices estan conectados  por otro camino en $G$ el cual no pasa por el tercer v\'ertice o a alguno de sus vecinos.
+    As\'i $x, y, z$ forman una tripleta asteroidal. Si por otro lado, (i) no es verdadero entonces el caso 1 aplica con $C_k, S_k$ en vez de $C, S$, si no se cumple (ii) entonces aplica el caso 1 con $C_0, S_1$ en vez de $C, S$.
+    
 
     
     \end{proof}
 
  
-
+\begin{comment}
 \section{Ambientes y etiquetas}
 \label{sec:etiquetas}
 
@@ -1028,3 +1061,4 @@ de caracteres especiales (como letras acentuadas) afecta el orden habitual. Para
 corregir problemas derivados del uso de caracteres especiales, se refiere al
 lector al siguiente \href{https://en.wikibooks.org/wiki/LaTeX/%
 Indexing#Using_special_characters}{art\'iculo sobre indexaci\'on}.
+\end{comment}

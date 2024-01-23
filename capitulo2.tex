@@ -277,7 +277,7 @@ $(u',u),(v',v)\in E(G)$ y $(v',u)\notin E(G)$. Usemos como ejemplo
   \centering
   \includegraphics[width=0.75\textwidth]{recursos/capturas/PairDgrph.jpg}
   \caption{Los colores distintos corresponden a las componentes fuertes de $G^+$.}
-  \label{fig:InvrtblPair02}
+  \label{fig:PairDigraph}
 \end{figure}
 
 Apoy\'andonos del esquema de la derecha, podemos verificar que en efecto las
@@ -650,34 +650,44 @@ Ahora para probar la segunda observaci\'on, se tiene de forma an\'aloga que si
 $x_j$ domina a $x_i$, pero $x_j$ no domina a $x_{i-1}$ en $G$, entonces
 $(x_{i-1}, x_i)$ domina a $(x_{i-1}, x_j)$ en $G^+$, implicando nuevamente la
 existencia de una cadena circular m\'as pequeña. Esto no es dif\'icil de
-verificar mediante un par de esquemas como los usados para probar la primer
+verificar mediante un par de esquemas como los usados para probar la primera
 propiedad.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=1\textwidth]{recursos/capturas/CompeteGraph.jpg}
+  \caption{Al existir una flecha entre dos v\'ertices del conjunto $\{x_i
+  \}_{i=1}^n$, mediante una aplicaci\'on repetida de las observaciones anteriores,
+  obtenemos una gr\'afica completa. }
+  \label{fig:completeGraph}
+\end{figure}
 
-Terminemos de ver que el hecho de tener una flechas entre dos v\'ertices de
-$x_0,\dots,x_n$ nos lleva a que se tiene una gr\'afica completa en
-$x_0,\dots,x_n$. Supongamos que $x_a$ domina a $x_b$ en $G$. La observaci\'on 1,
-implica que todos los antecesores de $x_a$ dominan a $x_b$, es decir $x_{a-1},
-x_{a-2},\dots, x_{b+1}$ dominan a $x_b$, observe el primer diagrama de la figura
-123123. Ahora como $x_{b+1}$ domina a $x_b$ la propiedad 2, implica que
+Terminemos de ver que el hecho de tener una flecha entre dos v\'ertices de
+$x_0,\dots,x_n$ nos lleva a que $x_0,\dots,x_n$ induce una gr\'afica completa.
+Supongamos que $x_a$ domina a $x_b$ en $G$. La primera de las dos observaciones
+presentadas al principio de este caso implica que todos los antecesores de
+$x_a$ dominan a $x_b$, es decir $x_{a-1}, x_{a-2},\dots, x_{b+1}$ dominan a
+$x_b$, observe el primer diagrama de  \cref{fig:completeGraph}. Ahora como
+$x_{b+1}$ domina a $x_b$ la segunda propiedad, implica que
 $x_{b+1}$ domina $x_{b-1}, x_{b-2},\dots,x_{b+2}$ esto es, domina a todos los
-otros v\'ertices, ver el segundo diagrama de la figura 123123. Ahora usando
+otros v\'ertices, ver el segundo diagrama de \cref{fig:completeGraph}. Ahora usando
 nuevamente la propiedad 1, tenemos que como $x_{b+1}$ domina a $x_{b-1}$
 entonces $x_b$ domina a $x_{b-1}$, y aplicando la propiedad 2, se obtiene que
 $x_b$ domina al resto de v\'ertices. Mediante la repetida aplicaci\'on de estas
-propiedades sobre toso los v\'ertices, se puede concluir que los v\'ertices
+propiedades sobre todos los v\'ertices, se puede concluir que los v\'ertices
 $x_0,x_1,\dots,x_n$ inducen una gr\'afica completa en $G$. Finalmente veremos
 que $C$ es una componente trivial, es decir consta de un solo v\'ertice,
-supongamos que esto no es así es decir supongamos que en $C$ hay un v\'ertice
-adicional del $(x_n,x_0)$, bajo estas hip\'otesis en la componente revertida
-$C'$ debe tener a como v\'ertices a $(x_0,x_n)$ y a otro v\'ertice, supongamos
-$(a,b)$, el cual no pertenece a $C\cup D$. Como $C'$ es conexa, se tiene que
+supongamos que esto no es así, es decir, supongamos que en $C$ hay un v\'ertice
+adicional del $(x_n,x_0)$, bajo estas hip\'otesis la componente revertida
+$C'$ debe tener como v\'ertices a $(x_0,x_n)$ y a otro v\'ertice, supongamos
+$(a,b)$, el cual no pertenece a $C\cup D$. Como $C'$ es conexa, tambi\'en podemos
+suponer que
 $(x_0,x_n)$ domina a $(a,b)$, así podemos suponer que $x_0$ domina a $a$ en $G$,
 $x_n$ domina a $b$ en $G$ y que $x_0$ no domina a  $b$ en $G$. Dado que $(a,b)$
 no pertenece a $C\cup D$, entonces la pareja $(x_0,x_1)$ que pertenece a $C\cup
-D$ no puede dominar a $(a,b)$ por lo que $x_1$ no domina a $b$ en $G$. Veamos
-que $x_2$ tampoco puede dominar a $b$, si $x_2$  domina a $b$ en $G$ entonces
+D$ no puede dominar a $(a,b)$, por lo que $x_1$ no domina a $b$ en $G$. Veamos
+que $x_2$ tampoco puede dominar a $b$.  Si $x_2$  domina a $b$ en $G$ entonces
 $(x_1,x_2)$ domina a $(x_0,b)$, recordemos que $x_1$ domina a $x_0$ porque
 $x_0,x_1,\dots,x_n$ induce una gr\'afica completa, continuando, tenemos que a su
 vez $(x_0,b)$ domina $(a,b)$ en $G^+$, pero esto no es posible ya que tendríamos
@@ -686,8 +696,8 @@ alguna flecha debe salir de $C\cup D$, que por hip\'otesis no puede pasar.
 Nuevamente si $x_3$ domina a $b$ entonces $(x_2,x_3)$ domina a $(x_1,b)$ que a
 su vez domina a $(a,b)$ y se llega a la misma contradicci\'on. De forma
 an\'aloga, se puede probar que $x_n$ no domina a $b$, lo cual es falso. La
-contradicci\'on de todo lo anterior surge de suponer que en $C$ hubo mas de un
-v\'ertice. Así $C=\{ (x_n,x_0)\} $ y $C'=\{ (x_0,x_n)\}$. Con esta misma pruba
+contradicci\'on de todo lo anterior surge de suponer que en $C$ hubo m\'as de un
+v\'ertice. Así $C=\{ (x_n,x_0)\} $ y $C'=\{ (x_0,x_n)\}$. Con esta misma prueba
 se muestra que $C'$ es una componente madura, pues no hay v\'ertices $(a,b)$ que
 sean dominados fuera de $C\cup D$. Finalmente si $(x_n,x_0)$ y $(x_0,x_n)$
 completan ambos una cadena circular con $D$, entonces en $D$ existía ya una
@@ -707,16 +717,15 @@ lemas auxiliares.
   Sea $x_0,x_1,\dots,x_n $ un conjunto independiente en $G$. Supongamos que $p$
   es un v\'ertice de $G$ distinto de $x_0,x_1,\dots,x_n$, el cual domina a
   $x_{i+1}$ pero no a $x_i$. Entonces $(x_0,x_1),\dots,
-  (x_i,p)(p,x_{i+2}),\dots, (x_n,x_0)$ es tambi\'en una cadena circular creada
-  al mismo tiempo.
+  (x_i,p)(p,x_{i+2}),\dots, (x_n,x_0)$ es tambi\'en una cadena circular.
 \end{lema}
 \begin{proof}
   Del hecho de que $(x_ix_{i+1})$ domina a $(x_i,p)$ en $G^+$ y dado que
   $(x_i,x_{i+1})$ pertenece a $C\cup D$ se debe tener que $(x_i,p)$ debe
   pertenecer tambien a $C\cup D$. Adem\'as, dado que $x_{i+1}$ no domina o es
-  dmoinado por $x_{i+2}$ en $G$, tambi\'en debemos tener que $(x_{i+1},x_{1+2})$
+  dominado por $x_{i+2}$ en $G$, tambi\'en debemos tener que $(x_{i+1},x_{1+2})$
   domina a $(p,x_{+2})$ cuando $(p,x_{i+2})$ est\'a en $C\cup D$. En
-  conclusi\'on vemps que cualquier v\'ertice $p$ podemos reemplazarlo por
+  conclusi\'on vemos que podemos reemplazar cualquier v\'ertice $p$ por
   $x_{i+1}$ en la cadena circular $(x_0,x_1),(x_1,x_2),\dots , (x_n,x_0)$
 \end{proof}
 
@@ -757,11 +766,11 @@ penúltimo v\'ertice en este camino y supongamos sin p\'erdida de generalidad qu
 $px_i,qx_{i+1}\in E(G), px_{i+1}\notin E(G)$. Por \cref{lem:Completa} $p$ no
 puede dominar a ningún otro $x_j$ ya que llegariamos a que domina a dos
 v\'ertices y por ende dominaría a todos e particular a $x_{i+1}$. Ahora, $q$ no
-domina a $x_i$, de hecho si $q$ domina a $x_i$ nuevamente por
-\cref{lem:Completa} tendremos que $q$ domina a todos los $x_i$, esto es una
-contradicci\'on ya que se llega a que $(p,q)$ domina a $(x_i,x_{i+2})$ en $G^+$
-lo que nos dice que $(x_i,x_{i+2})$ pertenece a $C\cup D$ y así tendemos una
-cadena circular mas pequeña en $H$. Tal como se muestra abajo:
+domina a $x_i$, de hecho, si $q$ domina a $x_i$, nuevamente por
+\cref{lem:Completa} tendremos que $q$ domina a todos los $x_i$.  Esto es una
+contradicci\'on ya que se llega a que $(p,q)$ domina a $(x_i,x_{i+2})$ en
+$G^+$, lo que nos dice que $(x_i,x_{i+2})$ pertenece a $C\cup D$ y así
+tenemos una cadena circular mas pequeña en $H$. Tal como se muestra abajo:
 $$ (x_,x_1), \dots , (x_{i-1},x_i ), {\color{malva} (x_i,x_{i+1}),
 (x_{i+1},x_{i+2})},(x_{i+2},x_{i+3}), \dots , (x_n,x_0) $$
 $$ (x_,x_1), \dots , (x_{i-1},x_i ), {\color{malva}
@@ -773,18 +782,18 @@ $(p,q)$ por el par previo en el camino $P$, hasta obetener el par $(p',q')$ el
 cual es el primero en aparecer en el camino que es distinto de $(x_n,x_0)$. Dado
 que $x_0$ es adyacente a $q'$, regresamos al caso 1.
 
-Así en efecto en la cadena $(x_0,x_1),(x_1,x_2),\dots,(x_n,x_0)$ tiene solamente
+Así, en efecto en la cadena $(x_0,x_1),(x_1,x_2),\dots,(x_n,x_0)$ tiene solamente
 el par $(x_n,x_0)$ en $C$ y cualquier otra cadena en $C\cup D$ debe tener
 exactamente un par en $C$. Ahora asumimos que nuestra cadena circular minimiza
-la suma de la longitud de la distancia entre los vértices $x_0,x_1,\dots ,x_n$
-en la gráfica subyacente de $G$.
+la suma de las longitudes de las distancias entre los vértices $x_0,x_1,\dots ,
+x_n$ en la gráfica subyacente de $G$.
 
 La digráfica $G$ resulta tener una estructura muy especial. Afirmamos que en
 esta situación existe un conjunto no vac\'io $K$ de vértices de $G$ tales que
-$G-K$ tiene componentes d\'ebiles $C_1,c_2,\dots,C_m$ donde $x_i\in C_i$ con
-$i=1,\dots,n$ y tal que si $p\in K$ domina un vértice en $C_i$ entonces $p$
-domina todos los vértices de $C_i$, mas aún si $x'_0,x'_1,\dots,x'_n$ son
-cualesquiera vértices con $x'_i\in C_i$ entonces
+$G-K$ tiene componentes d\'ebiles $C_1,C_2,\dots,C_m$ donde $x_i\in C_i$ con
+$i \in \{ 1, \dots, n \}$ y tal que si $p\in K$ domina un vértice en $C_i$
+entonces $p$ domina todos los vértices de $C_i$. Mas aún, si $x'_0,x'_1,\dots,
+x'_n$ son cualesquiera vértices con $x'_i\in C_i$ entonces
 $(x'_0,x'_1),(x'_1,x'_2),\dots,(x'_n,x'_0)$ es también una cadena circular. El
 conjunto $K$ corresponde a todos los vértices de $G$ que dominan a cada $x_i$ o
 que son dominados por cada $x_i$. Recordando \cref{lem:Completa} se tiene que
@@ -802,9 +811,10 @@ longitudes.
 El mismo argumento muestra que dos v\'ertices distintos $x_j, x_k$ no pueden
 estar en la misma componente débil $C_i$ de $G - K$, ya que se demostró que
 cualquier camino que conecta $x_j$ con $x_k$ contiene un vértice de $K$. Por lo
-tanto, podemos numerar los componentes de manera que $C_i$ contenga a $x_i$ para
-$i = 1, 2, \dots, n$. (Puede haber componentes adicionales $Ci $ con $i = n + 1,
-\dots , m$.) Ahora, \cref{lem:Sustitucion} implica que cada $x_i$ puede ser
+tanto, podemos numerar las componentes de manera que $C_i$ contenga a $x_i$ para
+$i \in \{ 1, 2, \dots, n \}$. (Puede haber componentes adicionales $C_i $ con $i
+\in \{ n + 1, \dots , m \}$.) Ahora, \cref{lem:Sustitucion} implica que cada
+$x_i$ puede ser
 reemplazado por cualquier vecino en $C_i$; así, cualquier vértice de $C_i$ puede
 tomarse como $x_i$. De esta manera, cada $p \in K$ que domina un vértice en
 $C_i$ también domina todos los vértices en $C_i$, y de manera similar para los
@@ -823,3 +833,13 @@ cadena circular, lo cual es una contradicción.
 Por supuesto, si la adición de $C'$ no crea una cadena circular, entonces
 agregamos $C '$ a $D$ y $C$ a $D'$.
 \end{proof}
+
+ La digráfica de pares de la digráfica (T3 figura 1) $G$ con $V(G)= \{0,1,2,a,b\}, E(G)=\{ (0,a),(a,1),(a,b),(b,a),(b,2),(a,a),(b,b),(0,0),(1,1),(2,2)\}$ es $G^+$ con $V(G^+)= \{(0,1), (0,2), (0,a), (0,b), 
+ (1,0), (1,2), (1,a), (1,b),
+ (2,1), (2,0), (2,a), (2,b),
+ (a,1), (a,2), (a,3), (a,b), 
+ (b,1), (b,2), (b,3), (b,a) \}$
+
+ Verifiquemos las adyacencias, 
+
+ En la digráfica $T_5$ podemos dar el siguiente ordenamiento lineal de los vértices el cual además afirmamos que es mínimo. (c,e,a,a',f)
